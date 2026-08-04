@@ -1,3 +1,5 @@
+ ![alt text](https://github.com/digvijaylp/opentelescopevr/blob/main/art/icon.png)
+
 # OpenTeleScopeVR
 OpenTelescopeVR is a specialized VR-based Android camera application for people with low vision, designed to turn your smartphone into a digital telescope
 
