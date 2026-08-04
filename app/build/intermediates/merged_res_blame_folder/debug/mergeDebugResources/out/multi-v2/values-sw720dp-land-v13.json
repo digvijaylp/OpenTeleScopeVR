@@ -4,7 +4,7 @@
             "outputFile": "net.sourceforge.opencamera.app-mergeDebugResources-24:/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/home/Digvijay/Apps/OpenCamera_dlp/repo/github/OpenTeleScopeVR/app/src/main/res/values-sw720dp-land/dimens.xml",
+                    "source": "/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/res/values-sw720dp-land/dimens.xml",
                     "from": {
                         "startLines": "6",
                         "startColumns": "4",

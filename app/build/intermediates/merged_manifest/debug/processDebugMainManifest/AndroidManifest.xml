@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.digvijaylp.OpenTeleScopeVR"
+    package="com.samsung.android.OpenTeleScopeVR"
     android:installLocation="auto"
     android:versionCode="96"
     android:versionName="1.56.2" >
@@ -44,10 +44,10 @@
     </queries>
 
     <permission
-        android:name="org.digvijaylp.OpenTeleScopeVR.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.samsung.android.OpenTeleScopeVR.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="org.digvijaylp.OpenTeleScopeVR.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.samsung.android.OpenTeleScopeVR.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:name="net.sourceforge.opencamera.OpenCameraApplication"
@@ -179,7 +179,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="org.digvijaylp.OpenTeleScopeVR.androidx-startup"
+            android:authorities="com.samsung.android.OpenTeleScopeVR.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"
