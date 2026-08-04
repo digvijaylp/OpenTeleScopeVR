@@ -6,6 +6,14 @@ OpenTelescopeVR is a specialized VR-based Android camera application for people 
 By mounting your phone into a standard VR viewer and connecting an external keyboard or gamepad, you can use your phone to attend lectures, conferences and meetings. 
 _________________________________
 
+### Test APK Link(s)
+
+[For any Android](https://github.com/digvijaylp/OpenTeleScopeVR/tree/main/app/build/outputs/apk/debug)
+
+[For Samsung Galaxy (OneUI)](https://github.com/digvijaylp/OpenTeleScopeVR/tree/samsung-galaxy/app/build/outputs/apk/debug)
+
+_________________________________
+
 ###  Acknowledgments and Credits
 
 This project is a modified fork of **Open Camera**, an open-source camera app for Android. Massive thanks to **Mark Harman**, (the creator and maintainer of Open Camera) and other members of the community who contributed to the Open Camera project. 
