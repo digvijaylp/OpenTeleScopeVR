@@ -4,6 +4,10 @@
 OpenTelescopeVR is a specialized VR-based Android camera application for people with low vision, designed to turn your smartphone into a digital telescope
 
 By mounting your phone into a standard VR viewer and connecting an external keyboard or gamepad, you can use your phone to attend lectures, conferences and meetings. 
+
+### Test APK Link(s)
+[For Samsung Galaxy (OneUI)](https://github.com/digvijaylp/OpenTeleScopeVR/tree/samsung-galaxy/app/build/outputs/apk/debug)
+
 _________________________________
 
 ###  Acknowledgments and Credits

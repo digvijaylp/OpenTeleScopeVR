@@ -224,8 +224,8 @@
     <string name="preference_video_flash_summary">If enabled, flash will switch on/off when recording video (can be used to tell camera is still recording at a distance)</string>
     
     <string name="preference_category_online">Misc</string>
-    <string name="preference_online_help">Online help</string>
-    <string name="preference_online_help_summary">Launch the Open Camera website in your browser</string>
+    <string name="preference_online_help">Github repository</string>
+    <string name="preference_online_help_summary">Launch the OpenTeleScopeVR repository in your browser</string>
     <string name="preference_use_camera2">Use Camera2 API</string>
     <string name="preference_use_camera2_summary">Enables extra features such as manual modes for exposure, focus, white balance, along with RAW (if supported by the device), but may not work properly on all devices (will cause a restart)</string>
     <string name="preference_about">About</string>
