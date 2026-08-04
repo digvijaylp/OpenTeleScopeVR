@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "net.sourceforge.opencamera.app-mergeDebugResources-24:/values-watch-v20/values-watch-v20.xml",
+            "map": [
+                {
+                    "source": "/home/Digvijay/.gradle/caches/8.13/transforms/c11a3a3fd5f949410a4fca96e0967c4b/transformed/appcompat-1.7.1/res/values-watch-v20/values-watch-v20.xml",
+                    "from": {
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
+                    }
+                }
+            ]
+        }
+    ]
+}
