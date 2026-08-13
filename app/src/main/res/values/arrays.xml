@@ -1060,4 +1060,20 @@
         <item>preference_gallery_exclude_legacy</item>
         <item>preference_gallery_all_editors</item>
     </string-array>
+    <!--gemini_81dlp Labels shown to the user in Settings -->
+    <string-array name="preference_max_zoom_boost_entries">
+        <item>Default Hardware Limit (1.0x)</item>
+        <item>+10% Boost (1.1x)</item>
+        <item>+25% Boost (1.25x)</item>
+        <item>+50% Boost (1.5x)</item>
+        <item>+100% Extra Digital Zoom (2.0x)</item>
+    </string-array>
+    <!--gemini_81dlp Actual values saved to SharedPreferences -->
+    <string-array name="preference_max_zoom_boost_values">
+        <item>1.0</item>
+        <item>1.1</item>
+        <item>1.25</item>
+        <item>1.5</item>
+        <item>2.0</item>
+    </string-array>
 </resources>

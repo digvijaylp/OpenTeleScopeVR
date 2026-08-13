@@ -6,6 +6,7 @@ import net.sourceforge.opencamera.R; // <-- gemini_81dlp
 
 
 import java.nio.ByteBuffer;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -1874,6 +1875,21 @@ public class CameraController2 extends CameraController {
             Log.d(TAG, "max_zoom: " + max_zoom);
         }
         if( camera_features.is_zoom_supported ) {
+
+            //gemini_81dlp forcing 80% extra max zoom 
+            // 1. Fetch user's custom zoom boost preference (defaulting to 1.0 = No Boost)
+            android.content.SharedPreferences sharedPreferences = 
+                    android.preference.PreferenceManager.getDefaultSharedPreferences(context);
+            String boostStr = sharedPreferences.getString("preference_max_zoom_boost", "1.0");
+            float dlp_zoomBoost = 1.0f;
+            try {
+                dlp_zoomBoost = Float.parseFloat(boostStr);
+            } catch (NumberFormatException e) {
+                dlp_zoomBoost = 1.0f;
+            }
+            // 2. Apply the custom multiplier to max_zoom
+            max_zoom = max_zoom * dlp_zoomBoost;
+            //gemini_81dlp//
 
             List<Integer> ratios = new ArrayList<>();
             this.zoom_value_1x = computeZoomRatios(ratios, min_zoom, max_zoom);

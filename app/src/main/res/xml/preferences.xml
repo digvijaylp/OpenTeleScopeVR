@@ -193,6 +193,14 @@
             android:summary="Force add hidden physical camera IDs (comma-separated, e.g., 52, 54)"
             android:dialogTitle="Enter Camera IDs"
             android:defaultValue="" />
+        <!-- gemini_81dlp: NEW BOOST ZOOM SETTING -->
+        <ListPreference
+            android:key="preference_max_zoom_boost"
+            android:title="Digital Zoom Boost Limit"
+            android:summary="Over-zoom beyond device hardware limits (may cause pixelation or preview lag on some devices)"
+            android:entries="@array/preference_max_zoom_boost_entries"
+            android:entryValues="@array/preference_max_zoom_boost_values"
+            android:defaultValue="1.0" />
         <!--gemini_81dlp-->
 
         <Preference
