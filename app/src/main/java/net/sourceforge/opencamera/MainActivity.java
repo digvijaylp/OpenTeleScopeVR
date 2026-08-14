@@ -1230,7 +1230,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
     //gemini_81dlp//
 
     // 1. Custom Camera Cycler 
-    private void cycleRearCameras() {
+    /*private void cycleRearCameras() {
         if (preview == null) return;
 
         // Define camera rotation sequence: 0 (Main Back) -> 1 (Front) -> 52 (3x Telephoto)
@@ -1248,38 +1248,45 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         // Leverages Open Camera's native switching routine
         userSwitchToCamera(nextId, null);
     }
-    /*
-    private void cycleBackCameras(boolean forward) {
-        if (preview == null) return;
+    */
+    private void cycleRearCameras() {
+        if (preview == null || preview.getCameraControllerManager() == null) return;
 
-        // Rear camera array: 0 (Main), 2 (Ultra-Wide), 52/4 (3x Telephoto)
-        int[] rearCameraIds = new int[]{0, 2, 4};
+        CameraControllerManager manager = preview.getCameraControllerManager();
+        int nCameras = manager.getNumberOfCameras();
+
+        List<Integer> rearCameraIds = new ArrayList<>();
+
+        // 1. Dynamically scan all reported camera IDs on the device
+        for (int i = 0; i < nCameras; i++) {
+            if (manager.getFacing(i) == CameraController.Facing.FACING_BACK) {
+                rearCameraIds.add(i);
+            }
+        }
+
+        // Fallback if no rear camera is detected
+        if (rearCameraIds.isEmpty()) {
+            return;
+        }
+
+        // 2. Find where we currently are in the rear camera list
         int currentId = preview.getCameraId();
-        int nextId = rearCameraIds[0];
+        int currentIndex = rearCameraIds.indexOf(currentId);
+        int nextId;
 
-        int index = -1;
-        for (int i = 0; i < rearCameraIds.length; i++) {
-            if (rearCameraIds[i] == currentId) {
-                index = i;
-                break;
-            }
-        }
-
-        if (index != -1) {
-            if (forward) {
-                nextId = rearCameraIds[(index + 1) % rearCameraIds.length];
-            } else {
-                nextId = rearCameraIds[(index - 1 + rearCameraIds.length) % rearCameraIds.length];
-            }
+        if (currentIndex != -1) {
+            // Step to the next rear camera in the detected sequence
+            nextId = rearCameraIds.get((currentIndex + 1) % rearCameraIds.size());
         } else {
-            // Fallback to main rear if currently on front camera
-            nextId = rearCameraIds[0];
+            // If currently on a front/external camera, switch to the first rear camera
+            nextId = rearCameraIds.get(0);
         }
 
+        // 3. Perform the switch
         userSwitchToCamera(nextId, null);
     }
-    */
 
+    
     @Override
     public boolean dispatchKeyEvent(android.view.KeyEvent event) {
         if (event.getAction() == android.view.KeyEvent.ACTION_DOWN) {

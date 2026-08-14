@@ -8,9 +8,9 @@ _________________________________
 
 ### Test APK Link(s)
 
-[For any Android](https://github.com/digvijaylp/OpenTeleScopeVR/tree/main/app/build/outputs/apk/debug)
+[For any Android (including newer Samsung devices)](https://github.com/digvijaylp/OpenTeleScopeVR/tree/main/app/build/outputs/apk/debug)
 
-[For Samsung Galaxy (OneUI)](https://github.com/digvijaylp/OpenTeleScopeVR/tree/samsung-galaxy/app/build/outputs/apk/debug)
+[For Samsung Galaxy (OneUI 6 or older (<= Android 14))](https://github.com/digvijaylp/OpenTeleScopeVR/tree/samsung-galaxy/app/build/outputs/apk/debug)
 
 _________________________________
 
@@ -26,6 +26,7 @@ _________________________________
 ### Key Features
 
 * **Immersive VR Mode:** The camera feed is shown in a stereoscopic side-by-side view. The application defaults to a "Hide Everything" UI state, with no on-screen buttons and menus, to provide a clean, viewfinderfor VR headsets.
+* **Digital Zoom Boost**: Increase maximum zoom-levels for each camera-lens.
 * **External Hardware Control:** Fully mapped to work with wired or writeless keyboards and gamepads, allowing you to control the **zoom-levels** and **color-filters** while it is strapped to your head.
 * **Experimental: Unlocking Telephoto Access:** Supports manually adding camera Lens ID to bypass OEM restrictions hiding these lenses (like telephoto and periscope cameras) from third-party apps.
 
