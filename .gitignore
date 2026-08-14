@@ -3,7 +3,6 @@
 /app/build
 *.class
 *.dex
-*.apk
 
 # IDE & Machine specific
 .gradle/
