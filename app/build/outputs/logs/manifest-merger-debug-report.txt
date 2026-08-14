@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:2:1-156:12
-INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:2:1-156:12
-INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:2:1-156:12
-INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:2:1-156:12
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:2:1-156:12
+INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:2:1-156:12
+INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:2:1-156:12
+INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:2:1-156:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] /home/Digvijay/.gradle/caches/8.13/transforms/1d4274fe45e14538e31222b6416f867e/transformed/jetified-appcompat-resources-1.7.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.7.1] /home/Digvijay/.gradle/caches/8.13/transforms/c11a3a3fd5f949410a4fca96e0967c4b/transformed/appcompat-1.7.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/Digvijay/.gradle/caches/8.13/transforms/f3ec447bb7b548db4c6de572c776a62f/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -46,86 +46,86 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/D
 MERGED from [androidx.print:print:1.0.0] /home/Digvijay/.gradle/caches/8.13/transforms/785fa589de889bae5aeab4900649e0ca/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/Digvijay/.gradle/caches/8.13/transforms/69df97b1f469eead2bec3349aef6b134/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 	package
-		INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml
+		INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml
 	android:versionName
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:5:5-33
-		INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:5:5-33
+		INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:3:5-51
 	xmlns:android
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:2:11-69
 	tools:ignore
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:7:5-44
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:7:5-44
 	android:versionCode
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:4:5-29
-		INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:4:5-29
+		INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml
 	android:installLocation
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:6:5-35
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:6:5-35
 supports-screens
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:5-164
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:5-164
 	android:largeScreens
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:52-79
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:52-79
 	android:smallScreens
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:109-136
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:109-136
 	android:normalScreens
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:80-108
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:80-108
 	android:xlargeScreens
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:23-51
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:23-51
 	android:anyDensity
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:137-162
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:137-162
 uses-permission#android.permission.BLUETOOTH_SCAN
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:13:5-15:31
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:13:5-15:31
 	android:usesPermissionFlags
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:14:9-55
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:14:9-55
 	tools:targetApi
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:15:9-28
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:15:9-28
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:13:22-70
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:13:22-70
 uses-permission#android.permission.BLUETOOTH_CONNECT
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:16:5-76
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:16:5-76
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:16:22-73
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:16:22-73
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:17:5-19:40
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:17:5-19:40
 	android:maxSdkVersion
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:18:9-35
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:18:9-35
 	tools:ignore
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:19:9-37
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:19:9-37
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:17:22-78
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:17:22-78
 uses-permission#android.permission.CAMERA
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:20:5-65
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:20:5-65
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:20:22-62
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:20:22-62
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:21:5-71
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:21:5-71
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:21:22-68
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:21:22-68
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:22:5-79
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:22:22-76
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:22:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:23:5-81
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:23:5-81
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:23:22-78
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:23:22-78
 uses-feature#android.hardware.camera
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:26:5-60
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:26:5-60
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:26:19-57
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:26:19-57
 uses-feature#android.hardware.microphone
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:27:5-64
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:27:5-64
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:27:19-61
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:27:19-61
 uses-feature#android.hardware.bluetooth_le
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:28:5-90
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:28:5-90
 	android:required
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:28:64-88
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:28:64-88
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:28:19-63
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:28:19-63
 application
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:30:5-149:19
-INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:30:5-149:19
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:30:5-149:19
+INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:30:5-149:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/066293d02bb8bea96c45f3cb5a1affc2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/066293d02bb8bea96c45f3cb5a1affc2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/Digvijay/.gradle/caches/8.13/transforms/1b4ec73591fd19c0ccb150d123f8f651/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
@@ -139,203 +139,203 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/Digvijay/.gradle/cach
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/Digvijay/.gradle/caches/8.13/transforms/77dfc7d8ba8af0582d2d5dd7062da322/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/Digvijay/.gradle/caches/8.13/transforms/77dfc7d8ba8af0582d2d5dd7062da322/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
-		INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml
+		INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/95524671b3f6a4560196fca52c22901e/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:33:9-41
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:33:9-41
 	android:largeHeap
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:36:9-33
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:36:9-33
 	android:icon
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:32:9-43
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:32:9-43
 	android:allowBackup
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:31:9-35
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:31:9-35
 	android:theme
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:35:9-40
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:35:9-40
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:34:9-46
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:34:9-46
 activity#net.sourceforge.opencamera.MainActivity
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:39:9-76:20
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:39:9-76:20
 	android:clearTaskOnLaunch
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:42:13-45
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:42:13-45
 	android:exported
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:43:13-36
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:43:13-36
 	android:configChanges
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:41:13-74
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:41:13-74
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:40:13-67
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:40:13-67
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:46:13-50:29
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:46:13-50:29
 action#android.intent.action.MAIN
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:17-69
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:17-69
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:25-66
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:48:17-77
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:48:17-77
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:48:27-74
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:48:27-74
 category#android.intent.category.DEFAULT
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:49:17-76
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:49:17-76
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:49:27-73
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:49:27-73
 intent-filter#action:name:android.media.action.IMAGE_CAPTURE+category:name:android.intent.category.DEFAULT
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:51:13-54:29
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:51:13-54:29
 action#android.media.action.IMAGE_CAPTURE
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:52:17-77
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:52:17-77
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:52:25-74
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:52:25-74
 intent-filter#action:name:android.media.action.IMAGE_CAPTURE_SECURE+category:name:android.intent.category.DEFAULT
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:55:13-58:29
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:55:13-58:29
 action#android.media.action.IMAGE_CAPTURE_SECURE
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:56:17-84
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:56:17-84
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:56:25-81
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:56:25-81
 intent-filter#action:name:android.media.action.STILL_IMAGE_CAMERA+category:name:android.intent.category.DEFAULT
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:59:13-62:29
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:59:13-62:29
 action#android.media.action.STILL_IMAGE_CAMERA
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:60:17-82
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:60:17-82
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:60:25-79
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:60:25-79
 intent-filter#action:name:android.media.action.STILL_IMAGE_CAMERA_SECURE+category:name:android.intent.category.DEFAULT
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:63:13-66:29
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:63:13-66:29
 action#android.media.action.STILL_IMAGE_CAMERA_SECURE
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:64:17-89
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:64:17-89
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:64:25-86
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:64:25-86
 intent-filter#action:name:android.media.action.VIDEO_CAMERA+category:name:android.intent.category.DEFAULT
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:67:13-70:29
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:67:13-70:29
 action#android.media.action.VIDEO_CAMERA
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:68:17-76
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:68:17-76
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:68:25-73
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:68:25-73
 intent-filter#action:name:android.media.action.VIDEO_CAPTURE+category:name:android.intent.category.DEFAULT
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:71:13-74:29
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:71:13-74:29
 action#android.media.action.VIDEO_CAPTURE
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:72:17-77
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:72:17-77
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:72:25-74
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:72:25-74
 meta-data#android.app.shortcuts
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:75:13-97
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:75:13-97
 	android:resource
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:75:61-94
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:75:61-94
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:75:24-60
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:75:24-60
 activity#net.sourceforge.opencamera.remotecontrol.DeviceScanner
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:77:9-82:20
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:77:9-82:20
 	android:label
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:79:13-45
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:79:13-45
 	android:exported
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:80:13-37
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:80:13-37
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:78:13-82
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:78:13-82
 activity#net.sourceforge.opencamera.TakePhoto
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:85:9-94:20
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:85:9-94:20
 	android:label
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:87:13-47
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:87:13-47
 	android:excludeFromRecents
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:91:13-46
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:91:13-46
 	android:exported
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:92:13-37
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:92:13-37
 	android:configChanges
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:89:13-74
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:89:13-74
 	android:icon
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:88:13-60
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:88:13-60
 	android:taskAffinity
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:90:13-36
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:90:13-36
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:86:13-37
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:86:13-37
 receiver#net.sourceforge.opencamera.MyWidgetProviderTakePhoto
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:96:9-107:20
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:96:9-107:20
 	android:label
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:98:13-47
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:98:13-47
 	android:exported
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:100:13-36
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:100:13-36
 	android:icon
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:97:13-60
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:97:13-60
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:99:13-53
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:99:13-53
 intent-filter#action:name:android.appwidget.action.APPWIDGET_UPDATE
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:101:13-103:29
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:101:13-103:29
 action#android.appwidget.action.APPWIDGET_UPDATE
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:102:18-85
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:102:18-85
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:102:26-82
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:102:26-82
 meta-data#android.appwidget.provider
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:104:13-106:65
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:104:13-106:65
 	android:resource
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:106:16-62
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:106:16-62
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:105:16-57
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:105:16-57
 service#net.sourceforge.opencamera.MyTileService
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:109:9-119:19
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:109:9-119:19
 	android:label
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:112:13-43
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:112:13-43
 	android:exported
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:114:13-36
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:114:13-36
 	android:permission
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:113:13-77
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:113:13-77
 	tools:targetApi
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:115:13-32
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:115:13-32
 	android:icon
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:111:13-64
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:111:13-64
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:110:13-68
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:110:13-68
 intent-filter#action:name:android.service.quicksettings.action.QS_TILE
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:116:13-118:29
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:116:13-118:29
 action#android.service.quicksettings.action.QS_TILE
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:117:17-87
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:117:17-87
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:117:25-84
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:117:25-84
 service#net.sourceforge.opencamera.MyTileServiceVideo
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:121:9-131:19
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:121:9-131:19
 	android:label
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:124:13-49
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:124:13-49
 	android:exported
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:126:13-36
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:126:13-36
 	android:permission
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:125:13-77
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:125:13-77
 	tools:targetApi
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:127:13-32
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:127:13-32
 	android:icon
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:123:13-60
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:123:13-60
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:122:13-73
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:122:13-73
 service#net.sourceforge.opencamera.MyTileServiceFrontCamera
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:133:9-143:19
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:133:9-143:19
 	android:label
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:136:13-43
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:136:13-43
 	android:exported
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:138:13-36
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:138:13-36
 	android:permission
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:137:13-77
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:137:13-77
 	tools:targetApi
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:139:13-32
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:139:13-32
 	android:icon
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:135:13-56
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:135:13-56
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:134:13-79
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:134:13-79
 service#net.sourceforge.opencamera.remotecontrol.BluetoothLeService
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:144:9-148:15
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:144:9-148:15
 	android:enabled
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:145:13-35
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:145:13-35
 	android:exported
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:146:13-37
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:146:13-37
 	tools:targetApi
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:147:13-33
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:147:13-33
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:144:18-92
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:144:18-92
 queries
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:151:5-155:15
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:151:5-155:15
 intent#action:name:android.intent.action.TTS_SERVICE
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:152:9-154:18
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:152:9-154:18
 action#android.intent.action.TTS_SERVICE
-ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:153:13-72
+ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:153:13-72
 	android:name
-		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml:153:21-69
+		ADDED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:153:21-69
 uses-sdk
-INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml
-INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml
+INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml
+INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] /home/Digvijay/.gradle/caches/8.13/transforms/1d4274fe45e14538e31222b6416f867e/transformed/jetified-appcompat-resources-1.7.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] /home/Digvijay/.gradle/caches/8.13/transforms/1d4274fe45e14538e31222b6416f867e/transformed/jetified-appcompat-resources-1.7.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat:1.7.1] /home/Digvijay/.gradle/caches/8.13/transforms/c11a3a3fd5f949410a4fca96e0967c4b/transformed/appcompat-1.7.1/AndroidManifest.xml:5:5-44
@@ -419,9 +419,9 @@ MERGED from [androidx.print:print:1.0.0] /home/Digvijay/.gradle/caches/8.13/tran
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/Digvijay/.gradle/caches/8.13/transforms/69df97b1f469eead2bec3349aef6b134/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/Digvijay/.gradle/caches/8.13/transforms/69df97b1f469eead2bec3349aef6b134/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
-		INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml
+		INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/OpenTeleScopeVR/app/src/main/AndroidManifest.xml
+		INJECTED from /home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/066293d02bb8bea96c45f3cb5a1affc2/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/Digvijay/.gradle/caches/8.13/transforms/1b4ec73591fd19c0ccb150d123f8f651/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:24:9-32:20

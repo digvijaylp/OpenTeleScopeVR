@@ -86,6 +86,8 @@ array preference_immersive_mode_entries
 array preference_immersive_mode_values
 array preference_lock_orientation_entries
 array preference_lock_orientation_values
+array preference_max_zoom_boost_entries
+array preference_max_zoom_boost_values
 array preference_nr_mode_entries
 array preference_nr_mode_values
 array preference_nr_save_entries

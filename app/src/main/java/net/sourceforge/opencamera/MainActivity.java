@@ -212,8 +212,8 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
     private float mWaterDensity = 1.0f;
 
     // whether to lock to landscape orientation, or allow switching between portrait and landscape orientations
-    //public static final boolean lock_to_landscape = true;
-    public static final boolean lock_to_landscape = false;
+    public static final boolean lock_to_landscape = true;
+    //public static final boolean lock_to_landscape = false;
 
     // handling for lock_to_landscape==false:
 
@@ -1230,7 +1230,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
     //gemini_81dlp//
 
     // 1. Custom Camera Cycler 
-    private void cycleRearCameras() {
+    /*private void cycleRearCameras() {
         if (preview == null) return;
 
         // Define camera rotation sequence: 0 (Main Back) -> 1 (Front) -> 52 (3x Telephoto)
@@ -1248,38 +1248,45 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         // Leverages Open Camera's native switching routine
         userSwitchToCamera(nextId, null);
     }
-    /*
-    private void cycleBackCameras(boolean forward) {
-        if (preview == null) return;
+    */
+    private void cycleRearCameras() {
+        if (preview == null || preview.getCameraControllerManager() == null) return;
 
-        // Rear camera array: 0 (Main), 2 (Ultra-Wide), 52/4 (3x Telephoto)
-        int[] rearCameraIds = new int[]{0, 2, 4};
+        CameraControllerManager manager = preview.getCameraControllerManager();
+        int nCameras = manager.getNumberOfCameras();
+
+        List<Integer> rearCameraIds = new ArrayList<>();
+
+        // 1. Dynamically scan all reported camera IDs on the device
+        for (int i = 0; i < nCameras; i++) {
+            if (manager.getFacing(i) == CameraController.Facing.FACING_BACK) {
+                rearCameraIds.add(i);
+            }
+        }
+
+        // Fallback if no rear camera is detected
+        if (rearCameraIds.isEmpty()) {
+            return;
+        }
+
+        // 2. Find where we currently are in the rear camera list
         int currentId = preview.getCameraId();
-        int nextId = rearCameraIds[0];
+        int currentIndex = rearCameraIds.indexOf(currentId);
+        int nextId;
 
-        int index = -1;
-        for (int i = 0; i < rearCameraIds.length; i++) {
-            if (rearCameraIds[i] == currentId) {
-                index = i;
-                break;
-            }
-        }
-
-        if (index != -1) {
-            if (forward) {
-                nextId = rearCameraIds[(index + 1) % rearCameraIds.length];
-            } else {
-                nextId = rearCameraIds[(index - 1 + rearCameraIds.length) % rearCameraIds.length];
-            }
+        if (currentIndex != -1) {
+            // Step to the next rear camera in the detected sequence
+            nextId = rearCameraIds.get((currentIndex + 1) % rearCameraIds.size());
         } else {
-            // Fallback to main rear if currently on front camera
-            nextId = rearCameraIds[0];
+            // If currently on a front/external camera, switch to the first rear camera
+            nextId = rearCameraIds.get(0);
         }
 
+        // 3. Perform the switch
         userSwitchToCamera(nextId, null);
     }
-    */
 
+    
     @Override
     public boolean dispatchKeyEvent(android.view.KeyEvent event) {
         if (event.getAction() == android.view.KeyEvent.ACTION_DOWN) {
@@ -1320,7 +1327,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
             } else if (keyCode == android.view.KeyEvent.KEYCODE_DPAD_RIGHT) {
                 cycleColorFilter(true);
                 return true;
-            }
+            }   
 
             // 3. Toggle Camera (ENTER / DPAD_CENTER / NUMPAD_ENTER)
             else if (keyCode == android.view.KeyEvent.KEYCODE_ENTER || keyCode == android.view.KeyEvent.KEYCODE_DPAD_CENTER) {
@@ -1347,7 +1354,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         return super.dispatchKeyEvent(event);
     }
     
-    private void cycleColorFilter(boolean forward) {
+    /*private void cycleColorFilter(boolean forward) {
         if (preview == null || preview.getCameraController() == null) return;
         
         // Get supported list from Preview
@@ -1368,6 +1375,84 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         String nextEffect = supported.get(index);
         preview.getCameraController().setColorEffect(nextEffect);
     }    //gemini_81dlp//
+*/
+
+    // 1. Matrix for Pure Inverted B&W: Deep Black background + Crisp White lines
+    private static final float[] INVERT_BW_MATRIX = new float[] {
+        -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Red channel -> Inverted grayscale
+        -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Green channel -> Inverted grayscale
+        -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Blue channel -> Inverted grayscale
+        0.000f,  0.000f,  0.000f, 1.0f,   0.0f  // Alpha channel
+    };
+
+    private int currentFilterIndex = 0;
+
+    /**
+     * Cycles through standard camera filters AND includes custom Inverted B&W.
+     */
+    private void cycleColorFilter(boolean forward) {
+        if (preview == null || preview.getCameraController() == null) return;
+
+        // Get hardware-supported color effects
+        java.util.List<String> supported = preview.getSupportedColorEffects();
+        int hardwareCount = (supported != null) ? supported.size() : 0;
+        
+        // Total steps = Hardware filters + 1 Custom Inverted B&W mode
+        int totalSteps = hardwareCount + 1;
+
+        if (forward) {
+            currentFilterIndex = (currentFilterIndex + 1) % totalSteps;
+        } else {
+            currentFilterIndex = (currentFilterIndex - 1 + totalSteps) % totalSteps;
+        }
+
+        if (currentFilterIndex < hardwareCount) {
+            // --- HARDWARE CAMERA FILTER ---
+            // 1. Turn off software filter
+            applySoftwareFilter(null);
+
+            // 2. Apply camera hardware effect (e.g. Mono, Sepia, Negative, etc.)
+            String nextEffect = supported.get(currentFilterIndex);
+            preview.getCameraController().setColorEffect(nextEffect);
+            preview.showToast(null, "Filter: " + nextEffect);
+        } else {
+            // --- CUSTOM INVERTED B&W CHALKBOARD FILTER ---
+            // 1. Reset hardware effect to default
+            preview.getCameraController().setColorEffect("none");
+
+            // 2. Apply Black & White Inverted matrix
+            applySoftwareFilter(INVERT_BW_MATRIX);
+            preview.showToast(null, "Filter: Inverted Black & White");
+        }
+    }
+
+    /**
+     * Helper to apply software ColorMatrix to both VR eye views.
+     */
+    private void applySoftwareFilter(float[] matrix) {
+        android.graphics.Paint paint = null;
+        int layerType = android.view.View.LAYER_TYPE_NONE;
+
+        if (matrix != null) {
+            paint = new android.graphics.Paint();
+            paint.setColorFilter(new android.graphics.ColorMatrixColorFilter(matrix));
+            layerType = android.view.View.LAYER_TYPE_HARDWARE;
+        }
+
+        // Apply to Left Eye Preview
+        if (preview != null && preview.getView() != null) {
+            preview.getView().setLayerType(layerType, paint);
+        }
+
+        // Apply to Right Eye Preview (SBS VR Container)
+        android.view.ViewGroup previewRight = findViewById(R.id.preview_right);
+        if (previewRight != null) {
+            android.view.TextureView rightEyeView = previewRight.findViewWithTag("right_eye_texture");
+            if (rightEyeView != null) {
+                rightEyeView.setLayerType(layerType, paint);
+            }
+        }
+    }
 
     private void zoomByStep(int change) {
         if( MyDebug.LOG )
