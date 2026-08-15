@@ -8,7 +8,7 @@ _________________________________
 
 ### Test APK Link(s)
 
-[For any Android (including newer Samsung devices)](https://github.com/digvijaylp/OpenTeleScopeVR/tree/main/app/build/outputs/apk/debug)
+[For any Android (including newer Samsung devices)](https://github.com/digvijaylp/OpenTeleScopeVR/releases)
 
 [For Samsung Galaxy (OneUI 6 or older (<= Android 14))](https://github.com/digvijaylp/OpenTeleScopeVR/tree/samsung-galaxy/app/build/outputs/apk/debug)
 
