@@ -35,6 +35,11 @@ android {
     buildFeatures {
     }
     //useLibrary 'android.test.mock'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+   }
+
 }
 
 dependencies {
@@ -66,7 +71,3 @@ dependencies {
     }
 }*/
 
-compileOptions {
-    sourceCompatibility JavaVersion.VERSION_17
-    targetCompatibility JavaVersion.VERSION_17
-}
