@@ -60,8 +60,8 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:3.7.0"
 }
 
-java {
+/*java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
-}
+}*/
