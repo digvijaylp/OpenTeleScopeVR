@@ -1,0 +1,27 @@
+Categories:
+  - Multimedia
+  - Accessibility
+License: GPL-3.0-or-later
+WebSite: https://github.com/digvijaylp/OpenTeleScopeVR
+SourceCode: https://github.com/digvijaylp/OpenTeleScopeVR
+IssueTracker: https://github.com/digvijaylp/OpenTeleScopeVR/issues
+
+AutoName: Open TeleScope VR
+Summary: VR-based digital telescope/binoculars for low-vision accessibility
+Description: |-
+  Open TeleScope VR is an accessibility-focused tool designed to be used with a 
+  VR headset and a gamepad or keyboard. Built as a specialized fork of Open Camera, 
+  it features high-contrast chalkboard filters, D-pad zoom controls, and dynamic 
+  lens cycling to assist individuals with low vision.
+
+Builds:
+  - versionName: 0.1.oc.1.56.2
+    versionCode: 1
+    commit: v0.1.oc.1.56.2
+    subdir: app
+    gradle:
+      - yes
+
+UpdateCheckMode: Tags
+CurrentVersion: 0.1.oc.1.56.2
+CurrentVersionCode: 1
