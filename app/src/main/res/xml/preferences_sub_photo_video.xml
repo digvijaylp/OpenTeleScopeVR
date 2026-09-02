@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceScreen
+        android:key="preference_screen_photo_settings"
+        android:title="@string/preference_screen_photo_settings"
+        android:icon="@drawable/take_photo_pref"
+        android:persistent="false"
+        android:fragment="net.sourceforge.opencamera.PreferenceSubPhoto" />
+
+    <PreferenceScreen
+        android:key="preference_screen_video_settings"
+        android:title="@string/preference_screen_video_settings"
+        android:icon="@drawable/take_video_pref"
+        android:persistent="false"
+        android:fragment="net.sourceforge.opencamera.PreferenceSubVideo" />
+
+    <PreferenceScreen
+        android:key="preference_preview"
+        android:title="@string/preference_preview"
+        android:icon="@drawable/ic_more_horiz_white_48dp"
+        android:persistent="false"
+        android:fragment="net.sourceforge.opencamera.PreferenceSubPreview" />
+
+    <PreferenceScreen
+        android:key="preference_screen_camera_controls_more"
+        android:title="@string/preference_screen_camera_controls_more"
+        android:icon="@drawable/ic_more_horiz_white_48dp"
+        android:persistent="false"
+        android:fragment="net.sourceforge.opencamera.PreferenceSubCameraControlsMore" />
+
+    <PreferenceScreen
+        android:key="preference_screen_location_settings"
+        android:title="@string/preference_screen_location_settings"
+        android:icon="@drawable/ic_gps_fixed_white_48dp"
+        android:persistent="false"
+        android:fragment="net.sourceforge.opencamera.PreferenceSubLocation" />
+
+    <PreferenceScreen
+        android:key="preference_screen_processing_settings"
+        android:title="@string/preference_screen_processing_settings"
+        android:icon="@drawable/ic_more_horiz_white_48dp"
+        android:persistent="false"
+        android:fragment="net.sourceforge.opencamera.PreferenceSubProcessing" />
+
+</PreferenceScreen>

@@ -1159,7 +1159,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         // also if we change this method name or where it's located, remember to update the mention in
         // opencamera_source.txt
         //return "https://opencamera.sourceforge.io/" + append;
-        return "https://github.com/digvijaylp/OpenTeleScopeVR" + append;
+        return "https://github.com/digvijaylp/OpenTeleScopeVR/issues" + append;
     }
 
     void launchOnlineHelp() {
@@ -1175,7 +1175,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
             Log.d(TAG, "launchOnlinePrivacyPolicy");
         // if we change this, remember that any page linked to must abide by Google Play developer policies!
         //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getOnlineHelpUrl("index.html#privacy")));
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getOnlineHelpUrl("privacy_oc.html")));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getOnlineHelpUrl("/../blob/main/privacy.md")));
         startActivity(browserIntent);
     }
 

@@ -344,6 +344,8 @@ public class MyPreferenceFragment extends PreferenceFragment implements OnShared
             pg.removePreference(pref);
         }*/
 
+        //gemini_81dlp//
+        /*/
         {
             final Preference pref = findPreference("preference_online_help");
             pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
@@ -739,7 +741,8 @@ public class MyPreferenceFragment extends PreferenceFragment implements OnShared
                     return false;
                 }
             });
-        }
+        }*/
+       //gemini_81dlp//
 
         setupDependencies();
 

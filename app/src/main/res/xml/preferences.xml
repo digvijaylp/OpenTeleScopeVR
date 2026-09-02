@@ -3,18 +3,12 @@
 
     <ListPreference
         android:key="preference_max_zoom_boost"
-        android:title="Digital Zoom Boost Limit"
+        android:title="Digital zoom boost limit"
         android:summary="Over-zoom beyond device hardware limits (may cause pixelation or preview lag on some devices)"
         android:entries="@array/preference_max_zoom_boost_entries"
         android:entryValues="@array/preference_max_zoom_boost_values"
-        android:defaultValue="1.0" />
-
-    <SwitchPreference
-        android:key="preference_face_detection"
-        android:title="@string/preference_face_detection"
-        android:summary="@string/preference_face_detection_summary"
-        android:defaultValue="false"
-        />
+        android:defaultValue="1.0"
+        android:icon="@drawable/ic_photo_size_select_large_white_48dp" />
 
     <PreferenceScreen
         android:key="preference_screen_gui"
@@ -24,98 +18,25 @@
         android:fragment="net.sourceforge.opencamera.PreferenceSubGUI"
         />
 
-    <PreferenceScreen
-        android:key="preference_screen_camera_controls_more"
-        android:title="@string/preference_screen_camera_controls_more"
-        android:icon="@drawable/ic_more_horiz_white_48dp"
-        android:persistent="false"
-        android:fragment="net.sourceforge.opencamera.PreferenceSubCameraControlsMore"
-        />
-
-    <PreferenceScreen
-        android:key="preference_preview"
-        android:title="@string/preference_preview"
-        android:icon="@drawable/ic_more_horiz_white_48dp"
-        android:persistent="false"
-        android:fragment="net.sourceforge.opencamera.PreferenceSubPreview"
-        />
-
-    <PreferenceScreen
-        android:key="preference_screen_photo_settings"
-        android:title="@string/preference_screen_photo_settings"
-        android:icon="@drawable/take_photo_pref"
-        android:persistent="false"
-        android:fragment="net.sourceforge.opencamera.PreferenceSubPhoto"
-        />
-    
-    <PreferenceScreen
-        android:key="preference_screen_video_settings"
-        android:title="@string/preference_screen_video_settings"
-        android:icon="@drawable/take_video_pref"
-        android:persistent="false"
-        android:fragment="net.sourceforge.opencamera.PreferenceSubVideo"
-        />
-
-    <PreferenceScreen
-        android:key="preference_screen_location_settings"
-        android:title="@string/preference_screen_location_settings"
-        android:icon="@drawable/ic_gps_fixed_white_48dp"
-        android:persistent="false"
-        android:fragment="net.sourceforge.opencamera.PreferenceSubLocation"
-        />
-
-    <PreferenceScreen
-        android:key="preference_screen_processing_settings"
-        android:title="@string/preference_screen_processing_settings"
-        android:icon="@drawable/ic_more_horiz_white_48dp"
-        android:persistent="false"
-        android:fragment="net.sourceforge.opencamera.PreferenceSubProcessing"
-        />
-
-    <Preference
-        android:key="preference_online_help"  
-        android:title="@string/preference_online_help"
-        android:summary="@string/preference_online_help_summary"
-        android:icon="@drawable/ic_help_outline_white_48dp"
-        />  
-
-    <!-- gemini_81dlp, remove this setting (camera 2 api is the only supported option)
-    <ListPreference
-        android:key="preference_camera_api"
-        android:title="@string/preference_camera_api"
-        android:summary="@string/preference_camera_api_summary"
-    />
-	    -->
     <!-- gemini_81dlp: NEW MANUAL CAMERA ID SETTING -->
     <EditTextPreference
         android:key="preference_manual_camera_ids"
-        android:title="Manual Camera IDs"
+        android:title="Manual camera IDs"
         android:summary="Force add hidden physical camera IDs (comma-separated, e.g., 52, 54)"
-        android:dialogTitle="Enter Camera IDs"
-        android:defaultValue="" />
+        android:dialogTitle="Enter camera IDs"
+        android:defaultValue=""
+        android:icon="@drawable/baseline_add_a_photo_white_48" />
     <!--gemini_81dlp-->
 
-    <Preference
-        android:key="preference_about"  
-        android:title="@string/preference_about"
-        android:summary="@string/preference_about_summary"
-        android:icon="@drawable/ic_info_outline_white_48dp"
-        />
-
-    <Preference
-        android:key="preference_privacy_policy"
-        android:title="@string/preference_privacy_policy"
-        android:summary="@string/preference_privacy_policy_summary"
-        android:icon="@drawable/ic_info_outline_white_48dp"
-        />
-
+    <!--gemini_81dlp Nested Photo & Video Settings -->
     <PreferenceScreen
-        android:key="preference_screen_licences"
-        android:title="@string/preference_screen_licences"
-        android:icon="@drawable/ic_info_outline_white_48dp"
+        android:key="preference_screen_photo_video_settings"
+        android:title="Photo and video settings"
+        android:summary="Photo, video, preview, and capture controls"
+        android:icon="@drawable/take_photo_pref"
         android:persistent="false"
-        android:fragment="net.sourceforge.opencamera.PreferenceSubLicences"
-        />
+        android:fragment="net.sourceforge.opencamera.PreferenceSubPhotoVideo" />
+    <!--gemini_81dlp-->
 
     <PreferenceScreen
         android:key="preference_screen_settings_manager"
@@ -125,5 +46,13 @@
         android:fragment="net.sourceforge.opencamera.PreferenceSubSettingsManager"
         />
 
-            
+    <!--gemini_81dlp Nested App Info Sub-Settings -->
+    <PreferenceScreen
+        android:key="preference_screen_app_info"
+        android:title="App info and help"
+        android:summary="@string/preference_about_summary"
+        android:icon="@drawable/ic_info_outline_white_48dp"
+        android:fragment="net.sourceforge.opencamera.PreferenceSubAppInfo" />
+    <!--gemini_81dlp-->
+
 </PreferenceScreen>
