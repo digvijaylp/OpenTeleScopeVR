@@ -267,6 +267,8 @@ public class MyPreferenceFragment extends PreferenceFragment implements OnShared
             Log.d(TAG, "camera_view_angle_y: " + camera_view_angle_y);
         }
 
+        //81dlp_gemini//
+        /*
         {
             List<String> camera_api_values = new ArrayList<>();
             List<String> camera_api_entries = new ArrayList<>();
@@ -314,6 +316,9 @@ public class MyPreferenceFragment extends PreferenceFragment implements OnShared
                 });
             }
         }
+        */
+        //81dlp_gemini//
+
         /*final boolean supports_camera2 = bundle.getBoolean("supports_camera2");
         if( MyDebug.LOG )
             Log.d(TAG, "supports_camera2: " + supports_camera2);

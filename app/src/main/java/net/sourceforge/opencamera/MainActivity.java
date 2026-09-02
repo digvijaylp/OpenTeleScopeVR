@@ -825,6 +825,9 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
             editor.putBoolean(PreferenceKeys.Camera2FastBurstPreferenceKey, false);
             editor.apply();
         }
+
+        //81dlp_gemini//
+        /*
         if( supports_camera2 && !is_test ) {
             // n.b., when testing, we explicitly decide whether to run with Camera2 API or not
             CameraControllerManager2 manager2 = new CameraControllerManager2(this);
@@ -862,6 +865,17 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
                 }
             }
         }
+        */
+        // Unconditionally force Camera2 API whenever the device hardware supports it
+        if( supports_camera2 && !is_test ) {
+            if( MyDebug.LOG )
+                Log.d(TAG, "force camera2 API by default");
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(PreferenceKeys.CameraAPIPreferenceKey, "preference_camera_api_camera2");
+            editor.apply();
+        }
+        //81dlp_gemini//
     }
 
     /** Switches modes if required, if called from a relevant intent/tile.
@@ -1002,6 +1016,8 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         if( MyDebug.LOG )
             Log.d(TAG, "supports_camera2? " + supports_camera2);
 
+        //81dlp_gemini//
+        /*
         // handle the switch from a boolean preference_use_camera2 to String preference_camera_api
         // that occurred in v1.48
         if( supports_camera2 ) {
@@ -1018,6 +1034,16 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
                 editor.apply();
             }
         }
+        */
+        // Always force preference_camera_api to Camera2 whenever supported
+        if( supports_camera2 ) {
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(PreferenceKeys.CameraAPIPreferenceKey, "preference_camera_api_camera2");
+            editor.remove("preference_use_camera2");
+            editor.apply();
+        }
+        //81dlp_gemini//
     }
 
     private void preloadIcons(int icons_id) {

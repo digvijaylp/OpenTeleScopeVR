@@ -15,9 +15,9 @@ Description: |-
   lens cycling to assist individuals with low vision.
 
 Builds:
-  - versionName: 0.1.oc.1.56.2
-    versionCode: 1
-    commit: v0.1.oc.1.56.2
+  - versionName: 0.2.oc.1.56.2
+    versionCode: 2
+    commit: v0.2.oc.1.56.2
     subdir: app
     gradle:
       - yes
