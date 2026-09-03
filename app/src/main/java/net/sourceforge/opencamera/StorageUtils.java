@@ -232,7 +232,7 @@ public class StorageUtils {
         }
         // leave ORIENTATION for now - this doesn't seem to get inserted for JPEGs anyway (via MediaScannerConnection.scanFile())
         values.put(ImageColumns.DATA, file.getAbsolutePath());
-        //values.put(ImageColumns.DATA, "/storage/emulated/0/DCIM/OpenCamera/blah.dng");
+        //values.put(ImageColumns.DATA, "/storage/emulated/0/DCIM/OTVR/blah.dng");
         Uri uri = null;
         try {
     		uri = context.getContentResolver().insert(Images.Media.EXTERNAL_CONTENT_URI, values); 
@@ -378,7 +378,7 @@ public class StorageUtils {
     // only valid if !isUsingSAF()
     String getSaveLocation() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPreferences.getString(PreferenceKeys.SaveLocationPreferenceKey, "OpenCamera");
+        return sharedPreferences.getString(PreferenceKeys.SaveLocationPreferenceKey, "OTVR");
     }
 
     // only valid if isUsingSAF()

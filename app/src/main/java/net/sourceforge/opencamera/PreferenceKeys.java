@@ -245,6 +245,8 @@ public class PreferenceKeys {
 
     public static final String ShowTakePhotoPreferenceKey = "preference_show_take_photo";
 
+    public static final String ShowVideoButtonPreferenceKey = "preference_show_take_video";
+
     public static final String ShowFaceDetectionPreferenceKey = "preference_show_face_detection";
 
     public static final String ShowCycleLockOrientationPreferenceKey = "preference_show_cycle_lock_orientation";

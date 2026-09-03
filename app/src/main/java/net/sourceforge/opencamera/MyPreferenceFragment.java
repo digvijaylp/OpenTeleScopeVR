@@ -1053,6 +1053,11 @@ public class MyPreferenceFragment extends PreferenceFragment implements OnShared
      *  summary.
      */
     static void setSummary(Preference pref) {
+        //81dlp_gemini// Guard against null preferences removed from XML
+        if( pref == null ) {
+            return;
+        }
+        //81dlp_gemini//
         if( pref instanceof EditTextPreference ) {
             /* We have a runtime check for using EditTextPreference - we don't want these due to importance of
              * supporting the Google Play emoji policy (see comment in MyEditTextPreference.java) - and this

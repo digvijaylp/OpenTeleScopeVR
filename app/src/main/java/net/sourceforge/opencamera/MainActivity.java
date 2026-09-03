@@ -543,8 +543,12 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
             }
         });
 
-        // set up gallery button long click
+        //81dlp_gemini// Hide gallery button permanently and disable long click
         View galleryButton = findViewById(R.id.gallery);
+        if( galleryButton != null ) {
+            galleryButton.setVisibility(View.GONE);
+        }
+        /*
         galleryButton.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -557,7 +561,9 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
                 return true;
             }
         });
-
+        */
+        //81dlp_gemini//
+    
         if( MyDebug.LOG )
             Log.d(TAG, "onCreate: time after setting long click listeners: " + (System.currentTimeMillis() - debug_time));
 
@@ -1183,7 +1189,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         if( MyDebug.LOG )
             Log.d(TAG, "launchOnlineLicences");
         // if we change this, remember that any page linked to must abide by Google Play developer policies!
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getOnlineHelpUrl("#licence")));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getOnlineHelpUrl("/../")));
         startActivity(browserIntent);
     }
 
@@ -4074,7 +4080,9 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         // done here rather than onCreate, so that changing it in preferences takes effect without restarting app
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         final WindowManager.LayoutParams layout = getWindow().getAttributes();
-        if( force_max || sharedPreferences.getBoolean(PreferenceKeys.MaxBrightnessPreferenceKey, false) ) {
+        //gemini_81dlp silencing if condition as don't require max brightness. 
+        //if( force_max || sharedPreferences.getBoolean(PreferenceKeys.MaxBrightnessPreferenceKey, false) ) {
+        if (force_max){
             layout.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_FULL;
         }
         else {
@@ -4157,16 +4165,18 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
 
 
         // keep screen active - see http://stackoverflow.com/questions/2131948/force-screen-on
-        if( sharedPreferences.getBoolean(PreferenceKeys.KeepDisplayOnPreferenceKey, true) ) {
-            if( MyDebug.LOG )
+        //gemini_81dlp silencing if condition as setting this as default
+        //if( sharedPreferences.getBoolean(PreferenceKeys.KeepDisplayOnPreferenceKey, true) ) {
+            //if( MyDebug.LOG )
                 Log.d(TAG, "do keep screen on");
             this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        }
-        else {
-            if( MyDebug.LOG )
-                Log.d(TAG, "don't keep screen on");
-            this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        }
+        //}
+        //else {
+         //   if( MyDebug.LOG )
+         //       Log.d(TAG, "don't keep screen on");
+         //   this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        //}
+
         if( sharedPreferences.getBoolean(PreferenceKeys.ShowWhenLockedPreferenceKey, false) ) {
             if( MyDebug.LOG )
                 Log.d(TAG, "do show when locked");
@@ -5883,14 +5893,8 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
     }
 
     public boolean supportsPanorama() {
-        // don't support panorama mode if called from image capture intent
-        // in theory this works, but problem that currently we'd end up doing the processing on the UI thread, so risk ANR
-        if( applicationInterface.isImageCaptureIntent() )
+        //gemini_81dlp not needed for VR
             return false;
-        // require 256MB just to be safe, due to the large number of images that may be created
-        // remember to update the FAQ "Why isn't Panorama supported on my device?" if this changes
-        return large_heap_memory >= 256 && applicationInterface.getGyroSensor().hasSensors();
-        //return false; // currently blocked for release
     }
 
     public boolean supportsFastBurst() {

@@ -22,7 +22,7 @@
     <EditTextPreference
         android:key="preference_manual_camera_ids"
         android:title="Manual camera IDs"
-        android:summary="Force add hidden physical camera IDs (comma-separated, e.g., 52, 54)"
+        android:summary="Force add hidden physical camera IDs.Some brands hide telephoto camera ID. Look up your device tele cam ID on GCam forums and add it here. The app will crash on pressing OK. Repeat this a couple of times."
         android:dialogTitle="Enter camera IDs"
         android:defaultValue=""
         android:icon="@drawable/baseline_add_a_photo_white_48" />
@@ -31,8 +31,8 @@
     <!--gemini_81dlp Nested Photo & Video Settings -->
     <PreferenceScreen
         android:key="preference_screen_photo_video_settings"
-        android:title="Photo and video settings"
-        android:summary="Photo, video, preview, and capture controls"
+        android:title="Additional settings"
+        android:summary="Video and controls"
         android:icon="@drawable/take_photo_pref"
         android:persistent="false"
         android:fragment="net.sourceforge.opencamera.PreferenceSubPhotoVideo" />

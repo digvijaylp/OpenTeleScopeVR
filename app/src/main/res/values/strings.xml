@@ -901,17 +901,10 @@
         When enabled, use the on-screen microphone button to start/stop listening.
         \n%s</string>
 
-    <string name="intro_text">Connect the phone to a keyboard or gamepad, and mount it in a VR headset.
-        \nUse up and down keys to zoom in and zoom out.
-        \nUse left and right keys to toggle color filters.
-        \nPress Enter or the OK key to toggle lens selection.
-        \n\nBy default, brands hide telephoto lens camera IDs from third-party apps.
-        \nIf your telephoto camera is not being detected,
-        \n 1. Look up your device telephoto camera ID in GCam forums.
-        \n 2. Add the ID in Settings/Manual Camera IDs.
-        \n NOTE. This feature is experimental and currently being tested.
-        \n  The app might crash after pressing OK. 
-        Repeat this atleast a couple of times.
+    <string name="intro_text">Connect to a mouse keyboard or gamepad, and mount the phone in a VR headset.
+        \nUse up and down keys or mouse scroll to zoom in and zoom out.
+        \nUse left and right arrow keys or mouse right-click to toggle color filters.
+    \nPress Enter / OK key or mouse middle-click to toggle lens selection.
     </string>
 
 
@@ -1105,7 +1098,7 @@
         https://google.github.io/material-design-icons/ ,
         https://fonts.google.com/icons)
         under the Apache license version 2.0. Some icons include modifications. Tap here for full licence text.</string>
-    <string name="preference_licence_online" translatable="false">Online licences</string>
+    <string name="preference_licence_online" translatable="false">GitHub repository</string>
     <string name="preference_licence_online_text" translatable="false">Please tap here for full online licensing information (opens in your browser).</string>
 
     <!-- There's no point translating the What's New text (and shouldn't be included in language-specific strings.xml) - it'll be updated constantly, and change each version -->
