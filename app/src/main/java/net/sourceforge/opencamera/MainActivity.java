@@ -1255,26 +1255,6 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
 
     //gemini_81dlp//
 
-    // 1. Custom Camera Cycler 
-    /*private void cycleRearCameras() {
-        if (preview == null) return;
-
-        // Define camera rotation sequence: 0 (Main Back) -> 1 (Front) -> 52 (3x Telephoto)
-        int[] cameraIds = new int[]{0, 2, 3, 4};
-        int currentId = preview.getCameraId();
-        int nextId = cameraIds[0];
-
-        for (int i = 0; i < cameraIds.length; i++) {
-            if (cameraIds[i] == currentId) {
-                nextId = cameraIds[(i + 1) % cameraIds.length];
-                break;
-            }
-        }
-
-        // Leverages Open Camera's native switching routine
-        userSwitchToCamera(nextId, null);
-    }
-    */
     private void cycleRearCameras() {
         if (preview == null || preview.getCameraControllerManager() == null) return;
 
@@ -1312,6 +1292,70 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         userSwitchToCamera(nextId, null);
     }
 
+    //81dlp_gemini// Mouse & VR External Controls
+    private long lastMouseActionTime = 0;
+
+    private void triggerKey(int keyCode) {
+        dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, keyCode));
+        dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, keyCode));
+    }
+
+    @Override
+    public boolean dispatchGenericMotionEvent(MotionEvent event) {
+        // 1. Scroll Wheel -> Zoom In / Zoom Out
+        if (event.getAction() == MotionEvent.ACTION_SCROLL) {
+            float vscroll = event.getAxisValue(MotionEvent.AXIS_VSCROLL);
+            if (vscroll > 0.0f) {
+                triggerKey(KeyEvent.KEYCODE_DPAD_UP); // Zoom In
+                return true;
+            } else if (vscroll < 0.0f) {
+                triggerKey(KeyEvent.KEYCODE_DPAD_DOWN); // Zoom Out
+                return true;
+            }
+        }
+
+        // 2 & 3. Mouse Button Press (API 23+)
+        if (event.getAction() == MotionEvent.ACTION_BUTTON_PRESS) {
+            long now = System.currentTimeMillis();
+            if (now - lastMouseActionTime > 200) {
+                if (event.getActionButton() == MotionEvent.BUTTON_TERTIARY) {
+                    lastMouseActionTime = now;
+                    triggerKey(KeyEvent.KEYCODE_ENTER); // Switch Lens
+                    return true;
+                } else if (event.getActionButton() == MotionEvent.BUTTON_SECONDARY) {
+                    lastMouseActionTime = now;
+                    triggerKey(KeyEvent.KEYCODE_DPAD_RIGHT); // Color Filter
+                    return true;
+                }
+            }
+        }
+
+        return super.dispatchGenericMotionEvent(event);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        // Fallback for devices delivering right/middle clicks through the touch pipeline
+        int buttonState = event.getButtonState();
+        if ((buttonState & (MotionEvent.BUTTON_SECONDARY | MotionEvent.BUTTON_TERTIARY)) != 0) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                long now = System.currentTimeMillis();
+                if (now - lastMouseActionTime > 200) {
+                    if ((buttonState & MotionEvent.BUTTON_TERTIARY) != 0) {
+                        lastMouseActionTime = now;
+                        triggerKey(KeyEvent.KEYCODE_ENTER); // Switch Lens
+                    } else if ((buttonState & MotionEvent.BUTTON_SECONDARY) != 0) {
+                        lastMouseActionTime = now;
+                        triggerKey(KeyEvent.KEYCODE_DPAD_RIGHT); // Color Filter
+                    }
+                }
+            }
+            return true; // Suppress right-click from triggering Android's default Back navigation
+        }
+
+        return super.dispatchTouchEvent(event);
+    }
+    //81dlp_gemini//
     
     @Override
     public boolean dispatchKeyEvent(android.view.KeyEvent event) {
@@ -1380,28 +1424,6 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         return super.dispatchKeyEvent(event);
     }
     
-    /*private void cycleColorFilter(boolean forward) {
-        if (preview == null || preview.getCameraController() == null) return;
-        
-        // Get supported list from Preview
-        java.util.List<String> supported = preview.getSupportedColorEffects();
-        if (supported == null || supported.isEmpty()) return;
-
-        // Get current effect and set the next one via CameraController
-        String current = preview.getCameraController().getColorEffect();
-        int index = supported.indexOf(current);
-        if (index == -1) index = 0;
-
-        if (forward) {
-            index = (index + 1) % supported.size();
-        } else {
-            index = (index - 1 + supported.size()) % supported.size();
-        }
-
-        String nextEffect = supported.get(index);
-        preview.getCameraController().setColorEffect(nextEffect);
-    }    //gemini_81dlp//
-*/
 
     // 1. Matrix for Pure Inverted B&W: Deep Black background + Crisp White lines
     private static final float[] INVERT_BW_MATRIX = new float[] {
