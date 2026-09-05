@@ -20,23 +20,21 @@
         android:defaultValue="immersive_mode_everything"
         />
 
-    <!--  if we move this to another PreferenceGroup, we should update code to remove this Preference -->
     <CheckBoxPreference
-        android:key="preference_face_detection"
-        android:title="@string/preference_face_detection"
-        android:summary="@string/preference_face_detection_summary"
-        android:defaultValue="false"
+        android:key="preference_multi_cam_button"
+        android:title="@string/preference_multi_cam_button"
+        android:summary="@string/preference_multi_cam_button_summary"
+        android:defaultValue="true"
         />
 
-
-    <!--  if we move this to another PreferenceGroup, we should update code to remove this Preference -->
-    <!--<CheckBoxPreference
-        android:key="preference_show_focus_peaking"
-        android:title="@string/preference_show_focus_peaking"
-        android:summary="@string/preference_show_focus_peaking_summary"
-        android:icon="@drawable/key_visualizer"
-        android:defaultValue="false"
-        />-->
+    <ListPreference
+        android:key="preference_color_filters_type"
+        android:title="Color filters menu"
+        android:summary="%s (HWS filters usually only work on Samsung devices)"
+        android:entries="@array/preference_color_filters_entries"
+        android:entryValues="@array/preference_color_filters_values"
+        android:defaultValue="otvr" 
+        />
 
     <!--  if we move this to another PreferenceGroup, we should update code to remove this Preference -->
     <CheckBoxPreference
@@ -83,14 +81,6 @@
         android:defaultValue="false"
         />
 
-    <!--  if we move this to another PreferenceGroup, we should update code to remove this Preference -->
-    <CheckBoxPreference
-        android:key="preference_multi_cam_button"
-        android:title="@string/preference_multi_cam_button"
-        android:summary="@string/preference_multi_cam_button_summary"
-        android:defaultValue="true"
-        />
-
     <CheckBoxPreference
         android:key="preference_show_time"
         android:title="@string/preference_show_time"
@@ -109,7 +99,7 @@
         android:key="preference_show_battery"
         android:title="@string/preference_show_battery"
         android:summary="@string/preference_show_battery_summary"
-        android:defaultValue="false"
+        android:defaultValue="true"
         />
 
     <CheckBoxPreference
@@ -118,5 +108,23 @@
         android:summary="@string/preference_show_iso_summary"
         android:defaultValue="false"
         />
+
+    <!--  if we move this to another PreferenceGroup, we should update code to remove this Preference -->
+    <CheckBoxPreference
+        android:key="preference_face_detection"
+        android:title="@string/preference_face_detection"
+        android:summary="@string/preference_face_detection_summary"
+        android:defaultValue="false"
+        />
+
+
+    <!--  if we move this to another PreferenceGroup, we should update code to remove this Preference -->
+    <!--<CheckBoxPreference
+        android:key="preference_show_focus_peaking"
+        android:title="@string/preference_show_focus_peaking"
+        android:summary="@string/preference_show_focus_peaking_summary"
+        android:icon="@drawable/key_visualizer"
+        android:defaultValue="false"
+        />-->
 
 </PreferenceScreen>

@@ -47,7 +47,8 @@
         app:srcCompat="@drawable/take_photo_selector"
         android:stateListAnimator="@animator/button_animation"
         android:onClick="clickedTakePhoto"
-        android:background="@null"
+	    android:background="@null"
+	    android:visibility="gone"
         />
 
     <ImageButton
@@ -81,7 +82,6 @@
         android:background="@drawable/circle_background"
         android:backgroundTint="@color/icons_background_tint"
         android:backgroundTintMode="src_in"
-        android:visibility="gone"
         />
 
     <ImageButton

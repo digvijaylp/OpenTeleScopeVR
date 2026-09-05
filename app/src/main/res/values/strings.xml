@@ -151,8 +151,8 @@
     <string name="preference_show_geo_direction_summary">Display the compass direction of the device on screen</string>
     <string name="preference_show_time">Show time</string>
     <string name="preference_show_time_summary">Display the current time on screen</string>
-    <string name="preference_show_battery">Show battery</string>
-    <string name="preference_show_battery_summary">Display the current battery level on screen</string>
+    <string name="preference_show_battery">Show battery and temperature</string>
+    <string name="preference_show_battery_summary">Display the current battery level and temperature</string>
     <string name="preference_grid">Show a grid</string>
     <string name="grid">Grid</string> <!-- short form of Show a grid -->
     <string name="preference_crop_guide">Show a crop guide</string>
@@ -388,7 +388,7 @@
     <string name="duration_1h">1 hour</string>
 
     <string name="preference_show_take_photo">Show \"Take Photo\" icon</string>
-    <string name="preference_show_take_photo_summary">Show the icon for taking photos and recording videos. Uncheck if you\'d rather take photos by other methods (e.g., if your device has a hardware shutter button, or using the volume keys).</string>
+    <string name="preference_show_take_photo_summary">Show the icon for taking photos. (If disabled, double-click the left mouse button on the left screen)</string>
 
     <string name="video_pause">Video paused</string>
     <string name="video_resume">Video resumed</string>
@@ -743,9 +743,9 @@
     <string name="preference_nr_mode_normal">Normal</string>
     <string name="preference_nr_mode_low_light">Low light</string>
 
-    <string name="preference_ui_placement_left">Left-handed user interface</string>
-    <string name="preference_ui_placement_right">Right-handed user interface</string>
-    <string name="preference_ui_placement_top">Icons along top (portrait)</string>
+    <string name="preference_ui_placement_left">Right-view bottom</string>
+    <string name="preference_ui_placement_right">Right-view top</string>
+    <string name="preference_ui_placement_top">Left-view edge (default)</string>
 
     <string name="preference_show_face_detection">Show face detection icon</string>
     <string name="preference_show_face_detection_summary">Whether to show an on-screen icon for enabling or disabling face detection</string>
@@ -931,7 +931,7 @@
 
     <string name="preference_immersive_mode_off">Off</string>
     <string name="preference_immersive_mode_navigation">Hide on-screen virtual navigation buttons</string>
-    <string name="preference_immersive_mode_gui">Hide GUI</string>
+    <string name="preference_immersive_mode_gui">Hide on-screen elements</string>
     <string name="preference_immersive_mode_everything">Hide everything</string>
 
     <string name="preference_ghost_image_alpha">Ghost image opacity</string>
@@ -955,10 +955,11 @@
     <string name="switch_to_unknown_camera">Switch camera</string>
     <string name="switch_multi_camera">Switch between multiple cameras</string>
     <string name="preference_multi_cam_button">Multiple cameras icon</string>
-    <string name="preference_multi_cam_button_summary">If enabled, use separate buttons to switch between front/back cameras, and to switch between multiple front/back facing cameras. If disabled, the Switch Camera icon will cycle through all cameras.</string>
+    <string name="preference_multi_cam_button_summary">Show an icon to switch between detected cameras.</string>
 
     <string name="preference_show_camera_id">Show camera ID</string>
     <string name="preference_show_camera_id_summary">Display the current camera ID number on screen</string>
+    <string name="preference_manual_camera_ids_summary">Force add undetected camera IDs. Some manufacturers hide the telephoto lens from third-party apps. Check GCam forums for your device\'s camera ID. Note: The app will restart/close on saving; relaunch it to apply.</string>
 
     <string name="preference_allow_long_press">Allow long press actions</string>
     <string name="preference_allow_long_press_summary">Whether to allow long press actions (e.g., long press on gallery to change save location).</string>
@@ -1103,17 +1104,8 @@
 
     <!-- There's no point translating the What's New text (and shouldn't be included in language-specific strings.xml) - it'll be updated constantly, and change each version -->
     <string name="whats_new_text" translatable="false">
-        <small>[This dialog is shown when Open Camera is updated. You can disable it under
+        <small>[This dialog is shown when the app is updated. You can disable it under
             Settings/On screen GUI/Show What\'s New dialog.]</small>
-        \n\n<b>v1.56:</b>\n
-        <ul>
-            <li>Optional on-screen icon for locking orientation to portrait/landscape.\n</li>
-            <li>Optional on-screen icon for preview shots.\n</li>
-            <li>Grids now rotate when auto-level is enabled.\n</li>
-            <li>Exif tags now supported for WebP and PNG image formats.\n</li>
-            <li>Panorama photos now store XMP metadata to mark these as panorama images (JPEG formats only).\n</li>
-            <li>Photos no longer save on UI thread when using \"Pause after taking photo\" option.\n</li>
-            <li>Various other improvements and bug fixes.\n</li>
-        </ul>
+        \n\n<b>v0.2:</b>\n
     </string>
 </resources>

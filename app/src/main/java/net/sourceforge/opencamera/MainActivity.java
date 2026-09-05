@@ -10,6 +10,7 @@ import net.sourceforge.opencamera.ui.DrawPreview;
 import net.sourceforge.opencamera.ui.FolderChooserDialog;
 import net.sourceforge.opencamera.ui.MainUI;
 import net.sourceforge.opencamera.ui.ManualSeekbars;
+import net.sourceforge.opencamera.ui.PopupView;
 
 import java.io.File;
 import java.io.IOException;
@@ -257,6 +258,10 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
 
         setContentView(R.layout.activity_main);
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false); // initialise any unset preferences to their default values
+        // 81dlp_gemini // Enforce VR defaults on fresh install or settings reset
+        PreferenceManager.setDefaultValues(this, R.xml.preferences_sub_gui, false);
+        setMyPreferenceDefaults();
+        // 81dlp_gemini //
         if( MyDebug.LOG )
             Log.d(TAG, "onCreate: time after setting default preference values: " + (System.currentTimeMillis() - debug_time));
 
@@ -613,8 +618,8 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
                     Log.d(TAG, "version_code: " + version_code);
                     Log.d(TAG, "latest_version: " + latest_version);
                 }
-                //final boolean whats_new_enabled = false;
-                final boolean whats_new_enabled = true;
+                final boolean whats_new_enabled = false;
+                //final boolean whats_new_enabled = true;
                 if( whats_new_enabled ) {
                     // whats_new_version is the version code that the What's New text is written for. Normally it will equal the
                     // current release (version_code), but it some cases we may want to leave it unchanged.
@@ -710,6 +715,38 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         if( MyDebug.LOG )
             Log.d(TAG, "onCreate: total time for Activity startup: " + (System.currentTimeMillis() - debug_time));
     }
+
+// 81dlp_gemini // Enforce VR default settings on fresh install or reset
+    private void setMyPreferenceDefaults() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        if( !sharedPreferences.contains(PreferenceKeys.ShowTakePhotoPreferenceKey) ) {
+            editor.putBoolean(PreferenceKeys.ShowTakePhotoPreferenceKey, false);
+        }
+        if( !sharedPreferences.contains(PreferenceKeys.ShowZoomSliderControlsPreferenceKey) ) {
+            editor.putBoolean(PreferenceKeys.ShowZoomSliderControlsPreferenceKey, true); // Keep zoom bar on by default
+        }
+        if( !sharedPreferences.contains(PreferenceKeys.ShowVideoButtonPreferenceKey) ) {
+            editor.putBoolean(PreferenceKeys.ShowVideoButtonPreferenceKey, false);
+        }
+        if( !sharedPreferences.contains(PreferenceKeys.ColorFiltersTypePreferenceKey) ) {
+            editor.putString(PreferenceKeys.ColorFiltersTypePreferenceKey, "otvr");
+        }
+        if( !sharedPreferences.contains(PreferenceKeys.ShowExposureLockPreferenceKey) ) {
+            editor.putBoolean(PreferenceKeys.ShowExposureLockPreferenceKey, false);
+        }
+        editor.apply();
+    }
+    /*public float getBatteryTemperature() {
+    Intent intent = registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+    if( intent != null ) {
+        int temp = intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0);
+        return temp / 10.0f; // Android reports in tenths of a degree Celsius (e.g., 365 = 36.5°C)
+    }
+    return 0.0f;
+    }*/
+    // 81dlp_gemini //
 
     /** Whether to use codepaths that are compatible with scoped storage.
      */
@@ -1430,56 +1467,153 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         return super.dispatchKeyEvent(event);
     }
     
+// 1. Grayscale Matrix (Standard BT.601 Luminance)
+    private static final float[] GRAYSCALE_MATRIX = new float[] {
+        0.299f, 0.587f, 0.114f, 0.0f, 0.0f, // Red
+        0.299f, 0.587f, 0.114f, 0.0f, 0.0f, // Green
+        0.299f, 0.587f, 0.114f, 0.0f, 0.0f, // Blue
+        0.000f, 0.000f, 0.000f, 1.0f, 0.0f  // Alpha
+    };
 
-    // 1. Matrix for Pure Inverted B&W: Deep Black background + Crisp White lines
+    // 2. Matrix for Pure Inverted B&W: Deep Black background + Crisp White lines
     private static final float[] INVERT_BW_MATRIX = new float[] {
-        -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Red channel -> Inverted grayscale
-        -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Green channel -> Inverted grayscale
-        -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Blue channel -> Inverted grayscale
+       -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Red channel -> Inverted grayscale
+       -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Green channel -> Inverted grayscale
+       -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Blue channel -> Inverted grayscale
         0.000f,  0.000f,  0.000f, 1.0f,   0.0f  // Alpha channel
     };
 
-    private int currentFilterIndex = 0;
+    // 3. Full Color Inversion Matrix (Negative)
+    private static final float[] INVERT_COLOR_MATRIX = new float[] {
+       -1.0f,  0.0f,  0.0f, 0.0f, 255.0f, // Inverted Red
+        0.0f, -1.0f,  0.0f, 0.0f, 255.0f, // Inverted Green
+        0.0f,  0.0f, -1.0f, 0.0f, 255.0f, // Inverted Blue
+        0.0f,  0.0f,  0.0f, 1.0f,   0.0f  // Alpha
+    };
+
+
+    //4. Matrix for Y-Blackboard: Deep Black background + Bright Yellow lines (R + G)
+    private static final float[] Y_BLACKBOARD_MATRIX = new float[] {
+       -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Red channel -> Inverted luminance
+       -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Green channel -> Inverted luminance
+        0.000f,  0.000f,  0.000f, 0.0f,   0.0f,  // Blue channel -> Completely suppressed
+        0.000f,  0.000f,  0.000f, 1.0f,   0.0f   // Alpha channel
+    };
+
+    // 5. Medium Blue Light Cut (Warm Night Mode: reduces blue by ~45%, natural tint)
+    private static final float[] BLUE_LIGHT_CUT_MED_MATRIX = new float[] {
+        1.0f,  0.0f,   0.0f,  0.0f, 0.0f, // Red preserved
+        0.0f,  0.96f,  0.0f,  0.0f, 0.0f, // Green slightly adjusted
+        0.0f,  0.0f,   0.55f, 0.0f, 0.0f, // Blue reduced to 55% (~45% cut)
+        0.0f,  0.0f,   0.0f,  1.0f, 0.0f  // Alpha
+    };
+
+    // 6. Strong Blue Light Cut (Deep Amber / High Cut: reduces blue by ~90%)
+    private static final float[] BLUE_LIGHT_CUT_MAX_MATRIX = new float[] {
+        1.0f,  0.0f,   0.0f,  0.0f, 0.0f, // Red preserved
+        0.0f,  0.90f,  0.0f,  0.0f, 0.0f, // Green
+        0.0f,  0.0f,   0.10f, 0.0f, 0.0f, // Blue reduced to 10% (~90% cut)
+        0.0f,  0.0f,   0.0f,  1.0f, 0.0f  // Alpha
+    };
+
+    private int currentFilterIndex = -1;
+
+    private PopupView activePopupView;
+
+    public void setActivePopupView(PopupView popupView) {
+        this.activePopupView = popupView;
+    }
+
+    public int getCurrentFilterIndex() {
+        return this.currentFilterIndex;
+    }
 
     /**
-     * Cycles through standard camera filters AND includes custom Inverted B&W.
+     * Applies an OTVR software filter and syncs the open popup menu.
      */
-    private void cycleColorFilter(boolean forward) {
-        if (preview == null || preview.getCameraController() == null) return;
+    public void setSoftwareFilter(int index) {
+        this.currentFilterIndex = index;
 
-        // Get hardware-supported color effects
-        java.util.List<String> supported = preview.getSupportedColorEffects();
-        int hardwareCount = (supported != null) ? supported.size() : 0;
-        
-        // Total steps = Hardware filters + 1 Custom Inverted B&W mode
-        int totalSteps = hardwareCount + 1;
-
-        if (forward) {
-            currentFilterIndex = (currentFilterIndex + 1) % totalSteps;
-        } else {
-            currentFilterIndex = (currentFilterIndex - 1 + totalSteps) % totalSteps;
+        if (preview != null && preview.getCameraController() != null) {
+            preview.getCameraController().setColorEffect("none");
         }
 
-        if (currentFilterIndex < hardwareCount) {
-            // --- HARDWARE CAMERA FILTER ---
-            // 1. Turn off software filter
-            applySoftwareFilter(null);
+        switch (index) {
+            case 0:
+                applySoftwareFilter(GRAYSCALE_MATRIX);
+                preview.showToast(null, "Filter: OTVR Grayscale");
+                break;
+            case 1:
+                applySoftwareFilter(INVERT_BW_MATRIX);
+                preview.showToast(null, "Filter: OTVR Blackboard");
+                break;
+            case 2:
+                applySoftwareFilter(INVERT_COLOR_MATRIX);
+                preview.showToast(null, "Filter: OTVR Inverted");
+                break;
+            case 3:
+                applySoftwareFilter(Y_BLACKBOARD_MATRIX);
+                preview.showToast(null, "Filter: OTVR Y-Blackboard");
+                break;
+            case 4:
+                applySoftwareFilter(BLUE_LIGHT_CUT_MED_MATRIX);
+                preview.showToast(null, "Filter: OTVR Blue-cut 50%");
+                break;
+            case 5:
+                applySoftwareFilter(BLUE_LIGHT_CUT_MAX_MATRIX);
+                preview.showToast(null, "Filter: OTVR Blue-cut 100%");
+                break;
+            default:
+                this.currentFilterIndex = -1;
+                applySoftwareFilter(null);
+                preview.showToast(null, "Filter: None");
+                break;
+        }
 
-            // 2. Apply camera hardware effect (e.g. Mono, Sepia, Negative, etc.)
-            String nextEffect = supported.get(currentFilterIndex);
-            preview.getCameraController().setColorEffect(nextEffect);
-            preview.showToast(null, "Filter: " + nextEffect);
-        } else {
-            // --- CUSTOM INVERTED B&W CHALKBOARD FILTER ---
-            // 1. Reset hardware effect to default
-            preview.getCameraController().setColorEffect("none");
-
-            // 2. Apply Black & White Inverted matrix
-            applySoftwareFilter(INVERT_BW_MATRIX);
-            preview.showToast(null, "Filter: Inverted Black & White");
+        if (activePopupView != null) {
+            activePopupView.updateFilterSelection();
         }
     }
 
+    /**
+     * Applies a native hardware camera filter and syncs the open popup menu.
+     */
+    public void setHardwareFilter(String effectName, int hardwareIndex) {
+        applySoftwareFilter(null);
+        final int customFiltersCount = 6; // 81dlp_gemini // updated from 5 to 6
+        this.currentFilterIndex = customFiltersCount + hardwareIndex;
+
+        if (preview != null && preview.getCameraController() != null) {
+            preview.getCameraController().setColorEffect(effectName);
+            preview.showToast(null, "Filter: " + effectName);
+        }
+
+        if (activePopupView != null) {
+            activePopupView.updateFilterSelection();
+        }
+    }
+
+    // 81dlp_gemini // Keyboard strictly cycles OTVR software filters
+    private void cycleColorFilter(boolean forward) {
+        if (preview == null || preview.getCameraController() == null) return;
+
+        // 0: Grayscale, 1: Blackboard, 2: Y-Blackboard, 3: Inverted, 4: Blue 50%, 5: Blue 100%
+        final int customFiltersCount = 6; 
+        final int totalStates = customFiltersCount + 1; // 6 OTVR filters + 1 "None" state
+
+        // Map currentFilterIndex (-1 to 5) to 0..6. If currently on an out-of-range filter, reset to 0 (None)
+        int state = (currentFilterIndex >= 0 && currentFilterIndex < customFiltersCount) ? (currentFilterIndex + 1) : 0;
+
+        if (forward) {
+            state = (state + 1) % totalStates;
+        } else {
+            state = (state - 1 + totalStates) % totalStates;
+        }
+
+        int targetFilterIndex = state - 1; // Maps to: -1 (None), 0, 1, 2, 3, 4, 5
+        setSoftwareFilter(targetFilterIndex);
+    }
+    // 81dlp_gemini //    
     /**
      * Helper to apply software ColorMatrix to both VR eye views.
      */
@@ -2780,6 +2914,10 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
             switch( key ) {
                 // we whitelist preferences where we're sure that we don't need to call updateForSettings() if they've changed
                 //case "preference_face_detection": // need to update camera controller
+                //gemini_81dlp // for color filters popup menu
+                case PreferenceKeys.ColorFiltersTypePreferenceKey:
+                    any_significant_change = true;
+                    break;
                 case "preference_timer":
                 case "preference_burst_mode":
                 case "preference_burst_interval":

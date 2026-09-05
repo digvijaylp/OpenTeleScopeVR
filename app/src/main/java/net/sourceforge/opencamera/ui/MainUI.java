@@ -469,6 +469,9 @@ public class MainUI {
 
             buttons_permanent.add(main_activity.findViewById(R.id.settings));
             buttons_permanent.add(main_activity.findViewById(R.id.popup));
+            // 81dlp_gemini // Add multi-camera button to top icon panel
+            buttons_permanent.add(main_activity.findViewById(R.id.switch_multi_camera));
+            // 81dlp_gemini //
             buttons_permanent.add(main_activity.findViewById(R.id.exposure));
             //buttons_permanent.add(main_activity.findViewById(R.id.switch_video));
             //buttons_permanent.add(main_activity.findViewById(R.id.switch_camera));
@@ -626,6 +629,7 @@ public class MainUI {
             view.setLayoutParams(layoutParams);
             setViewRotation(view, ui_rotation);
             
+            /*
             //81dlp_gemini// Position switch_multi_camera directly over take_photo
             view = main_activity.findViewById(R.id.switch_multi_camera);
             layoutParams = (RelativeLayout.LayoutParams)view.getLayoutParams();
@@ -650,6 +654,7 @@ public class MainUI {
             view.setLayoutParams(layoutParams);
             setViewRotation(view, ui_rotation);
             //81dlp_gemini//
+             */
 
             /*view = main_activity.findViewById(R.id.switch_multi_camera);
             layoutParams = (RelativeLayout.LayoutParams)view.getLayoutParams();
@@ -1308,6 +1313,15 @@ public class MainUI {
                     exposureButton.setVisibility(visibility);
                 onScreenIcons.setVisibility(visibility, visibility);
                 popupButton.setVisibility(visibility);
+                // 81dlp_gemini // Suppress popup button in immersive toggles if "none"
+                String filterPref = sharedPreferences.getString(PreferenceKeys.ColorFiltersTypePreferenceKey, "otvr");
+                if( "none".equals(filterPref) ) {
+                    popupButton.setVisibility(View.GONE);
+                }
+                else {
+                    popupButton.setVisibility(visibility);
+                }
+                // 81dlp_gemini //
                 galleryButton.setVisibility(visibility);
                 settingsButton.setVisibility(visibility);
                 if( MyDebug.LOG ) {
@@ -1322,7 +1336,7 @@ public class MainUI {
                     focusBracketingTargetSeekBar.setVisibility(visibility);
                 String pref_immersive_mode = sharedPreferences.getString(PreferenceKeys.ImmersiveModePreferenceKey, "immersive_mode_off");
                 if( pref_immersive_mode.equals("immersive_mode_everything") ) {
-                    if( sharedPreferences.getBoolean(PreferenceKeys.ShowTakePhotoPreferenceKey, true) ) {
+                    if( sharedPreferences.getBoolean(PreferenceKeys.ShowTakePhotoPreferenceKey, false) ) {
                         View takePhotoButton = main_activity.findViewById(R.id.take_photo);
                         takePhotoButton.setVisibility(visibility);
                     }
@@ -1392,14 +1406,22 @@ public class MainUI {
                     //switchCameraButton.setVisibility(visibility);
 		            switchCameraButton.setVisibility(View.GONE);
                     //gemini_81dlp//
-                //81dlp_gemini// Only display switch_video if preference is enabled
+
+                    //81dlp_gemini// Only display switch_video if preference is enabled
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(main_activity);
                 boolean show_video_pref = sharedPreferences.getBoolean(PreferenceKeys.ShowVideoButtonPreferenceKey, false);
 
                 if( switchVideoButton != null ) {
                     switchVideoButton.setVisibility(show_video_pref ? visibility : View.GONE);
                 }
-                //81dlp_gemini//
+
+                // 81dlp_gemini // Control shutter button visibility via preference (default false)
+                View takePhotoButton = main_activity.findViewById(R.id.take_photo);
+                if( takePhotoButton != null ) {
+                    boolean show_take_photo = sharedPreferences.getBoolean(PreferenceKeys.ShowTakePhotoPreferenceKey, false);
+                    takePhotoButton.setVisibility(show_take_photo ? visibility : View.GONE);
+                }
+                // 81dlp_gemini //
 
                 if( main_activity.showSwitchMultiCamIcon() )
                     switchMultiCameraButton.setVisibility(visibility);
@@ -1421,8 +1443,16 @@ public class MainUI {
                         Log.d(TAG, "Remote control DISconnected");
                     remoteConnectedIcon.setVisibility(View.GONE);
                 }
-                popupButton.setVisibility(main_activity.getPreview().supportsFlash() ? visibility_video : visibility); // still allow popup in order to change flash mode when recording video
-
+                //popupButton.setVisibility(main_activity.getPreview().supportsFlash() ? visibility_video : visibility); // still allow popup in order to change flash mode when recording video
+                // 81dlp_gemini // Suppress popup button if color filters are set to "none"
+                String filterPref = sharedPreferences.getString(PreferenceKeys.ColorFiltersTypePreferenceKey, "otvr");
+                if( "none".equals(filterPref) ) {
+                    popupButton.setVisibility(View.GONE);
+                }
+                else {
+                    popupButton.setVisibility(main_activity.getPreview().supportsFlash() ? visibility_video : visibility);
+                }
+                // 81dlp_gemini //
                 if( show_gui_photo && show_gui_video ) {
                     layoutUI(); // needed for "top" UIPlacement, to auto-arrange the buttons
                 }
@@ -2159,10 +2189,23 @@ public class MainUI {
         view.setVisibility(View.GONE);
     }
 
-    public void setPopupIcon() {
+public void setPopupIcon() {
         if( MyDebug.LOG )
             Log.d(TAG, "setPopupIcon");
         ImageButton popup = main_activity.findViewById(R.id.popup);
+        if( popup == null )
+            return;
+
+        // gemini_81dlp Hide popup completely if color filters are set to "none"
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(main_activity);
+        String filterPref = sharedPreferences.getString(PreferenceKeys.ColorFiltersTypePreferenceKey, "otvr");
+        if( "none".equals(filterPref) ) {
+            popup.setVisibility(View.GONE);
+            return;
+        }
+        popup.setVisibility(View.VISIBLE);
+
+        // Keep the original drawable logic below
         String flash_value = main_activity.getPreview().getCurrentFlashValue();
         if( MyDebug.LOG )
             Log.d(TAG, "flash_value: " + flash_value);

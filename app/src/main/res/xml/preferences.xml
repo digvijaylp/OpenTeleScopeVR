@@ -22,7 +22,7 @@
     <EditTextPreference
         android:key="preference_manual_camera_ids"
         android:title="Manual camera IDs"
-        android:summary="Force add hidden physical camera IDs.Some brands hide telephoto camera ID. Look up your device tele cam ID on GCam forums and add it here. The app will crash on pressing OK. Repeat this a couple of times."
+        android:summary="@string/preference_manual_camera_ids_summary"
         android:dialogTitle="Enter camera IDs"
         android:defaultValue=""
         android:icon="@drawable/baseline_add_a_photo_white_48" />

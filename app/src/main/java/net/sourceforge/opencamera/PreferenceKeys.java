@@ -245,7 +245,9 @@ public class PreferenceKeys {
 
     public static final String ShowTakePhotoPreferenceKey = "preference_show_take_photo";
 
-    public static final String ShowVideoButtonPreferenceKey = "preference_show_take_video";
+    public static final String ShowVideoButtonPreferenceKey = "preference_show_take_video"; //gemini_81dlp//
+    
+    public static final String ColorFiltersTypePreferenceKey = "preference_color_filters_type"; //gemini_81dlp//
 
     public static final String ShowFaceDetectionPreferenceKey = "preference_show_face_detection";
 

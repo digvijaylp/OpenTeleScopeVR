@@ -45,8 +45,8 @@ import android.widget.ImageView.ScaleType;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SwitchCompat;
 
-/** This defines the UI for the "popup" button, that provides quick access to a
- *  range of options.
+/** This defines the UI for the "popup" button, providing quick access to
+ *  OTVR software filters and hardware camera color effects based on user preferences.
  */
 public class PopupView extends LinearLayout {
     private static final String TAG = "PopupView";
@@ -64,6 +64,13 @@ public class PopupView extends LinearLayout {
 
     private int total_width_dp;
 
+    private RadioGroup rg_otvr;
+    private RadioGroup rg_hardware;
+
+    // 81dlp_gemini // Define custom filters count variable
+    private final int customFiltersCount = 6;
+    // 81dlp_gemini //
+
     @SuppressWarnings("FieldCanBeLocal")
     private final DecimalFormat decimal_format_1dp_force0 = new DecimalFormat("0.0");
 
@@ -80,6 +87,7 @@ public class PopupView extends LinearLayout {
         arrow_button_h = (int) (arrow_button_h_dp * scale + 0.5f);
 
         final MainActivity main_activity = (MainActivity)this.getContext();
+        main_activity.setActivePopupView(this);
 
         boolean small_screen = false;
         total_width_dp = 280;
@@ -93,30 +101,151 @@ public class PopupView extends LinearLayout {
         boolean is_camera_extension = main_activity.getApplicationInterface().isCameraExtensionPref();
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(main_activity);
 
-        //81dlp_gemini// Only show Color Effects in popup with permanent header
-        if( preview.getCameraController() != null && !is_camera_extension ) {
-            List<String> supported_color_effects = preview.getSupportedColorEffects();
-            List<String> supported_color_effects_entries = null;
-            if( supported_color_effects != null ) {
-                supported_color_effects_entries = new ArrayList<>();
-                for(String value : supported_color_effects) {
-                    String entry = main_activity.getMainUI().getEntryForColorEffect(value);
-                    supported_color_effects_entries.add(entry);
+        String filterPref = sharedPreferences.getString(PreferenceKeys.ColorFiltersTypePreferenceKey, "otvr");
+        boolean showOtvr = "otvr".equals(filterPref) || "both".equals(filterPref);
+        boolean showHardware = "hardware".equals(filterPref) || "both".equals(filterPref);
+
+        //81dlp_gemini// Dual-Section Color Filters (OTVR & Hardware)
+        if( preview.getCameraController() != null && !is_camera_extension && !"none".equals(filterPref) ) {
+
+            // --- 1. OTVR SOFTWARE FILTERS SUBSECTION ---
+            if( showOtvr ) {
+                rg_otvr = new RadioGroup(this.getContext());
+                rg_otvr.setOrientation(RadioGroup.VERTICAL);
+                rg_otvr.setVisibility(View.VISIBLE);
+
+                addTitleToPopup("OTVR Filters");
+
+                List<String> otvr_options = Arrays.asList(
+                    "None",
+                    "Grayscale",
+                    "Blackboard",
+                    "Inverted",
+                    "Y-Blackboard",
+                    "Blue-cut 50%",
+                    "Blue-cut 100%"
+                );
+
+                for(int i = 0; i < otvr_options.size(); i++) {
+                    final int filterIdx = i - 1; // i=0 -> -1 (None), i=1 -> 0 (Grayscale), etc.
+                    final String entry = otvr_options.get(i);
+
+                    @SuppressLint("InflateParams")
+                    final View view = LayoutInflater.from(this.getContext()).inflate(R.layout.popupview_radiobutton, null);
+                    final RadioButton button = view.findViewById(R.id.popupview_radiobutton);
+
+                    button.setId(i);
+                    button.setText(entry);
+                    button.setTextSize(TypedValue.COMPLEX_UNIT_SP, standard_text_size_dip);
+                    button.setTextColor(Color.WHITE);
+                    rg_otvr.addView(button);
+
+                    button.setContentDescription(entry);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            main_activity.setSoftwareFilter(filterIdx);
+                        }
+                    });
+                }
+                this.addView(rg_otvr);
+            }
+
+            // --- 2. HARDWARE CAMERA FILTERS SUBSECTION ---
+            if( showHardware ) {
+                List<String> supported_color_effects = preview.getSupportedColorEffects();
+                if( supported_color_effects != null && !supported_color_effects.isEmpty() ) {
+                    rg_hardware = new RadioGroup(this.getContext());
+                    rg_hardware.setOrientation(RadioGroup.VERTICAL);
+                    rg_hardware.setVisibility(View.VISIBLE);
+
+                    addTitleToPopup("HWS Filters");
+
+                    for(int i = 0; i < supported_color_effects.size(); i++) {
+                        final int hwIndex = i;
+                        final String value = supported_color_effects.get(i);
+                        final String entry = main_activity.getMainUI().getEntryForColorEffect(value);
+
+                        @SuppressLint("InflateParams")
+                        final View view = LayoutInflater.from(this.getContext()).inflate(R.layout.popupview_radiobutton, null);
+                        final RadioButton button = view.findViewById(R.id.popupview_radiobutton);
+
+                        button.setId(i);
+                        button.setText(entry);
+                        button.setTextSize(TypedValue.COMPLEX_UNIT_SP, standard_text_size_dip);
+                        button.setTextColor(Color.WHITE);
+                        rg_hardware.addView(button);
+
+                        button.setContentDescription(entry);
+                        button.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                main_activity.setHardwareFilter(value, hwIndex);
+
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString(PreferenceKeys.ColorEffectPreferenceKey, value);
+                                editor.apply();
+                            }
+                        });
+                    }
+                    this.addView(rg_hardware);
                 }
             }
-            addRadioOptionsToPopup(sharedPreferences, supported_color_effects_entries, supported_color_effects, getResources().getString(R.string.color_effect), PreferenceKeys.ColorEffectPreferenceKey, CameraController.COLOR_EFFECT_DEFAULT, null, "TEST_COLOR_EFFECT", new RadioOptionsListener() {
-                @Override
-                public void onClick(String selected_value) {
-                    if( preview.getCameraController() != null ) {
-                        preview.getCameraController().setColorEffect(selected_value);
-                    }
-                }
-            });
+
+            updateFilterSelection();
         }
         //81dlp_gemini//
 
         if( MyDebug.LOG )
             Log.d(TAG, "Overall PopupView time: " + (System.nanoTime() - debug_time));
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        MainActivity main_activity = (MainActivity)this.getContext();
+        if( main_activity != null ) {
+            main_activity.setActivePopupView(this);
+            updateFilterSelection();
+        }
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        MainActivity main_activity = (MainActivity)this.getContext();
+        if( main_activity != null ) {
+            main_activity.setActivePopupView(null);
+        }
+    }
+
+    /**
+     * Updates radio button selection dynamically when filter is changed via keyboard/mouse.
+     */
+    public void updateFilterSelection() {
+        MainActivity main_activity = (MainActivity)this.getContext();
+        if( main_activity == null ) return;
+
+        int currentFilter = main_activity.getCurrentFilterIndex();
+
+        if( rg_otvr != null ) {
+            // 81dlp_gemini // Use customFiltersCount variable
+            if( currentFilter >= 0 && currentFilter < customFiltersCount ) {
+                rg_otvr.check(currentFilter + 1);
+            } else {
+                rg_otvr.check(0); // Select "None"
+            }
+        }
+
+        if( rg_hardware != null ) {
+            // 81dlp_gemini // Use customFiltersCount variable
+            if( currentFilter >= customFiltersCount ) {
+                int hwIndex = currentFilter - customFiltersCount;
+                rg_hardware.check(hwIndex);
+            } else {
+                rg_hardware.clearCheck();
+            }
+        }
     }
 
     int getTotalWidth() {
@@ -339,7 +468,6 @@ public class PopupView extends LinearLayout {
         if( supported_options_entries != null ) {
             final MainActivity main_activity = (MainActivity)this.getContext();
 
-            //81dlp_gemini// Permanent title header; options rendered directly with no collapse listener
             addTitleToPopup(title);
 
             final RadioGroup rg = new RadioGroup(this.getContext());
@@ -350,7 +478,6 @@ public class PopupView extends LinearLayout {
             addRadioOptionsToGroup(rg, sharedPreferences, supported_options_entries, supported_options_values, title, preference_key, default_value, current_option_value, test_key, listener);
 
             this.addView(rg);
-            //81dlp_gemini//
         }
     }
 

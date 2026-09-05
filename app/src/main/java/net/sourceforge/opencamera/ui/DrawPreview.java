@@ -235,6 +235,10 @@ public class DrawPreview {
     private boolean has_battery_frac;
     private float battery_frac;
     private long last_battery_time;
+    // 81dlp_gemini // Combined battery percentage and temperature
+    private float battery_temp_c = -1.0f;
+    private String battery_info_string;
+    // 81dlp_gemini //
 
     private boolean has_video_max_amp;
     private int video_max_amp;
@@ -661,14 +665,14 @@ public class DrawPreview {
         if( MyDebug.LOG )
             Log.d(TAG, "photoMode: " + photoMode);
 
-        show_time_pref = sharedPreferences.getBoolean(PreferenceKeys.ShowTimePreferenceKey, true);
+        show_time_pref = sharedPreferences.getBoolean(PreferenceKeys.ShowTimePreferenceKey, false);
         // reset in case user changes the preference:
         dateFormatTimeInstance = DateFormat.getTimeInstance();
         current_time_string = null;
         last_current_time_time = 0;
         text_bounds_time = null;
 
-        show_camera_id_pref = main_activity.isMultiCam() && sharedPreferences.getBoolean(PreferenceKeys.ShowCameraIDPreferenceKey, true);
+        show_camera_id_pref = main_activity.isMultiCam() && sharedPreferences.getBoolean(PreferenceKeys.ShowCameraIDPreferenceKey, false);
         //show_camera_id_pref = true; // test
         show_free_memory_pref = sharedPreferences.getBoolean(PreferenceKeys.ShowFreeMemoryPreferenceKey, false);
         show_iso_pref = sharedPreferences.getBoolean(PreferenceKeys.ShowISOPreferenceKey, false);
@@ -1268,6 +1272,27 @@ public class DrawPreview {
 
         int first_line_height = 0;
         int first_line_xshift = 0;
+
+        // 81dlp_gemini // Draw battery percentage and temperature text next to the battery icon
+        if( show_battery_pref && battery_info_string != null ) {
+            int text_color = Color.WHITE;
+            if( battery_temp_c >= 45.0f || battery_frac <= 0.15f ) {
+                text_color = Color.rgb(244, 67, 54); // Red 500: High heat or low battery
+            }
+            else if( battery_temp_c >= 40.0f ) {
+                text_color = Color.rgb(255, 235, 59); // Yellow 500: Heating up
+            }
+
+            int xpos = align_right ? location_x - first_line_xshift : location_x + first_line_xshift;
+            int height = applicationInterface.drawTextWithBackground(canvas, p, battery_info_string, text_color, Color.BLACK, xpos, location_y, MyApplicationInterface.Alignment.ALIGNMENT_TOP, null, MyApplicationInterface.Shadow.SHADOW_OUTLINE);
+            height += gap_y;
+            first_line_height = Math.max(first_line_height, height);
+
+            int str_width = (int) (p.measureText(battery_info_string) + 0.5f);
+            first_line_xshift += str_width + gap_x;
+        }
+        // 81dlp_gemini //
+        
         if( show_time_pref ) {
             if( current_time_string == null || time_ms/1000 > last_current_time_time/1000 ) {
                 // avoid creating a new calendar object every time
@@ -2344,19 +2369,29 @@ public class DrawPreview {
             battery_x = canvas.getWidth() - battery_x - battery_width;
         }
         if( show_battery_pref ) {
-            if( !this.has_battery_frac || time_ms > this.last_battery_time + 60000 ) {
-                // only check periodically - unclear if checking is costly in any way
-                // note that it's fine to call registerReceiver repeatedly - we pass a null receiver, so this is fine as a "one shot" use
+            // 81dlp_gemini // Check every 10s for battery and temperature
+            if( !this.has_battery_frac || time_ms > this.last_battery_time + 10000 ) {
                 Intent batteryStatus = main_activity.registerReceiver(null, battery_ifilter);
-                int battery_level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
-                int battery_scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-                has_battery_frac = true;
-                battery_frac = battery_level/(float)battery_scale;
+                if( batteryStatus != null ) {
+                    int battery_level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+                    int battery_scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+                    has_battery_frac = true;
+                    battery_frac = battery_level / (float) battery_scale;
+
+                    int tempRaw = batteryStatus.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, -1);
+                    if( tempRaw > 0 ) {
+                        battery_temp_c = tempRaw / 10.0f;
+                    }
+
+                    int battery_pct = Math.round(battery_frac * 100.0f);
+                    battery_info_string = battery_pct + "%" + (battery_temp_c > 0 ? " " + decimalFormat.format(battery_temp_c) + (char)0x00B0 + "C" : "");
+                }
                 last_battery_time = time_ms;
                 if( MyDebug.LOG )
-                    Log.d(TAG, "Battery status is " + battery_level + " / " + battery_scale + " : " + battery_frac);
+                    Log.d(TAG, "Battery status: " + battery_info_string);
             }
-            //battery_frac = 0.2999f; // test
+            // 81dlp_gemini //
+
             boolean draw_battery = true;
             if( battery_frac <= 0.05f ) {
                 // flash icon at this low level
@@ -2365,7 +2400,7 @@ public class DrawPreview {
             if( draw_battery ) {
                 p.setColor(battery_frac > 0.15f ? Color.rgb(37, 155, 36) : Color.rgb(244, 67, 54)); // Green 500 or Red 500
                 p.setStyle(Paint.Style.FILL);
-                canvas.drawRect(battery_x, battery_y+(1.0f-battery_frac)*(battery_height-2), battery_x+battery_width, battery_y+battery_height, p);
+                canvas.drawRect(battery_x, battery_y + (1.0f - battery_frac) * (battery_height - 2), battery_x + battery_width, battery_y + battery_height, p);
                 if( battery_frac < 1.0f ) {
                     p.setColor(Color.BLACK);
                     p.setAlpha(64);
@@ -2959,6 +2994,32 @@ public class DrawPreview {
             p.setAlpha(255);
         }
 
+        // 81dlp_gemini // Absolute bypass: Force thermal/battery alert before immersive exit check
+        if( battery_temp_c >= 48.0f || battery_frac <= 0.12f ) {
+            String warningText = String.format("ALERT: %d%% | %.1f°C", (int)(battery_frac * 100), battery_temp_c);
+            int alert_color = Color.rgb(244, 67, 54);
+
+            android.graphics.Paint alertPaint = new android.graphics.Paint(p);
+            alertPaint.setTextSize(81.0f);
+            alertPaint.setFakeBoldText(true);
+
+            float alert_x = canvas.getWidth() / 2.0f - (alertPaint.measureText(warningText) / 2.0f);
+            float alert_y = 60.0f;
+
+            applicationInterface.drawTextWithBackground(
+                canvas, alertPaint, warningText, alert_color, Color.BLACK,
+                (int)alert_x, (int)alert_y,
+                MyApplicationInterface.Alignment.ALIGNMENT_TOP,
+                null, MyApplicationInterface.Shadow.SHADOW_OUTLINE, null
+            );
+        }
+        // 81dlp_gemini //
+
+        if( main_activity.getMainUI().inImmersiveMode() ) {
+            if( immersive_mode_everything_pref ) {
+                return;
+            }
+        }        
         if( main_activity.getMainUI().inImmersiveMode() ) {
             if( immersive_mode_everything_pref ) {
                 // exit, to ensure we don't display anything!

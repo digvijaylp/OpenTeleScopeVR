@@ -371,7 +371,7 @@ public class OnScreenIcons {
             return false;
         }
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(main_activity);
-        return sharedPreferences.getBoolean(PreferenceKeys.ShowExposureLockPreferenceKey, true);
+        return sharedPreferences.getBoolean(PreferenceKeys.ShowExposureLockPreferenceKey, false);
     }
 
     private boolean showWhiteBalanceLockIcon() {
