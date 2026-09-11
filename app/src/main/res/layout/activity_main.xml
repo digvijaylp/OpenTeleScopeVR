@@ -47,7 +47,8 @@
         app:srcCompat="@drawable/take_photo_selector"
         android:stateListAnimator="@animator/button_animation"
         android:onClick="clickedTakePhoto"
-        android:background="@null"
+	    android:background="@null"
+	    android:visibility="gone"
         />
 
     <ImageButton
@@ -81,7 +82,6 @@
         android:background="@drawable/circle_background"
         android:backgroundTint="@color/icons_background_tint"
         android:backgroundTintMode="src_in"
-        android:visibility="gone"
         />
 
     <ImageButton
@@ -190,7 +190,7 @@
         when the thumbnail aspect ratio doesn't match the button aspect ratio, to avoid showing a
         shaded background
         -->
-    <ImageButton
+    <!--<ImageButton
         android:id="@+id/gallery"
         android:layout_width="44dp"
         android:layout_height="44dp"
@@ -202,7 +202,14 @@
         android:backgroundTint="@color/icons_background_tint"
         android:backgroundTintMode="src_in"
         android:onClick="clickedGallery"
-        />
+            />gemini_81dlp-->
+    <ImageButton
+        android:id="@+id/gallery"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:clickable="false"
+        android:focusable="false" />
 
     <ImageButton
         android:id="@+id/settings"

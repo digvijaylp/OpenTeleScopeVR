@@ -10,6 +10,7 @@ import net.sourceforge.opencamera.ui.DrawPreview;
 import net.sourceforge.opencamera.ui.FolderChooserDialog;
 import net.sourceforge.opencamera.ui.MainUI;
 import net.sourceforge.opencamera.ui.ManualSeekbars;
+import net.sourceforge.opencamera.ui.PopupView;
 
 import java.io.File;
 import java.io.IOException;
@@ -257,6 +258,10 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
 
         setContentView(R.layout.activity_main);
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false); // initialise any unset preferences to their default values
+        // 81dlp_gemini // Enforce VR defaults on fresh install or settings reset
+        PreferenceManager.setDefaultValues(this, R.xml.preferences_sub_gui, false);
+        setMyPreferenceDefaults();
+        // 81dlp_gemini //
         if( MyDebug.LOG )
             Log.d(TAG, "onCreate: time after setting default preference values: " + (System.currentTimeMillis() - debug_time));
 
@@ -543,8 +548,12 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
             }
         });
 
-        // set up gallery button long click
+        //81dlp_gemini// Hide gallery button permanently and disable long click
         View galleryButton = findViewById(R.id.gallery);
+        if( galleryButton != null ) {
+            galleryButton.setVisibility(View.GONE);
+        }
+        /*
         galleryButton.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -557,7 +566,9 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
                 return true;
             }
         });
-
+        */
+        //81dlp_gemini//
+    
         if( MyDebug.LOG )
             Log.d(TAG, "onCreate: time after setting long click listeners: " + (System.currentTimeMillis() - debug_time));
 
@@ -607,8 +618,8 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
                     Log.d(TAG, "version_code: " + version_code);
                     Log.d(TAG, "latest_version: " + latest_version);
                 }
-                //final boolean whats_new_enabled = false;
-                final boolean whats_new_enabled = true;
+                final boolean whats_new_enabled = false;
+                //final boolean whats_new_enabled = true;
                 if( whats_new_enabled ) {
                     // whats_new_version is the version code that the What's New text is written for. Normally it will equal the
                     // current release (version_code), but it some cases we may want to leave it unchanged.
@@ -704,6 +715,38 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         if( MyDebug.LOG )
             Log.d(TAG, "onCreate: total time for Activity startup: " + (System.currentTimeMillis() - debug_time));
     }
+
+// 81dlp_gemini // Enforce VR default settings on fresh install or reset
+    private void setMyPreferenceDefaults() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        if( !sharedPreferences.contains(PreferenceKeys.ShowTakePhotoPreferenceKey) ) {
+            editor.putBoolean(PreferenceKeys.ShowTakePhotoPreferenceKey, false);
+        }
+        if( !sharedPreferences.contains(PreferenceKeys.ShowZoomSliderControlsPreferenceKey) ) {
+            editor.putBoolean(PreferenceKeys.ShowZoomSliderControlsPreferenceKey, true); // Keep zoom bar on by default
+        }
+        if( !sharedPreferences.contains(PreferenceKeys.ShowVideoButtonPreferenceKey) ) {
+            editor.putBoolean(PreferenceKeys.ShowVideoButtonPreferenceKey, false);
+        }
+        if( !sharedPreferences.contains(PreferenceKeys.ColorFiltersTypePreferenceKey) ) {
+            editor.putString(PreferenceKeys.ColorFiltersTypePreferenceKey, "otvr");
+        }
+        if( !sharedPreferences.contains(PreferenceKeys.ShowExposureLockPreferenceKey) ) {
+            editor.putBoolean(PreferenceKeys.ShowExposureLockPreferenceKey, false);
+        }
+        editor.apply();
+    }
+    /*public float getBatteryTemperature() {
+    Intent intent = registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+    if( intent != null ) {
+        int temp = intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0);
+        return temp / 10.0f; // Android reports in tenths of a degree Celsius (e.g., 365 = 36.5°C)
+    }
+    return 0.0f;
+    }*/
+    // 81dlp_gemini //
 
     /** Whether to use codepaths that are compatible with scoped storage.
      */
@@ -825,6 +868,9 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
             editor.putBoolean(PreferenceKeys.Camera2FastBurstPreferenceKey, false);
             editor.apply();
         }
+
+        //81dlp_gemini//
+        /*
         if( supports_camera2 && !is_test ) {
             // n.b., when testing, we explicitly decide whether to run with Camera2 API or not
             CameraControllerManager2 manager2 = new CameraControllerManager2(this);
@@ -862,6 +908,17 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
                 }
             }
         }
+        */
+        // Unconditionally force Camera2 API whenever the device hardware supports it
+        if( supports_camera2 && !is_test ) {
+            if( MyDebug.LOG )
+                Log.d(TAG, "force camera2 API by default");
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(PreferenceKeys.CameraAPIPreferenceKey, "preference_camera_api_camera2");
+            editor.apply();
+        }
+        //81dlp_gemini//
     }
 
     /** Switches modes if required, if called from a relevant intent/tile.
@@ -1002,6 +1059,8 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         if( MyDebug.LOG )
             Log.d(TAG, "supports_camera2? " + supports_camera2);
 
+        //81dlp_gemini//
+        /*
         // handle the switch from a boolean preference_use_camera2 to String preference_camera_api
         // that occurred in v1.48
         if( supports_camera2 ) {
@@ -1018,6 +1077,16 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
                 editor.apply();
             }
         }
+        */
+        // Always force preference_camera_api to Camera2 whenever supported
+        if( supports_camera2 ) {
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(PreferenceKeys.CameraAPIPreferenceKey, "preference_camera_api_camera2");
+            editor.remove("preference_use_camera2");
+            editor.apply();
+        }
+        //81dlp_gemini//
     }
 
     private void preloadIcons(int icons_id) {
@@ -1133,7 +1202,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         // also if we change this method name or where it's located, remember to update the mention in
         // opencamera_source.txt
         //return "https://opencamera.sourceforge.io/" + append;
-        return "https://github.com/digvijaylp/OpenTeleScopeVR" + append;
+        return "https://github.com/digvijaylp/OpenTeleScopeVR/issues" + append;
     }
 
     void launchOnlineHelp() {
@@ -1149,7 +1218,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
             Log.d(TAG, "launchOnlinePrivacyPolicy");
         // if we change this, remember that any page linked to must abide by Google Play developer policies!
         //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getOnlineHelpUrl("index.html#privacy")));
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getOnlineHelpUrl("privacy_oc.html")));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getOnlineHelpUrl("/../blob/main/privacy.md")));
         startActivity(browserIntent);
     }
 
@@ -1157,7 +1226,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         if( MyDebug.LOG )
             Log.d(TAG, "launchOnlineLicences");
         // if we change this, remember that any page linked to must abide by Google Play developer policies!
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getOnlineHelpUrl("#licence")));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getOnlineHelpUrl("/../")));
         startActivity(browserIntent);
     }
 
@@ -1229,26 +1298,6 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
 
     //gemini_81dlp//
 
-    // 1. Custom Camera Cycler 
-    /*private void cycleRearCameras() {
-        if (preview == null) return;
-
-        // Define camera rotation sequence: 0 (Main Back) -> 1 (Front) -> 52 (3x Telephoto)
-        int[] cameraIds = new int[]{0, 2, 3, 4};
-        int currentId = preview.getCameraId();
-        int nextId = cameraIds[0];
-
-        for (int i = 0; i < cameraIds.length; i++) {
-            if (cameraIds[i] == currentId) {
-                nextId = cameraIds[(i + 1) % cameraIds.length];
-                break;
-            }
-        }
-
-        // Leverages Open Camera's native switching routine
-        userSwitchToCamera(nextId, null);
-    }
-    */
     private void cycleRearCameras() {
         if (preview == null || preview.getCameraControllerManager() == null) return;
 
@@ -1286,6 +1335,70 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         userSwitchToCamera(nextId, null);
     }
 
+    //81dlp_gemini// Mouse & VR External Controls
+    private long lastMouseActionTime = 0;
+
+    private void triggerKey(int keyCode) {
+        dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, keyCode));
+        dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, keyCode));
+    }
+
+    @Override
+    public boolean dispatchGenericMotionEvent(MotionEvent event) {
+        // 1. Scroll Wheel -> Zoom In / Zoom Out
+        if (event.getAction() == MotionEvent.ACTION_SCROLL) {
+            float vscroll = event.getAxisValue(MotionEvent.AXIS_VSCROLL);
+            if (vscroll > 0.0f) {
+                triggerKey(KeyEvent.KEYCODE_DPAD_UP); // Zoom In
+                return true;
+            } else if (vscroll < 0.0f) {
+                triggerKey(KeyEvent.KEYCODE_DPAD_DOWN); // Zoom Out
+                return true;
+            }
+        }
+
+        // 2 & 3. Mouse Button Press (API 23+)
+        if (event.getAction() == MotionEvent.ACTION_BUTTON_PRESS) {
+            long now = System.currentTimeMillis();
+            if (now - lastMouseActionTime > 200) {
+                if (event.getActionButton() == MotionEvent.BUTTON_TERTIARY) {
+                    lastMouseActionTime = now;
+                    triggerKey(KeyEvent.KEYCODE_ENTER); // Switch Lens
+                    return true;
+                } else if (event.getActionButton() == MotionEvent.BUTTON_SECONDARY) {
+                    lastMouseActionTime = now;
+                    triggerKey(KeyEvent.KEYCODE_DPAD_RIGHT); // Color Filter
+                    return true;
+                }
+            }
+        }
+
+        return super.dispatchGenericMotionEvent(event);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        // Fallback for devices delivering right/middle clicks through the touch pipeline
+        int buttonState = event.getButtonState();
+        if ((buttonState & (MotionEvent.BUTTON_SECONDARY | MotionEvent.BUTTON_TERTIARY)) != 0) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                long now = System.currentTimeMillis();
+                if (now - lastMouseActionTime > 200) {
+                    if ((buttonState & MotionEvent.BUTTON_TERTIARY) != 0) {
+                        lastMouseActionTime = now;
+                        triggerKey(KeyEvent.KEYCODE_ENTER); // Switch Lens
+                    } else if ((buttonState & MotionEvent.BUTTON_SECONDARY) != 0) {
+                        lastMouseActionTime = now;
+                        triggerKey(KeyEvent.KEYCODE_DPAD_RIGHT); // Color Filter
+                    }
+                }
+            }
+            return true; // Suppress right-click from triggering Android's default Back navigation
+        }
+
+        return super.dispatchTouchEvent(event);
+    }
+    //81dlp_gemini//
     
     @Override
     public boolean dispatchKeyEvent(android.view.KeyEvent event) {
@@ -1354,78 +1467,153 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         return super.dispatchKeyEvent(event);
     }
     
-    /*private void cycleColorFilter(boolean forward) {
-        if (preview == null || preview.getCameraController() == null) return;
-        
-        // Get supported list from Preview
-        java.util.List<String> supported = preview.getSupportedColorEffects();
-        if (supported == null || supported.isEmpty()) return;
+// 1. Grayscale Matrix (Standard BT.601 Luminance)
+    private static final float[] GRAYSCALE_MATRIX = new float[] {
+        0.299f, 0.587f, 0.114f, 0.0f, 0.0f, // Red
+        0.299f, 0.587f, 0.114f, 0.0f, 0.0f, // Green
+        0.299f, 0.587f, 0.114f, 0.0f, 0.0f, // Blue
+        0.000f, 0.000f, 0.000f, 1.0f, 0.0f  // Alpha
+    };
 
-        // Get current effect and set the next one via CameraController
-        String current = preview.getCameraController().getColorEffect();
-        int index = supported.indexOf(current);
-        if (index == -1) index = 0;
-
-        if (forward) {
-            index = (index + 1) % supported.size();
-        } else {
-            index = (index - 1 + supported.size()) % supported.size();
-        }
-
-        String nextEffect = supported.get(index);
-        preview.getCameraController().setColorEffect(nextEffect);
-    }    //gemini_81dlp//
-*/
-
-    // 1. Matrix for Pure Inverted B&W: Deep Black background + Crisp White lines
+    // 2. Matrix for Pure Inverted B&W: Deep Black background + Crisp White lines
     private static final float[] INVERT_BW_MATRIX = new float[] {
-        -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Red channel -> Inverted grayscale
-        -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Green channel -> Inverted grayscale
-        -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Blue channel -> Inverted grayscale
+       -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Red channel -> Inverted grayscale
+       -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Green channel -> Inverted grayscale
+       -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Blue channel -> Inverted grayscale
         0.000f,  0.000f,  0.000f, 1.0f,   0.0f  // Alpha channel
     };
 
-    private int currentFilterIndex = 0;
+    // 3. Full Color Inversion Matrix (Negative)
+    private static final float[] INVERT_COLOR_MATRIX = new float[] {
+       -1.0f,  0.0f,  0.0f, 0.0f, 255.0f, // Inverted Red
+        0.0f, -1.0f,  0.0f, 0.0f, 255.0f, // Inverted Green
+        0.0f,  0.0f, -1.0f, 0.0f, 255.0f, // Inverted Blue
+        0.0f,  0.0f,  0.0f, 1.0f,   0.0f  // Alpha
+    };
+
+
+    //4. Matrix for Y-Blackboard: Deep Black background + Bright Yellow lines (R + G)
+    private static final float[] Y_BLACKBOARD_MATRIX = new float[] {
+       -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Red channel -> Inverted luminance
+       -0.299f, -0.587f, -0.114f, 0.0f, 255.0f, // Green channel -> Inverted luminance
+        0.000f,  0.000f,  0.000f, 0.0f,   0.0f,  // Blue channel -> Completely suppressed
+        0.000f,  0.000f,  0.000f, 1.0f,   0.0f   // Alpha channel
+    };
+
+    // 5. Medium Blue Light Cut (Warm Night Mode: reduces blue by ~45%, natural tint)
+    private static final float[] BLUE_LIGHT_CUT_MED_MATRIX = new float[] {
+        1.0f,  0.0f,   0.0f,  0.0f, 0.0f, // Red preserved
+        0.0f,  0.96f,  0.0f,  0.0f, 0.0f, // Green slightly adjusted
+        0.0f,  0.0f,   0.55f, 0.0f, 0.0f, // Blue reduced to 55% (~45% cut)
+        0.0f,  0.0f,   0.0f,  1.0f, 0.0f  // Alpha
+    };
+
+    // 6. Strong Blue Light Cut (Deep Amber / High Cut: reduces blue by ~90%)
+    private static final float[] BLUE_LIGHT_CUT_MAX_MATRIX = new float[] {
+        1.0f,  0.0f,   0.0f,  0.0f, 0.0f, // Red preserved
+        0.0f,  0.90f,  0.0f,  0.0f, 0.0f, // Green
+        0.0f,  0.0f,   0.10f, 0.0f, 0.0f, // Blue reduced to 10% (~90% cut)
+        0.0f,  0.0f,   0.0f,  1.0f, 0.0f  // Alpha
+    };
+
+    private int currentFilterIndex = -1;
+
+    private PopupView activePopupView;
+
+    public void setActivePopupView(PopupView popupView) {
+        this.activePopupView = popupView;
+    }
+
+    public int getCurrentFilterIndex() {
+        return this.currentFilterIndex;
+    }
 
     /**
-     * Cycles through standard camera filters AND includes custom Inverted B&W.
+     * Applies an OTVR software filter and syncs the open popup menu.
      */
-    private void cycleColorFilter(boolean forward) {
-        if (preview == null || preview.getCameraController() == null) return;
+    public void setSoftwareFilter(int index) {
+        this.currentFilterIndex = index;
 
-        // Get hardware-supported color effects
-        java.util.List<String> supported = preview.getSupportedColorEffects();
-        int hardwareCount = (supported != null) ? supported.size() : 0;
-        
-        // Total steps = Hardware filters + 1 Custom Inverted B&W mode
-        int totalSteps = hardwareCount + 1;
-
-        if (forward) {
-            currentFilterIndex = (currentFilterIndex + 1) % totalSteps;
-        } else {
-            currentFilterIndex = (currentFilterIndex - 1 + totalSteps) % totalSteps;
+        if (preview != null && preview.getCameraController() != null) {
+            preview.getCameraController().setColorEffect("none");
         }
 
-        if (currentFilterIndex < hardwareCount) {
-            // --- HARDWARE CAMERA FILTER ---
-            // 1. Turn off software filter
-            applySoftwareFilter(null);
+        switch (index) {
+            case 0:
+                applySoftwareFilter(GRAYSCALE_MATRIX);
+                preview.showToast(null, "Filter: OTVR Grayscale");
+                break;
+            case 1:
+                applySoftwareFilter(INVERT_BW_MATRIX);
+                preview.showToast(null, "Filter: OTVR Blackboard");
+                break;
+            case 2:
+                applySoftwareFilter(INVERT_COLOR_MATRIX);
+                preview.showToast(null, "Filter: OTVR Inverted");
+                break;
+            case 3:
+                applySoftwareFilter(Y_BLACKBOARD_MATRIX);
+                preview.showToast(null, "Filter: OTVR Y-Blackboard");
+                break;
+            case 4:
+                applySoftwareFilter(BLUE_LIGHT_CUT_MED_MATRIX);
+                preview.showToast(null, "Filter: OTVR Blue-cut 50%");
+                break;
+            case 5:
+                applySoftwareFilter(BLUE_LIGHT_CUT_MAX_MATRIX);
+                preview.showToast(null, "Filter: OTVR Blue-cut 100%");
+                break;
+            default:
+                this.currentFilterIndex = -1;
+                applySoftwareFilter(null);
+                preview.showToast(null, "Filter: None");
+                break;
+        }
 
-            // 2. Apply camera hardware effect (e.g. Mono, Sepia, Negative, etc.)
-            String nextEffect = supported.get(currentFilterIndex);
-            preview.getCameraController().setColorEffect(nextEffect);
-            preview.showToast(null, "Filter: " + nextEffect);
-        } else {
-            // --- CUSTOM INVERTED B&W CHALKBOARD FILTER ---
-            // 1. Reset hardware effect to default
-            preview.getCameraController().setColorEffect("none");
-
-            // 2. Apply Black & White Inverted matrix
-            applySoftwareFilter(INVERT_BW_MATRIX);
-            preview.showToast(null, "Filter: Inverted Black & White");
+        if (activePopupView != null) {
+            activePopupView.updateFilterSelection();
         }
     }
 
+    /**
+     * Applies a native hardware camera filter and syncs the open popup menu.
+     */
+    public void setHardwareFilter(String effectName, int hardwareIndex) {
+        applySoftwareFilter(null);
+        final int customFiltersCount = 6; // 81dlp_gemini // updated from 5 to 6
+        this.currentFilterIndex = customFiltersCount + hardwareIndex;
+
+        if (preview != null && preview.getCameraController() != null) {
+            preview.getCameraController().setColorEffect(effectName);
+            preview.showToast(null, "Filter: " + effectName);
+        }
+
+        if (activePopupView != null) {
+            activePopupView.updateFilterSelection();
+        }
+    }
+
+    // 81dlp_gemini // Keyboard strictly cycles OTVR software filters
+    private void cycleColorFilter(boolean forward) {
+        if (preview == null || preview.getCameraController() == null) return;
+
+        // 0: Grayscale, 1: Blackboard, 2: Y-Blackboard, 3: Inverted, 4: Blue 50%, 5: Blue 100%
+        final int customFiltersCount = 6; 
+        final int totalStates = customFiltersCount + 1; // 6 OTVR filters + 1 "None" state
+
+        // Map currentFilterIndex (-1 to 5) to 0..6. If currently on an out-of-range filter, reset to 0 (None)
+        int state = (currentFilterIndex >= 0 && currentFilterIndex < customFiltersCount) ? (currentFilterIndex + 1) : 0;
+
+        if (forward) {
+            state = (state + 1) % totalStates;
+        } else {
+            state = (state - 1 + totalStates) % totalStates;
+        }
+
+        int targetFilterIndex = state - 1; // Maps to: -1 (None), 0, 1, 2, 3, 4, 5
+        setSoftwareFilter(targetFilterIndex);
+    }
+    // 81dlp_gemini //    
     /**
      * Helper to apply software ColorMatrix to both VR eye views.
      */
@@ -2726,6 +2914,10 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
             switch( key ) {
                 // we whitelist preferences where we're sure that we don't need to call updateForSettings() if they've changed
                 //case "preference_face_detection": // need to update camera controller
+                //gemini_81dlp // for color filters popup menu
+                case PreferenceKeys.ColorFiltersTypePreferenceKey:
+                    any_significant_change = true;
+                    break;
                 case "preference_timer":
                 case "preference_burst_mode":
                 case "preference_burst_interval":
@@ -4026,7 +4218,9 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         // done here rather than onCreate, so that changing it in preferences takes effect without restarting app
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         final WindowManager.LayoutParams layout = getWindow().getAttributes();
-        if( force_max || sharedPreferences.getBoolean(PreferenceKeys.MaxBrightnessPreferenceKey, false) ) {
+        //gemini_81dlp silencing if condition as don't require max brightness. 
+        //if( force_max || sharedPreferences.getBoolean(PreferenceKeys.MaxBrightnessPreferenceKey, false) ) {
+        if (force_max){
             layout.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_FULL;
         }
         else {
@@ -4109,16 +4303,18 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
 
 
         // keep screen active - see http://stackoverflow.com/questions/2131948/force-screen-on
-        if( sharedPreferences.getBoolean(PreferenceKeys.KeepDisplayOnPreferenceKey, true) ) {
-            if( MyDebug.LOG )
+        //gemini_81dlp silencing if condition as setting this as default
+        //if( sharedPreferences.getBoolean(PreferenceKeys.KeepDisplayOnPreferenceKey, true) ) {
+            //if( MyDebug.LOG )
                 Log.d(TAG, "do keep screen on");
             this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        }
-        else {
-            if( MyDebug.LOG )
-                Log.d(TAG, "don't keep screen on");
-            this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        }
+        //}
+        //else {
+         //   if( MyDebug.LOG )
+         //       Log.d(TAG, "don't keep screen on");
+         //   this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        //}
+
         if( sharedPreferences.getBoolean(PreferenceKeys.ShowWhenLockedPreferenceKey, false) ) {
             if( MyDebug.LOG )
                 Log.d(TAG, "do show when locked");
@@ -5835,14 +6031,8 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
     }
 
     public boolean supportsPanorama() {
-        // don't support panorama mode if called from image capture intent
-        // in theory this works, but problem that currently we'd end up doing the processing on the UI thread, so risk ANR
-        if( applicationInterface.isImageCaptureIntent() )
+        //gemini_81dlp not needed for VR
             return false;
-        // require 256MB just to be safe, due to the large number of images that may be created
-        // remember to update the FAQ "Why isn't Panorama supported on my device?" if this changes
-        return large_heap_memory >= 256 && applicationInterface.getGyroSensor().hasSensors();
-        //return false; // currently blocked for release
     }
 
     public boolean supportsFastBurst() {

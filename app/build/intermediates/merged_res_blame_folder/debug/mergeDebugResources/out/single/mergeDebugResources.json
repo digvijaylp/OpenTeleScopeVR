@@ -820,6 +820,10 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/ic_gps_fixed_white_48dp.png"
     },
     {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/xml_preferences_sub_photo_video.xml.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/xml/preferences_sub_photo_video.xml"
+    },
+    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_ic_videocam_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/ic_videocam_white_48dp.png"
     },
@@ -1390,6 +1394,10 @@
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_flash_on.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/flash_on.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/xml_preferences_sub_app_info.xml.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/xml/preferences_sub_app_info.xml"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_settings.png.flat",

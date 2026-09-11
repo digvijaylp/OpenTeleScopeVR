@@ -50,6 +50,8 @@ array preference_burst_interval_entries
 array preference_burst_interval_values
 array preference_burst_mode_entries
 array preference_burst_mode_values
+array preference_color_filters_entries
+array preference_color_filters_values
 array preference_crop_guide_entries
 array preference_crop_guide_values
 array preference_expo_bracketing_n_images_entries
@@ -1760,6 +1762,7 @@ string preference_lock_orientation
 string preference_lock_orientation_summary
 string preference_lock_video
 string preference_lock_video_summary
+string preference_manual_camera_ids_summary
 string preference_max_brightness
 string preference_max_brightness_summary
 string preference_multi_cam_button
@@ -2606,11 +2609,13 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
 xml preferences
+xml preferences_sub_app_info
 xml preferences_sub_camera_controls_more
 xml preferences_sub_gui
 xml preferences_sub_licences
 xml preferences_sub_location
 xml preferences_sub_photo
+xml preferences_sub_photo_video
 xml preferences_sub_preview
 xml preferences_sub_processing
 xml preferences_sub_remote_ctrl

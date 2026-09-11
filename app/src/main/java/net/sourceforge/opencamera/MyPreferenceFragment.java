@@ -267,6 +267,8 @@ public class MyPreferenceFragment extends PreferenceFragment implements OnShared
             Log.d(TAG, "camera_view_angle_y: " + camera_view_angle_y);
         }
 
+        //81dlp_gemini//
+        /*
         {
             List<String> camera_api_values = new ArrayList<>();
             List<String> camera_api_entries = new ArrayList<>();
@@ -314,6 +316,9 @@ public class MyPreferenceFragment extends PreferenceFragment implements OnShared
                 });
             }
         }
+        */
+        //81dlp_gemini//
+
         /*final boolean supports_camera2 = bundle.getBoolean("supports_camera2");
         if( MyDebug.LOG )
             Log.d(TAG, "supports_camera2: " + supports_camera2);
@@ -339,6 +344,8 @@ public class MyPreferenceFragment extends PreferenceFragment implements OnShared
             pg.removePreference(pref);
         }*/
 
+        //gemini_81dlp//
+        /*/
         {
             final Preference pref = findPreference("preference_online_help");
             pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
@@ -734,7 +741,8 @@ public class MyPreferenceFragment extends PreferenceFragment implements OnShared
                     return false;
                 }
             });
-        }
+        }*/
+       //gemini_81dlp//
 
         setupDependencies();
 
@@ -1045,6 +1053,11 @@ public class MyPreferenceFragment extends PreferenceFragment implements OnShared
      *  summary.
      */
     static void setSummary(Preference pref) {
+        //81dlp_gemini// Guard against null preferences removed from XML
+        if( pref == null ) {
+            return;
+        }
+        //81dlp_gemini//
         if( pref instanceof EditTextPreference ) {
             /* We have a runtime check for using EditTextPreference - we don't want these due to importance of
              * supporting the Google Play emoji policy (see comment in MyEditTextPreference.java) - and this

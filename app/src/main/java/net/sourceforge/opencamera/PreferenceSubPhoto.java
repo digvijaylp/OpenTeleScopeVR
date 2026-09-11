@@ -277,15 +277,18 @@ public class PreferenceSubPhoto extends PreferenceSubScreen {
         }
 
         {
+            
             // remove preference_category_photo_debugging category if empty (which will be the case for old api)
             PreferenceGroup pg = (PreferenceGroup)this.findPreference("preference_category_photo_debugging");
-            if( MyDebug.LOG )
-                Log.d(TAG, "preference_category_photo_debugging children: " + pg.getPreferenceCount());
-            if( pg.getPreferenceCount() == 0 ) {
-                // pg.getParent() requires API level 26
-                //PreferenceGroup parent = (PreferenceGroup)this.findPreference("preference_screen_photo_settings");
-                PreferenceGroup parent = (PreferenceGroup)this.findPreference("preferences_root");
-                parent.removePreference(pg);
+            if( pg != null && pg.getPreferenceCount() == 0 ) {
+                if( MyDebug.LOG )
+                    Log.d(TAG, "preference_category_photo_debugging children: " + pg.getPreferenceCount());
+                if( pg.getPreferenceCount() == 0 ) {
+                    // pg.getParent() requires API level 26
+                    //PreferenceGroup parent = (PreferenceGroup)this.findPreference("preference_screen_photo_settings");
+                    PreferenceGroup parent = (PreferenceGroup)this.findPreference("preferences_root");
+                    parent.removePreference(pg);
+                }
             }
         }
 

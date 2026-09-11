@@ -177,6 +177,18 @@
         <item>500</item>
         <item>unlimited</item>
     </string-array>
+    <string-array name="preference_color_filters_entries">
+        <item>OTVR Filters (Default)</item>
+        <item>Hardware Supported (HWS) Filters</item>
+        <item>Both</item>
+        <item>None</item>
+    </string-array>
+    <string-array name="preference_color_filters_values">
+        <item>otvr</item>
+        <item>hardware</item>
+        <item>both</item>
+        <item>none</item>
+    </string-array>
     <string-array name="preference_crop_guide_entries">
         <item>@string/preference_crop_guide_none</item>
         <item>@string/preference_crop_guide_1</item>
@@ -427,14 +439,10 @@
     </string-array>
     <string-array name="preference_immersive_mode_entries">
         <item>@string/preference_immersive_mode_off</item>
-        <item>@string/preference_immersive_mode_navigation</item>
         <item>@string/preference_immersive_mode_gui</item>
-        <item>@string/preference_immersive_mode_everything</item>
     </string-array>
     <string-array name="preference_immersive_mode_values">
         <item>immersive_mode_off</item>
-        <item>immersive_mode_navigation</item>
-        <item>immersive_mode_gui</item>
         <item>immersive_mode_everything</item>
     </string-array>
     <string-array name="preference_lock_orientation_entries">
@@ -1537,17 +1545,10 @@
     <string name="image_saving_notification">Saving images…</string>
     <string name="infinite">Infinite</string>
     <string name="intro_ok">OK (This message won\'t show again)</string>
-    <string name="intro_text">Connect the phone to a keyboard or gamepad, and mount it in a VR headset.
-        \nUse up and down keys to zoom in and zoom out.
-        \nUse left and right keys to toggle color filters.
-        \nPress Enter or the OK key to toggle lens selection.
-        \n\nBy default, brands hide telephoto lens camera IDs from third-party apps.
-        \nIf your telephoto camera is not being detected,
-        \n 1. Look up your device telephoto camera ID in GCam forums.
-        \n 2. Add the ID in Settings/Manual Camera IDs.
-        \n NOTE. This feature is experimental and currently being tested.
-        \n  The app might crash after pressing OK. 
-        Repeat this atleast a couple of times.
+    <string name="intro_text">Connect to a mouse keyboard or gamepad, and mount the phone in a VR headset.
+        \nUse up and down keys or mouse scroll to zoom in and zoom out.
+        \nUse left and right arrow keys or mouse right-click to toggle color filters.
+    \nPress Enter / OK key or mouse middle-click to toggle lens selection.
     </string>
     <string name="iso">ISO</string>
     <string name="left_of_screen">at left of screen</string>
@@ -1830,7 +1831,7 @@
     <string name="preference_image_format_webp">WebP</string>
     <string name="preference_immersive_mode">Immersive mode</string>
     <string name="preference_immersive_mode_everything">Hide everything</string>
-    <string name="preference_immersive_mode_gui">Hide GUI</string>
+    <string name="preference_immersive_mode_gui">Hide on-screen elements</string>
     <string name="preference_immersive_mode_navigation">Hide on-screen virtual navigation buttons</string>
     <string name="preference_immersive_mode_off">Off</string>
     <string name="preference_iso">Set the ISO</string>
@@ -1848,7 +1849,7 @@
         https://google.github.io/material-design-icons/ ,
         https://fonts.google.com/icons)
         under the Apache license version 2.0. Some icons include modifications. Tap here for full licence text.</string>
-    <string name="preference_licence_online" translatable="false">Online licences</string>
+    <string name="preference_licence_online" translatable="false">GitHub repository</string>
     <string name="preference_licence_online_text" translatable="false">Please tap here for full online licensing information (opens in your browser).</string>
     <string name="preference_licence_open_camera" translatable="false">Open Camera</string>
     <string name="preference_licence_open_camera_text" translatable="false">Open Camera is © 2013–2026 Mark Harman, released under the GPL v3 or later. Tap here for full licence text and terms of service.</string>
@@ -1860,10 +1861,11 @@
     <string name="preference_lock_orientation_summary">If set, the orientation of the device will be ignored, and the orientation of the photo/video will be with respect to the specified orientation\n%s</string>
     <string name="preference_lock_video">Lock screen when recording video</string>
     <string name="preference_lock_video_summary">When recording video, the GUI will be locked to prevent accidentally stopping recording. Swipe the screen to unlock. Note that video recording will always stop if the app goes into background or the screen is blanked.</string>
+    <string name="preference_manual_camera_ids_summary">Force add undetected camera IDs. Some manufacturers hide the telephoto lens from third-party apps. Check GCam forums for your device\'s camera ID. Note: The app will restart/close on saving; relaunch it to apply.</string>
     <string name="preference_max_brightness">Force maximum brightness</string>
     <string name="preference_max_brightness_summary">Force screen display to be at maximum brightness, rather than device default</string>
     <string name="preference_multi_cam_button">Multiple cameras icon</string>
-    <string name="preference_multi_cam_button_summary">If enabled, use separate buttons to switch between front/back cameras, and to switch between multiple front/back facing cameras. If disabled, the Switch Camera icon will cycle through all cameras.</string>
+    <string name="preference_multi_cam_button_summary">Show an icon to switch between detected cameras.</string>
     <string name="preference_noise_reduction_mode">Noise reduction algorithm</string>
     <string name="preference_noise_reduction_mode_summary">Algorithm that the camera driver should use for applying noise reduction. The noise reduction algorithm attempts to improve image quality by removing excessive noise added by the capture process, especially in dark conditions. (Note that this is not related to the Noise Reduction photo mode, and in fact this setting is ignored in NR photo mode.)\n%s</string>
     <string name="preference_nr_mode">NR Mode</string>
@@ -1875,8 +1877,8 @@
     <string name="preference_nr_save_no">Don\'t save original images</string>
     <string name="preference_nr_save_single">Save single original image</string>
     <string name="preference_nr_save_summary">Whether to save original images in noise reduction mode. Note this can make saving photos much slower.\n%s</string>
-    <string name="preference_online_help">Github repository</string>
-    <string name="preference_online_help_summary">Launch the OpenTeleScopeVR repository in your browser</string>
+    <string name="preference_online_help">Online help</string>
+    <string name="preference_online_help_summary">Click here to open an issue. Will respond as soon as I can</string>
     <string name="preference_panorama_crop">Panorama auto-crop</string>
     <string name="preference_panorama_crop_summary">For panorama mode, whether to remove the wavy boundaries\n%s</string>
     <string name="preference_panorama_save">Panorama original images</string>
@@ -1941,7 +1943,7 @@
     <string name="preference_record_audio_src_voice_recognition">Optimised for voice recognition</string>
     <string name="preference_record_audio_summary">Record audio when recording video</string>
     <string name="preference_remote_disconnect_screen_dim">Dim screen if remote disconnects</string>
-    <string name="preference_remote_disconnect_screen_dim_summary">Hint: set default brightness to minimum level before starting Open Camera.</string>
+    <string name="preference_remote_disconnect_screen_dim_summary">Hint: set default brightness to minimum level before starting Open TeleScope VR.</string>
     <string name="preference_remote_type">Remote device type</string>
     <string name="preference_remote_type_kraken" translatable="false">Kraken</string>
     <string name="preference_remote_video_mode">Remote control action during video recording</string>
@@ -1955,8 +1957,8 @@
     <string name="preference_require_location">Require location data</string>
     <string name="preference_require_location_summary">If location data is enabled, only take photo/video if location data is available</string>
     <string name="preference_reset">Reset settings</string>
-    <string name="preference_reset_question">Are you sure you want to reset all Open Camera settings to default?</string>
-    <string name="preference_reset_summary">Reset all Open Camera settings to default</string>
+    <string name="preference_reset_question">Are you sure you want to reset all settings to default?</string>
+    <string name="preference_reset_summary">Reset all settings to default</string>
     <string name="preference_resolution">Camera resolution</string>
     <string name="preference_restore_settings">Restore settings</string>
     <string name="preference_restore_settings_question">This option allows you to select one of the settings files that you previously saved. Be warned that selecting a file to load will overwrite all current settings!</string>
@@ -1973,7 +1975,7 @@
     <string name="preference_save_preshots_summary">When enabled, a short video will be saved alongside each photo, containing shots from the moment before the photo was taken. Not supported for expo, focus bracketing or panorama modes.\n%s</string>
     <string name="preference_save_settings">Save settings</string>
     <string name="preference_save_settings_filename">Saved settings name</string>
-    <string name="preference_save_settings_summary">Saves all of Open Camera\'s settings to a file</string>
+    <string name="preference_save_settings_summary">Saves all settings to a file</string>
     <string name="preference_save_video_prefix">Save video prefix</string>
     <string name="preference_save_video_prefix_summary">The prefix to use for the save filenames for videos</string>
     <string name="preference_save_zulu_time">Time format for filename</string>
@@ -1995,8 +1997,8 @@
     <string name="preference_show_angle_summary">Display the current device orientation angle on screen</string>
     <string name="preference_show_auto_level">Show auto-level icon</string>
     <string name="preference_show_auto_level_summary">Whether to show an on-screen icon for enabling or disabling auto-level. When auto-level is enabled, photos will be rotated so they are automatically level with the horizon.</string>
-    <string name="preference_show_battery">Show battery</string>
-    <string name="preference_show_battery_summary">Display the current battery level on screen</string>
+    <string name="preference_show_battery">Show battery and temperature</string>
+    <string name="preference_show_battery_summary">Display the current battery level and temperature</string>
     <string name="preference_show_camera_id">Show camera ID</string>
     <string name="preference_show_camera_id_summary">Display the current camera ID number on screen</string>
     <string name="preference_show_cycle_flash">Show flash icon</string>
@@ -2026,7 +2028,7 @@
     <string name="preference_show_store_location">Show store location data icon</string>
     <string name="preference_show_store_location_summary">Whether to show an on-screen icon for enabling or disabling location data (geotagging)</string>
     <string name="preference_show_take_photo">Show \"Take Photo\" icon</string>
-    <string name="preference_show_take_photo_summary">Show the icon for taking photos and recording videos. Uncheck if you\'d rather take photos by other methods (e.g., if your device has a hardware shutter button, or using the volume keys).</string>
+    <string name="preference_show_take_photo_summary">Show the icon for taking photos. (If disabled, double-click the left mouse button on the left screen)</string>
     <string name="preference_show_textstamp">Show custom text stamp photo icon</string>
     <string name="preference_show_textstamp_summary">Whether to show an on-screen icon for specifying custom text to be stamped onto the photo</string>
     <string name="preference_show_time">Show time</string>
@@ -2086,9 +2088,9 @@
     <string name="preference_touch_capture">Touch to capture</string>
     <string name="preference_touch_capture_summary">Take a photo or record video just by touching or double-tapping the preview\n%s</string>
     <string name="preference_ui_placement">UI placement</string>
-    <string name="preference_ui_placement_left">Left-handed user interface</string>
-    <string name="preference_ui_placement_right">Right-handed user interface</string>
-    <string name="preference_ui_placement_top">Icons along top (portrait)</string>
+    <string name="preference_ui_placement_left">Right-view bottom</string>
+    <string name="preference_ui_placement_right">Right-view top</string>
+    <string name="preference_ui_placement_top">Left-view edge (default)</string>
     <string name="preference_units_distance">Distance unit</string>
     <string name="preference_units_distance_ft">Feet</string>
     <string name="preference_units_distance_m">Metres</string>
@@ -2303,18 +2305,9 @@
     <string name="video_resume">Video resumed</string>
     <string name="whats_new">What\'s New:</string>
     <string name="whats_new_text" translatable="false">
-        <small>[This dialog is shown when Open Camera is updated. You can disable it under
+        <small>[This dialog is shown when the app is updated. You can disable it under
             Settings/On screen GUI/Show What\'s New dialog.]</small>
-        \n\n<b>v1.56:</b>\n
-        <ul>
-            <li>Optional on-screen icon for locking orientation to portrait/landscape.\n</li>
-            <li>Optional on-screen icon for preview shots.\n</li>
-            <li>Grids now rotate when auto-level is enabled.\n</li>
-            <li>Exif tags now supported for WebP and PNG image formats.\n</li>
-            <li>Panorama photos now store XMP metadata to mark these as panorama images (JPEG formats only).\n</li>
-            <li>Photos no longer save on UI thread when using \"Pause after taking photo\" option.\n</li>
-            <li>Various other improvements and bug fixes.\n</li>
-        </ul>
+        \n\n<b>v0.2:</b>\n
     </string>
     <string name="white_balance">White balance</string>
     <string name="white_balance_auto">Auto</string>

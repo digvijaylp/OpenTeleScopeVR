@@ -1183,18 +1183,8 @@ public class MyApplicationInterface extends BasicApplicationInterface {
 
     @Override
     public long getTimerPref() {
-        if( getPhotoMode() == MyApplicationInterface.PhotoMode.Panorama )
-            return 0; // don't support timer with panorama
-        String timer_value = sharedPreferences.getString(PreferenceKeys.TimerPreferenceKey, "0");
-        long timer_delay;
-        try {
-            timer_delay = (long)Integer.parseInt(timer_value) * 1000;
-        }
-        catch(NumberFormatException e) {
-            MyDebug.logStackTrace(TAG, "failed to parse preference_timer value: " + timer_value, e);
-            timer_delay = 0;
-        }
-        return timer_delay;
+        //gemini_81dlp: don't need timer
+        return 0;
     }
 
     @Override
@@ -1757,7 +1747,7 @@ public class MyApplicationInterface extends BasicApplicationInterface {
             return PhotoMode.NoiseReduction;
         boolean panorama = photo_mode_pref.equals("preference_photo_mode_panorama");
         if( panorama && !main_activity.getPreview().isVideo() && main_activity.supportsPanorama() )
-            return PhotoMode.Panorama;
+            return PhotoMode.Standard;
         boolean x_auto = photo_mode_pref.equals("preference_photo_mode_x_auto");
         if( x_auto && !main_activity.getPreview().isVideo() && main_activity.supportsCameraExtension(CameraExtensionCharacteristics.EXTENSION_AUTOMATIC) )
             return PhotoMode.X_Auto;

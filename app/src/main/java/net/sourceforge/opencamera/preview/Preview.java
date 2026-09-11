@@ -21,6 +21,15 @@ import net.sourceforge.opencamera.preview.camerasurface.CameraSurface;
 import net.sourceforge.opencamera.preview.camerasurface.MySurfaceView;
 import net.sourceforge.opencamera.preview.camerasurface.MyTextureView;
 
+//gemini_81dlp// for dual side message 
+//REVERT TO v0.1.oc.1.56.2 Preview.java in case issues//
+import android.graphics.Typeface;
+import android.os.Looper;
+import android.util.TypedValue;
+import android.view.Gravity;
+import android.widget.RelativeLayout;
+//gemini_81dlp//
+
 import java.io.File;
 //import java.io.FileOutputStream;
 import java.io.IOException;
@@ -8149,7 +8158,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
     private final Handler fake_toast_handler = new Handler();
     private TextView active_fake_toast = null;
 
-    public void clearActiveFakeToast() {
+public void clearActiveFakeToast() {
         clearActiveFakeToast(false);
     }
 
@@ -8161,11 +8170,26 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
             // important to remove the callback, otherwise when it runs, it may end up deleting a
             // new fake toast that is created after this method call, but before the callback runs
             fake_toast_handler.removeCallbacksAndMessages(null);
+
+            // 81dlp_gemini // Cancel scheduled VR toast auto-dismiss
+            if( vrToastRunnable != null ) {
+                vrToastHandler.removeCallbacks(vrToastRunnable);
+            }
+            // 81dlp_gemini //
         }
         // run on UI thread, to avoid threading issues
         final Activity activity = (Activity)this.getContext();
         activity.runOnUiThread(new Runnable() {
             public void run() {
+                // 81dlp_gemini // Dismiss dual VR toast HUD views
+                if( vrToastLeft != null ) {
+                    vrToastLeft.setVisibility(View.GONE);
+                }
+                if( vrToastRight != null ) {
+                    vrToastRight.setVisibility(View.GONE);
+                }
+                // 81dlp_gemini //
+
                 if( active_fake_toast != null ) {
                     if( MyDebug.LOG )
                         Log.d(TAG, "remove fake toast: " + active_fake_toast);
@@ -8178,6 +8202,65 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
             }
         });
     }
+    
+    // 81dlp_gemini // Dual-eye VR On-Screen Toast HUD
+    private TextView vrToastLeft;
+    private TextView vrToastRight;
+    private final Handler vrToastHandler = new Handler(Looper.getMainLooper());
+    private Runnable vrToastRunnable;
+
+    private TextView createVRToastView() {
+        TextView tv = new TextView(getContext());
+        tv.setTextColor(Color.WHITE);
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+        tv.setTypeface(null, Typeface.BOLD);
+        tv.setGravity(Gravity.CENTER);
+
+        android.graphics.drawable.GradientDrawable shape = new android.graphics.drawable.GradientDrawable();
+        shape.setColor(Color.parseColor("#B3000000")); // ~70% translucent black
+        shape.setCornerRadius(20.0f);
+        tv.setBackground(shape);
+
+        int padH = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 14, getContext().getResources().getDisplayMetrics());
+        int padV = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 6, getContext().getResources().getDisplayMetrics());
+        tv.setPadding(padH, padV, padH, padV);
+        tv.setVisibility(View.GONE);
+        return tv;
+    }
+
+    private void setupVRToastViews(Activity activity) {
+        ViewGroup previewLeft = activity.findViewById(R.id.preview_left);
+        ViewGroup previewRight = activity.findViewById(R.id.preview_right);
+
+        if( previewLeft != null && vrToastLeft == null ) {
+            vrToastLeft = createVRToastView();
+            attachToastToContainer(previewLeft, vrToastLeft);
+        }
+        if( previewRight != null && vrToastRight == null ) {
+            vrToastRight = createVRToastView();
+            attachToastToContainer(previewRight, vrToastRight);
+        }
+    }
+
+    private void attachToastToContainer(ViewGroup container, TextView toastView) {
+        if( container instanceof FrameLayout ) {
+            FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            lp.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
+            lp.bottomMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getContext().getResources().getDisplayMetrics());
+            container.addView(toastView, lp);
+        } else if( container instanceof RelativeLayout ) {
+            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
+            lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+            lp.bottomMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getContext().getResources().getDisplayMetrics());
+            container.addView(toastView, lp);
+        } else {
+            container.addView(toastView);
+        }
+    }
+    // 81dlp_gemini //
 
     public void showToast(final ToastBoxer clear_toast, final int message_id) {
         showToast(clear_toast, getResources().getString(message_id), false);
@@ -8245,153 +8328,63 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
      * @param dont_clear     If true, then the toast will remain until explicitly cleared via
      *                       clearActiveFakeToast(). Only supported if use_fake_toast==true.
      */
-    public void showToast(final ToastBoxer clear_toast, final String message, final int offset_y_dp, final boolean use_fake_toast, boolean dont_clear) {
-        //final boolean use_fake_toast = true;
-        //final boolean use_fake_toast = old_use_fake_toast;
+public void showToast(final ToastBoxer clear_toast, final String message, final int offset_y_dp, final boolean use_fake_toast, boolean dont_clear) {
         if( !applicationInterface.getShowToastsPref() ) {
+            return;
+        }
+
+        if( message == null || message.trim().isEmpty() ) {
             return;
         }
 
         if( MyDebug.LOG ) {
             Log.d(TAG, "showToast: " + message);
-            Log.d(TAG, "use_fake_toast: " + use_fake_toast);
         }
 
-        if( this.app_is_paused && use_fake_toast ) {
-            if( MyDebug.LOG )
-                Log.e(TAG, "don't show fake toast as application is paused: " + message);
-            // When targeting Android 11+, toasts with custom views won't be shown in background anyway - in theory we
-            // shouldn't be making toasts when in background, but check just in case.
-            // However we no longer use custom views when use_fake_toast==false, so fine to allow those - and indeed this
-            // is useful for cases where the toast is created shortly before Open Camera resumes, e.g., cancelling SAF
-            // (see toast in MainActivity.onActivityResult()), or denying location permission (see toast from
-            // PermissionHandler.onRequestPermissionsResult()).
+        if( this.app_is_paused ) {
             return;
         }
 
-        final Activity activity = (Activity)this.getContext();
-        // We get a crash on emulator at least if Toast constructor isn't run on main thread (e.g., the toast for taking a photo when on timer).
-        // Also see http://stackoverflow.com/questions/13267239/toast-from-a-non-ui-thread
-        // Also for the use_fake_toast code, running the creation code, and the postDelayed code (and the code in clearActiveFakeToast()), on the UI thread avoids threading issues
+        final Activity activity = (Activity) this.getContext();
         activity.runOnUiThread(new Runnable() {
             public void run() {
-                if( Preview.this.app_is_paused && use_fake_toast ) {
-                    if( MyDebug.LOG )
-                        Log.e(TAG, "don't show fake toast as application is paused: " + message);
-                    // see note above
+                if( Preview.this.app_is_paused ) {
                     return;
                 }
 
-                final float scale = Preview.this.getResources().getDisplayMetrics().density;
-                final int offset_y = (int) (offset_y_dp * scale + 0.5f); // convert dps to pixels
-                float shadow_radius = (2.0f * scale + 0.5f); // convert pt to pixels
-                shadow_radius = Math.max(shadow_radius, 1.0f);
-                if( MyDebug.LOG )
-                    Log.d(TAG, "shadow_radius: " + shadow_radius);
+                // Initialize VR eye textviews if not yet attached
+                if( vrToastLeft == null || vrToastRight == null ) {
+                    setupVRToastViews(activity);
+                }
 
-                if( use_fake_toast ) {
-                    if( active_fake_toast != null ) {
-                        // re-use existing fake toast
-                        if( MyDebug.LOG )
-                            Log.d(TAG, "re-use fake toast: " + active_fake_toast);
-                        active_fake_toast.setText(message);
-                        active_fake_toast.setPadding(0, offset_y, 0, 0);
-                        active_fake_toast.invalidate(); // make sure the view is redrawn
-                    }
-                    else {
-                        Activity activity = (Activity) Preview.this.getContext();
-                        @SuppressLint("InflateParams") // we add the view a few lines below
-                        final View view = LayoutInflater.from(activity).inflate(R.layout.toast_textview, null);
-                        active_fake_toast = view.findViewById(R.id.text_view);
-                        active_fake_toast.setShadowLayer(shadow_radius, 0.0f, 0.0f, Color.BLACK);
-                        active_fake_toast.setPadding(0, offset_y, 0, 0);
-                        active_fake_toast.setText(message);
-                        if( MyDebug.LOG )
-                            Log.d(TAG, "create new fake toast: " + active_fake_toast);
-                        final FrameLayout rootLayout = activity.findViewById(android.R.id.content);
-                        rootLayout.addView(active_fake_toast);
-                    }
+                // If eye containers exist, render to both eyes
+                if( vrToastLeft != null && vrToastRight != null ) {
+                    vrToastLeft.setText(message);
+                    vrToastLeft.setVisibility(View.VISIBLE);
+                    vrToastLeft.bringToFront();
 
-                    // in theory the fake_toast_handler should only have a callback on it if re-using an existing fake toast,
-                    // but we remove callbacks always just in case
-                    fake_toast_handler.removeCallbacksAndMessages(null);
+                    vrToastRight.setText(message);
+                    vrToastRight.setVisibility(View.VISIBLE);
+                    vrToastRight.bringToFront();
+
+                    if( vrToastRunnable != null ) {
+                        vrToastHandler.removeCallbacks(vrToastRunnable);
+                    }
 
                     if( !dont_clear ) {
-                        fake_toast_handler.postDelayed(new Runnable() {
+                        vrToastRunnable = new Runnable() {
                             @Override
                             public void run() {
-                                if( MyDebug.LOG )
-                                    Log.d(TAG, "destroy fake toast due to time expired");
-                                clearActiveFakeToast(true);
+                                if( vrToastLeft != null ) vrToastLeft.setVisibility(View.GONE);
+                                if( vrToastRight != null ) vrToastRight.setVisibility(View.GONE);
                             }
-                        }, 2000); // supposedly matches Toast.LENGTH_SHORT
+                        };
+                        vrToastHandler.postDelayed(vrToastRunnable, 2000);
                     }
-
-                    return;
+                } else {
+                    // Fallback to stock Android system toast if eye containers aren't found
+                    Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
                 }
-
-				/*if( clear_toast != null && clear_toast.toast != null )
-					clear_toast.toast.cancel();
-
-				Toast toast = new Toast(activity);
-				if( clear_toast != null )
-					clear_toast.toast = toast;*/
-                if( MyDebug.LOG ) {
-                    Log.d(TAG, "clear_toast: " + clear_toast);
-                    if( clear_toast != null )
-                        Log.d(TAG, "clear_toast.toast: " + clear_toast.toast);
-                    Log.d(TAG, "last_toast: " + last_toast);
-                    Log.d(TAG, "last_toast_time_ms: " + last_toast_time_ms);
-                }
-                // This method is better, as otherwise a previous toast (with different or no clear_toast) never seems to clear if we repeatedly issue new toasts - this doesn't happen if we reuse existing toasts if possible
-                // However should only do this if the previous toast was the most recent toast (to avoid messing up ordering)
-                Toast toast;
-                long time_now = System.currentTimeMillis();
-                /*
-                // We recreate a toast every 2s, to workaround Android toast bug that calling show() no longer seems to extend the toast duration!
-                // (E.g., see bug where toasts for sliders disappear after a while if continually moving the slider.)
-                if( clear_toast != null && clear_toast.toast != null && clear_toast.toast == last_toast && time_now < last_toast_time_ms+2000) {
-                    if( MyDebug.LOG )
-                        Log.d(TAG, "reuse last toast: " + last_toast);
-                    toast = clear_toast.toast;
-                    // for performance, important to reuse the same view, instead of creating a new one (otherwise we get jerky preview update e.g. for changing manual focus slider)
-                    TextView view = (TextView)toast.getView();
-                    view.setText(message);
-                    view.setPadding(0, offset_y, 0, 0);
-                    view.invalidate(); // make sure the toast is redrawn
-                    toast.setView(view);
-                }
-                else*/ {
-                    if( clear_toast != null && clear_toast.toast != null ) {
-                        if( MyDebug.LOG )
-                            Log.d(TAG, "cancel last toast: " + clear_toast.toast);
-                        clear_toast.toast.cancel();
-                    }
-                    //toast = new Toast(activity);
-                    toast = Toast.makeText(activity, message, Toast.LENGTH_SHORT);
-                    if( MyDebug.LOG )
-                        Log.d(TAG, "created new toast: " + toast);
-                    if( clear_toast != null )
-                        clear_toast.toast = toast;
-                    /*@SuppressLint("InflateParams") // we add the view to the toast
-                    final View view = LayoutInflater.from(activity).inflate(R.layout.toast_textview, null);
-                    TextView text = view.findViewById(R.id.text_view);
-                    text.setShadowLayer(shadow_radius, 0.0f, 0.0f, Color.BLACK);
-                    text.setText(message);
-                    view.setPadding(0, offset_y, 0, 0);
-                    toast.setView(text);
-                    toast.setGravity(Gravity.CENTER, 0, 0);*/
-                    last_toast_time_ms = time_now;
-                }
-                //toast.setDuration(Toast.LENGTH_SHORT);
-                if( !((Activity)getContext()).isFinishing() ) {
-                    // Workaround for crash due to bug in Android 7.1 when activity is closing whilst toast shows.
-                    // This was fixed in Android 8, but still good to fix the crash on Android 7.1! See
-                    // https://stackoverflow.com/questions/47548317/what-belong-is-badtokenexception-at-classes-of-project and
-                    // https://github.com/drakeet/ToastCompat#why .
-                    toast.show();
-                }
-                last_toast = toast;
             }
         });
     }

@@ -2,6 +2,14 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:key="preferences_root">
 
+    <!--Open TeleScope VR License -->
+    <Preference
+        android:key="preference_licence_opentelescopevr"
+        android:title="Open TeleScope VR licence"
+        android:summary="Open TeleScope VR (c) 2026 Digvijay Lalwani Prakash, is a modified fork of Open Camera (see below) and is released under GPL v3 or later"
+        android:selectable="false" 
+        />
+
     <Preference
         android:key="preference_licence_open_camera"
         android:title="@string/preference_licence_open_camera"

@@ -446,6 +446,7 @@ public class MainUI {
             View previous_view = view;
 
             List<View> buttons_permanent = new ArrayList<>();
+            /* gemini_81dlp removing as this add gallary icon 
             if( ui_placement == UIPlacement.UIPLACEMENT_TOP ) {
                 // not part of the icon panel in TOP mode
                 view = main_activity.findViewById(R.id.gallery);
@@ -464,9 +465,13 @@ public class MainUI {
             }
             else {
                 buttons_permanent.add(main_activity.findViewById(R.id.gallery));
-            }
+            } gemini_81dlp */
+
             buttons_permanent.add(main_activity.findViewById(R.id.settings));
             buttons_permanent.add(main_activity.findViewById(R.id.popup));
+            // 81dlp_gemini // Add multi-camera button to top icon panel
+            buttons_permanent.add(main_activity.findViewById(R.id.switch_multi_camera));
+            // 81dlp_gemini //
             buttons_permanent.add(main_activity.findViewById(R.id.exposure));
             //buttons_permanent.add(main_activity.findViewById(R.id.switch_video));
             //buttons_permanent.add(main_activity.findViewById(R.id.switch_camera));
@@ -623,8 +628,35 @@ public class MainUI {
             setMarginsForSystemUI(layoutParams, 0, 0, navigation_gap, 0);
             view.setLayoutParams(layoutParams);
             setViewRotation(view, ui_rotation);
-
+            
+            /*
+            //81dlp_gemini// Position switch_multi_camera directly over take_photo
             view = main_activity.findViewById(R.id.switch_multi_camera);
+            layoutParams = (RelativeLayout.LayoutParams)view.getLayoutParams();
+            
+            // Clear residual vertical & relative rules
+            layoutParams.addRule(ui_independent_below, 0);
+            layoutParams.addRule(ui_independent_left_of, 0);
+            layoutParams.addRule(ui_independent_right_of, 0);
+            layoutParams.addRule(align_top, 0);
+            layoutParams.addRule(align_bottom, 0);
+
+            // Vertical: Position directly above the shutter button
+            layoutParams.addRule(ui_independent_above, R.id.take_photo);
+
+            // Horizontal: Lock to take_photo's horizontal bounds so it follows UI placement
+            layoutParams.addRule(align_left, R.id.take_photo);
+            layoutParams.addRule(align_right, R.id.take_photo);
+
+            // Match system UI navigation margin
+            setMarginsForSystemUI(layoutParams, 0, 0, navigation_gap, 0);
+
+            view.setLayoutParams(layoutParams);
+            setViewRotation(view, ui_rotation);
+            //81dlp_gemini//
+             */
+
+            /*view = main_activity.findViewById(R.id.switch_multi_camera);
             layoutParams = (RelativeLayout.LayoutParams)view.getLayoutParams();
             layoutParams.addRule(ui_independent_above, 0);
             layoutParams.addRule(ui_independent_below, 0);
@@ -639,7 +671,7 @@ public class MainUI {
                 setMarginsForSystemUI(layoutParams, 0, 0, margin, 0);
             }
             view.setLayoutParams(layoutParams);
-            setViewRotation(view, ui_rotation);
+            */
 
             view = main_activity.findViewById(R.id.pause_video);
             layoutParams = (RelativeLayout.LayoutParams)view.getLayoutParams();
@@ -1096,6 +1128,14 @@ public class MainUI {
             view.setTag(resource); // for testing
 
             view = main_activity.findViewById(R.id.switch_video);
+            //81dlp_gemini// Only update resource if view is present and visible
+            if( view != null && view.getVisibility() == View.VISIBLE ) {
+                view.setContentDescription( main_activity.getResources().getString(switch_video_content_description) );
+                resource = main_activity.getPreview().isVideo() ? R.drawable.take_photo : R.drawable.take_video;
+                view.setImageResource(resource);
+                view.setTag(resource);
+            }
+            //81dlp_gemini//
             view.setContentDescription( main_activity.getResources().getString(switch_video_content_description) );
             resource = main_activity.getPreview().isVideo() ? R.drawable.take_photo : R.drawable.take_video;
             view.setImageResource(resource);
@@ -1245,12 +1285,27 @@ public class MainUI {
                 View exposureButton = main_activity.findViewById(R.id.exposure);
                 View popupButton = main_activity.findViewById(R.id.popup);
                 View galleryButton = main_activity.findViewById(R.id.gallery);
+                //gemini_81dlp//
+                if( galleryButton != null ) {
+                   galleryButton.setVisibility(View.GONE);
+                }
+                //gemini_81dlp//
+                //81dlp_gemini// Reuse existing sharedPreferences variable
+                boolean show_video_pref = sharedPreferences.getBoolean(PreferenceKeys.ShowVideoButtonPreferenceKey, false);
+                if( switchVideoButton != null ) {
+                    switchVideoButton.setVisibility(show_video_pref ? visibility : View.GONE);
+                }
+                //81dlp_gemini//
+
                 View settingsButton = main_activity.findViewById(R.id.settings);
                 View zoomSeekBar = main_activity.findViewById(R.id.zoom_seekbar);
                 View focusSeekBar = main_activity.findViewById(R.id.focus_seekbar);
                 View focusBracketingTargetSeekBar = main_activity.findViewById(R.id.focus_bracketing_target_seekbar);
                 if( main_activity.getPreview().getCameraControllerManager().getNumberOfCameras() > 1 )
-                    switchCameraButton.setVisibility(visibility);
+        		    //gemini_81dlp// turning off flip cam icon
+                    //switchCameraButton.setVisibility(visibility);
+		            switchCameraButton.setVisibility(View.GONE);
+                    //gemini_81dlp//
                 if( main_activity.showSwitchMultiCamIcon() )
                     switchMultiCameraButton.setVisibility(visibility);
                 switchVideoButton.setVisibility(visibility);
@@ -1258,6 +1313,15 @@ public class MainUI {
                     exposureButton.setVisibility(visibility);
                 onScreenIcons.setVisibility(visibility, visibility);
                 popupButton.setVisibility(visibility);
+                // 81dlp_gemini // Suppress popup button in immersive toggles if "none"
+                String filterPref = sharedPreferences.getString(PreferenceKeys.ColorFiltersTypePreferenceKey, "otvr");
+                if( "none".equals(filterPref) ) {
+                    popupButton.setVisibility(View.GONE);
+                }
+                else {
+                    popupButton.setVisibility(visibility);
+                }
+                // 81dlp_gemini //
                 galleryButton.setVisibility(visibility);
                 settingsButton.setVisibility(visibility);
                 if( MyDebug.LOG ) {
@@ -1272,7 +1336,7 @@ public class MainUI {
                     focusBracketingTargetSeekBar.setVisibility(visibility);
                 String pref_immersive_mode = sharedPreferences.getString(PreferenceKeys.ImmersiveModePreferenceKey, "immersive_mode_off");
                 if( pref_immersive_mode.equals("immersive_mode_everything") ) {
-                    if( sharedPreferences.getBoolean(PreferenceKeys.ShowTakePhotoPreferenceKey, true) ) {
+                    if( sharedPreferences.getBoolean(PreferenceKeys.ShowTakePhotoPreferenceKey, false) ) {
                         View takePhotoButton = main_activity.findViewById(R.id.take_photo);
                         takePhotoButton.setVisibility(visibility);
                     }
@@ -1338,10 +1402,30 @@ public class MainUI {
                 View popupButton = main_activity.findViewById(R.id.popup);
                 settingsButton.setVisibility(visibility_video); // still allow settings when recording video - arguably we shouldn't, but looks wierd given that the other default icons aren't hidden when recording video
                 if( main_activity.getPreview().getCameraControllerManager().getNumberOfCameras() > 1 )
-                    switchCameraButton.setVisibility(visibility);
+                    //gemini_81dlp// turning off flip cam icon
+                    //switchCameraButton.setVisibility(visibility);
+		            switchCameraButton.setVisibility(View.GONE);
+                    //gemini_81dlp//
+
+                    //81dlp_gemini// Only display switch_video if preference is enabled
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(main_activity);
+                boolean show_video_pref = sharedPreferences.getBoolean(PreferenceKeys.ShowVideoButtonPreferenceKey, false);
+
+                if( switchVideoButton != null ) {
+                    switchVideoButton.setVisibility(show_video_pref ? visibility : View.GONE);
+                }
+
+                // 81dlp_gemini // Control shutter button visibility via preference (default false)
+                View takePhotoButton = main_activity.findViewById(R.id.take_photo);
+                if( takePhotoButton != null ) {
+                    boolean show_take_photo = sharedPreferences.getBoolean(PreferenceKeys.ShowTakePhotoPreferenceKey, false);
+                    takePhotoButton.setVisibility(show_take_photo ? visibility : View.GONE);
+                }
+                // 81dlp_gemini //
+
                 if( main_activity.showSwitchMultiCamIcon() )
                     switchMultiCameraButton.setVisibility(visibility);
-                switchVideoButton.setVisibility(visibility);
+                //switchVideoButton.setVisibility(visibility);
                 if( main_activity.supportsExposureButton() )
                     exposureButton.setVisibility(visibility_video); // still allow exposure when recording video
                 onScreenIcons.setVisibility(visibility, visibility_video);
@@ -1359,8 +1443,16 @@ public class MainUI {
                         Log.d(TAG, "Remote control DISconnected");
                     remoteConnectedIcon.setVisibility(View.GONE);
                 }
-                popupButton.setVisibility(main_activity.getPreview().supportsFlash() ? visibility_video : visibility); // still allow popup in order to change flash mode when recording video
-
+                //popupButton.setVisibility(main_activity.getPreview().supportsFlash() ? visibility_video : visibility); // still allow popup in order to change flash mode when recording video
+                // 81dlp_gemini // Suppress popup button if color filters are set to "none"
+                String filterPref = sharedPreferences.getString(PreferenceKeys.ColorFiltersTypePreferenceKey, "otvr");
+                if( "none".equals(filterPref) ) {
+                    popupButton.setVisibility(View.GONE);
+                }
+                else {
+                    popupButton.setVisibility(main_activity.getPreview().supportsFlash() ? visibility_video : visibility);
+                }
+                // 81dlp_gemini //
                 if( show_gui_photo && show_gui_video ) {
                     layoutUI(); // needed for "top" UIPlacement, to auto-arrange the buttons
                 }
@@ -2097,10 +2189,23 @@ public class MainUI {
         view.setVisibility(View.GONE);
     }
 
-    public void setPopupIcon() {
+public void setPopupIcon() {
         if( MyDebug.LOG )
             Log.d(TAG, "setPopupIcon");
         ImageButton popup = main_activity.findViewById(R.id.popup);
+        if( popup == null )
+            return;
+
+        // gemini_81dlp Hide popup completely if color filters are set to "none"
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(main_activity);
+        String filterPref = sharedPreferences.getString(PreferenceKeys.ColorFiltersTypePreferenceKey, "otvr");
+        if( "none".equals(filterPref) ) {
+            popup.setVisibility(View.GONE);
+            return;
+        }
+        popup.setVisibility(View.VISIBLE);
+
+        // Keep the original drawable logic below
         String flash_value = main_activity.getPreview().getCurrentFlashValue();
         if( MyDebug.LOG )
             Log.d(TAG, "flash_value: " + flash_value);

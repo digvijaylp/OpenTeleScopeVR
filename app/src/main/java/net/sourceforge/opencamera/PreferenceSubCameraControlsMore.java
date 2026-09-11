@@ -73,147 +73,153 @@ public class PreferenceSubCameraControlsMore extends PreferenceSubScreen {
         }*/
         {
             Preference pref = findPreference("preference_save_location");
-            pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference arg0) {
-                    if( MyDebug.LOG )
-                        Log.d(TAG, "clicked save location");
-                    MainActivity main_activity = (MainActivity)PreferenceSubCameraControlsMore.this.getActivity();
-                    if( main_activity.getStorageUtils().isUsingSAF() ) {
-                        main_activity.openFolderChooserDialogSAF(true);
-                        return true;
-                    }
-                    else if( MainActivity.useScopedStorage() ) {
-                        // we can't use an EditTextPreference (or MyEditTextPreference) due to having to support non-scoped-storage, or when SAF is enabled...
-                        // anyhow, this means we can share code when called from gallery long-press anyway
-                        AlertDialog.Builder alertDialog = main_activity.getSaveLocationHandler().createSaveFolderDialog();
-                        final AlertDialog alert = alertDialog.create();
-                        // AlertDialog.Builder.setOnDismissListener() requires API level 17, so do it this way instead
-                        alert.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                            @Override
-                            public void onDismiss(DialogInterface arg0) {
-                                if( MyDebug.LOG )
-                                    Log.d(TAG, "save folder dialog dismissed");
-                                dialogs.remove(alert);
-                            }
-                        });
-                        alert.show();
-                        dialogs.add(alert);
-                        return true;
-                    }
-                    else {
-                        File start_folder = main_activity.getStorageUtils().getImageFolder();
+            if( pref != null ) {
+                pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference arg0) {
+                        if( MyDebug.LOG )
+                            Log.d(TAG, "clicked save location");
+                        MainActivity main_activity = (MainActivity)PreferenceSubCameraControlsMore.this.getActivity();
+                        if( main_activity.getStorageUtils().isUsingSAF() ) {
+                            main_activity.openFolderChooserDialogSAF(true);
+                            return true;
+                        }
+                        else if( MainActivity.useScopedStorage() ) {
+                            // we can't use an EditTextPreference (or MyEditTextPreference) due to having to support non-scoped-storage, or when SAF is enabled...
+                            // anyhow, this means we can share code when called from gallery long-press anyway
+                            AlertDialog.Builder alertDialog = main_activity.getSaveLocationHandler().createSaveFolderDialog();
+                            final AlertDialog alert = alertDialog.create();
+                            // AlertDialog.Builder.setOnDismissListener() requires API level 17, so do it this way instead
+                            alert.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                                @Override
+                                public void onDismiss(DialogInterface arg0) {
+                                    if( MyDebug.LOG )
+                                        Log.d(TAG, "save folder dialog dismissed");
+                                    dialogs.remove(alert);
+                                }
+                            });
+                            alert.show();
+                            dialogs.add(alert);
+                            return true;
+                        }
+                        else {
+                            File start_folder = main_activity.getStorageUtils().getImageFolder();
 
-                        FolderChooserDialog fragment = new MyPreferenceFragment.SaveFolderChooserDialog();
-                        fragment.setStartFolder(start_folder);
-                        fragment.show(getFragmentManager(), "FOLDER_FRAGMENT");
-                        return true;
-                    }
+                            FolderChooserDialog fragment = new MyPreferenceFragment.SaveFolderChooserDialog();
+                            fragment.setStartFolder(start_folder);
+                            fragment.show(getFragmentManager(), "FOLDER_FRAGMENT");
+                            return true;
+                        }
                 }
             });
+        }
         }
 
         {
             final Preference pref = findPreference("preference_using_saf");
-            pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference arg0) {
-                    if( pref.getKey().equals("preference_using_saf") ) {
-                        if( MyDebug.LOG )
-                            Log.d(TAG, "user clicked saf");
-                        if( sharedPreferences.getBoolean(PreferenceKeys.UsingSAFPreferenceKey, false) ) {
+            if( pref != null ) {
+                pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference arg0) {
+                        if( pref.getKey().equals("preference_using_saf") ) {
                             if( MyDebug.LOG )
-                                Log.d(TAG, "saf is now enabled");
-                            // seems better to always re-show the dialog when the user selects, to make it clear where files will be saved (as the SAF location in general will be different to the non-SAF one)
-                            //String uri = sharedPreferences.getString(PreferenceKeys.getSaveLocationSAFPreferenceKey(), "");
-                            //if( uri.length() == 0 )
-                            {
-                                // Also switch preference back off, and turn it on only once the new folder is selected in
-                                // MainActivity.onActivityResult().
-                                // This is better than turning SAF back off if the user cancels, as it also
-                                // works if the activity is ended whilst showing the SAF dialog (but before
-                                // the user selected a folder).
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putBoolean(PreferenceKeys.UsingSAFPreferenceKey, false);
-                                editor.apply();
+                                Log.d(TAG, "user clicked saf");
+                            if( sharedPreferences.getBoolean(PreferenceKeys.UsingSAFPreferenceKey, false) ) {
+                                if( MyDebug.LOG )
+                                    Log.d(TAG, "saf is now enabled");
+                                // seems better to always re-show the dialog when the user selects, to make it clear where files will be saved (as the SAF location in general will be different to the non-SAF one)
+                                //String uri = sharedPreferences.getString(PreferenceKeys.getSaveLocationSAFPreferenceKey(), "");
+                                //if( uri.length() == 0 )
+                                {
+                                    // Also switch preference back off, and turn it on only once the new folder is selected in
+                                    // MainActivity.onActivityResult().
+                                    // This is better than turning SAF back off if the user cancels, as it also
+                                    // works if the activity is ended whilst showing the SAF dialog (but before
+                                    // the user selected a folder).
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putBoolean(PreferenceKeys.UsingSAFPreferenceKey, false);
+                                    editor.apply();
 
-                                MainActivity main_activity = (MainActivity)PreferenceSubCameraControlsMore.this.getActivity();
-                                Toast.makeText(main_activity, R.string.saf_select_save_location, Toast.LENGTH_SHORT).show();
-                                main_activity.openFolderChooserDialogSAF(true);
+                                    MainActivity main_activity = (MainActivity)PreferenceSubCameraControlsMore.this.getActivity();
+                                    Toast.makeText(main_activity, R.string.saf_select_save_location, Toast.LENGTH_SHORT).show();
+                                    main_activity.openFolderChooserDialogSAF(true);
+                                }
+                            }
+                            else {
+                                if( MyDebug.LOG )
+                                    Log.d(TAG, "saf is now disabled");
+                                // need to update the summary, as switching back to non-SAF folder
+                                MyPreferenceFragment.setSummary(findPreference("preference_save_location"));
                             }
                         }
-                        else {
-                            if( MyDebug.LOG )
-                                Log.d(TAG, "saf is now disabled");
-                            // need to update the summary, as switching back to non-SAF folder
-                            MyPreferenceFragment.setSummary(findPreference("preference_save_location"));
-                        }
+                        return false;
                     }
-                    return false;
-                }
-            });
+                });
+            }
         }
 
         {
             final Preference pref = findPreference("preference_calibrate_level");
-            pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference arg0) {
-                    if( pref.getKey().equals("preference_calibrate_level") ) {
-                        if( MyDebug.LOG )
-                            Log.d(TAG, "user clicked calibrate level option");
-                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(PreferenceSubCameraControlsMore.this.getActivity());
-                        alertDialog.setTitle(getActivity().getResources().getString(R.string.preference_calibrate_level));
-                        alertDialog.setMessage(R.string.preference_calibrate_level_dialog);
-                        alertDialog.setPositiveButton(R.string.preference_calibrate_level_calibrate, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                if( MyDebug.LOG )
-                                    Log.d(TAG, "user clicked calibrate level");
-                                MainActivity main_activity = (MainActivity)PreferenceSubCameraControlsMore.this.getActivity();
-                                if( main_activity.getPreview().hasLevelAngleStable() ) {
-                                    double current_level_angle = main_activity.getPreview().getLevelAngleUncalibrated();
+            if( pref != null ) {
+                pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference arg0) {
+                        if( pref.getKey().equals("preference_calibrate_level") ) {
+                            if( MyDebug.LOG )
+                                Log.d(TAG, "user clicked calibrate level option");
+                            AlertDialog.Builder alertDialog = new AlertDialog.Builder(PreferenceSubCameraControlsMore.this.getActivity());
+                            alertDialog.setTitle(getActivity().getResources().getString(R.string.preference_calibrate_level));
+                            alertDialog.setMessage(R.string.preference_calibrate_level_dialog);
+                            alertDialog.setPositiveButton(R.string.preference_calibrate_level_calibrate, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    if( MyDebug.LOG )
+                                        Log.d(TAG, "user clicked calibrate level");
+                                    MainActivity main_activity = (MainActivity)PreferenceSubCameraControlsMore.this.getActivity();
+                                    if( main_activity.getPreview().hasLevelAngleStable() ) {
+                                        double current_level_angle = main_activity.getPreview().getLevelAngleUncalibrated();
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putFloat(PreferenceKeys.CalibratedLevelAnglePreferenceKey, (float)current_level_angle);
+                                        editor.apply();
+                                        main_activity.getPreview().updateLevelAngles();
+                                        Toast.makeText(main_activity, R.string.preference_calibrate_level_calibrated, Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                            alertDialog.setNegativeButton(R.string.preference_calibrate_level_reset, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    if( MyDebug.LOG )
+                                        Log.d(TAG, "user clicked reset calibration level");
+                                    MainActivity main_activity = (MainActivity)PreferenceSubCameraControlsMore.this.getActivity();
                                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putFloat(PreferenceKeys.CalibratedLevelAnglePreferenceKey, (float)current_level_angle);
+                                    editor.putFloat(PreferenceKeys.CalibratedLevelAnglePreferenceKey, 0.0f);
                                     editor.apply();
                                     main_activity.getPreview().updateLevelAngles();
-                                    Toast.makeText(main_activity, R.string.preference_calibrate_level_calibrated, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(main_activity, R.string.preference_calibrate_level_calibration_reset, Toast.LENGTH_SHORT).show();
                                 }
-                            }
-                        });
-                        alertDialog.setNegativeButton(R.string.preference_calibrate_level_reset, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                if( MyDebug.LOG )
-                                    Log.d(TAG, "user clicked reset calibration level");
-                                MainActivity main_activity = (MainActivity)PreferenceSubCameraControlsMore.this.getActivity();
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putFloat(PreferenceKeys.CalibratedLevelAnglePreferenceKey, 0.0f);
-                                editor.apply();
-                                main_activity.getPreview().updateLevelAngles();
-                                Toast.makeText(main_activity, R.string.preference_calibrate_level_calibration_reset, Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                        final AlertDialog alert = alertDialog.create();
-                        // AlertDialog.Builder.setOnDismissListener() requires API level 17, so do it this way instead
-                        alert.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                            @Override
-                            public void onDismiss(DialogInterface arg0) {
-                                if( MyDebug.LOG )
-                                    Log.d(TAG, "calibration dialog dismissed");
-                                dialogs.remove(alert);
-                            }
-                        });
-                        alert.show();
-                        dialogs.add(alert);
+                            });
+                            final AlertDialog alert = alertDialog.create();
+                            // AlertDialog.Builder.setOnDismissListener() requires API level 17, so do it this way instead
+                            alert.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                                @Override
+                                public void onDismiss(DialogInterface arg0) {
+                                    if( MyDebug.LOG )
+                                        Log.d(TAG, "calibration dialog dismissed");
+                                    dialogs.remove(alert);
+                                }
+                            });
+                            alert.show();
+                            dialogs.add(alert);
+                            return false;
+                        }
                         return false;
                     }
-                    return false;
-                }
-            });
+                });
+            }
         }
 
         // preference_save_location done in onResume
-        MyPreferenceFragment.setSummary(findPreference("preference_save_photo_prefix"));
-        MyPreferenceFragment.setSummary(findPreference("preference_save_video_prefix"));
+        //MyPreferenceFragment.setSummary(findPreference("preference_save_photo_prefix"));
+        //MyPreferenceFragment.setSummary(findPreference("preference_save_video_prefix"));
 
         setupDependencies();
 

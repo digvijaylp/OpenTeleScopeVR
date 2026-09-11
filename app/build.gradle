@@ -35,6 +35,11 @@ android {
     buildFeatures {
     }
     //useLibrary 'android.test.mock'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+   }
+
 }
 
 dependencies {
@@ -60,8 +65,9 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:3.7.0"
 }
 
-java {
+/*java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
-}
+}*/
+

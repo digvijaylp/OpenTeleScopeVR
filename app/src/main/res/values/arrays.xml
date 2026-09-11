@@ -986,7 +986,7 @@
         <item>preference_panorama_save_all</item>
         <item>preference_panorama_save_all_plus_debug</item>
     </string-array>
-    <string-array name="preference_immersive_mode_entries">
+    <!--<string-array name="preference_immersive_mode_entries">
         <item>@string/preference_immersive_mode_off</item>
         <item>@string/preference_immersive_mode_navigation</item>
         <item>@string/preference_immersive_mode_gui</item>
@@ -996,6 +996,14 @@
         <item>immersive_mode_off</item>
         <item>immersive_mode_navigation</item>
         <item>immersive_mode_gui</item>
+        <item>immersive_mode_everything</item>
+    </string-array>-->
+    <string-array name="preference_immersive_mode_entries">
+        <item>@string/preference_immersive_mode_off</item>
+        <item>@string/preference_immersive_mode_gui</item>
+    </string-array>
+    <string-array name="preference_immersive_mode_values">
+        <item>immersive_mode_off</item>
         <item>immersive_mode_everything</item>
     </string-array>
     <string-array name="preference_zebra_stripes_foreground_color_entries">
@@ -1075,5 +1083,19 @@
         <item>1.25</item>
         <item>1.5</item>
         <item>2.0</item>
+    </string-array>
+    <!--gemini_81dlp Labels shown to the user in Settings -->
+    <string-array name="preference_color_filters_entries">
+        <item>OTVR Filters (Default)</item>
+        <item>Hardware Supported (HWS) Filters</item>
+        <item>Both</item>
+        <item>None</item>
+    </string-array>
+    <!--gemini_81dlp Actual values saved to SharedPreferences -->
+    <string-array name="preference_color_filters_values">
+        <item>otvr</item>
+        <item>hardware</item>
+        <item>both</item>
+        <item>none</item>
     </string-array>
 </resources>

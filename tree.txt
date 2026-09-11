@@ -1,0 +1,2869 @@
+.
+├── androidx_LICENSE-2.0.txt
+├── app
+│   ├── build
+│   │   ├── generated
+│   │   │   ├── ap_generated_sources
+│   │   │   │   └── release
+│   │   │   │       └── out
+│   │   │   ├── res
+│   │   │   │   ├── pngs
+│   │   │   │   │   └── release
+│   │   │   │   └── resValues
+│   │   │   │       └── release
+│   │   │   └── updated_navigation_xml
+│   │   │       └── release
+│   │   ├── intermediates
+│   │   │   ├── aar_metadata_check
+│   │   │   │   └── release
+│   │   │   │       └── checkReleaseAarMetadata
+│   │   │   ├── annotation_processor_list
+│   │   │   │   └── release
+│   │   │   │       └── javaPreCompileRelease
+│   │   │   │           └── annotationProcessors.json
+│   │   │   ├── apk_ide_redirect_file
+│   │   │   │   └── release
+│   │   │   │       └── createReleaseApkListingFileRedirect
+│   │   │   │           └── redirect.txt
+│   │   │   ├── app_metadata
+│   │   │   │   └── release
+│   │   │   │       └── writeReleaseAppMetadata
+│   │   │   │           └── app-metadata.properties
+│   │   │   ├── assets
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseAssets
+│   │   │   │           ├── androidx_LICENSE-2.0.txt
+│   │   │   │           ├── google_material_design_icons_LICENSE-2.0.txt
+│   │   │   │           └── gpl-3.0.txt
+│   │   │   ├── binary_art_profile
+│   │   │   │   └── release
+│   │   │   │       └── compileReleaseArtProfile
+│   │   │   │           └── baseline.prof
+│   │   │   ├── binary_art_profile_metadata
+│   │   │   │   └── release
+│   │   │   │       └── compileReleaseArtProfile
+│   │   │   │           └── baseline.profm
+│   │   │   ├── combined_art_profile
+│   │   │   │   └── release
+│   │   │   │       └── compileReleaseArtProfile
+│   │   │   │           └── baseline-prof.txt
+│   │   │   ├── compatible_screen_manifest
+│   │   │   │   └── release
+│   │   │   │       └── createReleaseCompatibleScreenManifests
+│   │   │   │           └── output-metadata.json
+│   │   │   ├── compile_and_runtime_not_namespaced_r_class_jar
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   │           └── R.jar
+│   │   │   ├── compiled_navigation_res
+│   │   │   │   └── release
+│   │   │   │       └── compileReleaseNavigationResources
+│   │   │   ├── compressed_assets
+│   │   │   │   └── release
+│   │   │   │       └── compressReleaseAssets
+│   │   │   │           └── out
+│   │   │   │               └── assets
+│   │   │   │                   ├── androidx_LICENSE-2.0.txt.jar
+│   │   │   │                   ├── google_material_design_icons_LICENSE-2.0.txt.jar
+│   │   │   │                   └── gpl-3.0.txt.jar
+│   │   │   ├── d8_metadata
+│   │   │   │   └── release
+│   │   │   │       └── mergeDexRelease
+│   │   │   │           └── d8-metadata.dat
+│   │   │   ├── data_binding_layout_info_type_merge
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseResources
+│   │   │   │           └── out
+│   │   │   ├── desugar_graph
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   │               ├── currentProject
+│   │   │   │               │   ├── dirs_bucket_0
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── dirs_bucket_1
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── dirs_bucket_2
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── dirs_bucket_3
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── jar_851e7c88b2940b338ba1719ad534c53356229c0d56a2bde56e66a76186bb5c0d_bucket_0
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── jar_851e7c88b2940b338ba1719ad534c53356229c0d56a2bde56e66a76186bb5c0d_bucket_1
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── jar_851e7c88b2940b338ba1719ad534c53356229c0d56a2bde56e66a76186bb5c0d_bucket_2
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   └── jar_851e7c88b2940b338ba1719ad534c53356229c0d56a2bde56e66a76186bb5c0d_bucket_3
+│   │   │   │               │       └── graph.bin
+│   │   │   │               ├── externalLibs
+│   │   │   │               ├── mixedScopes
+│   │   │   │               └── otherProjects
+│   │   │   ├── dex
+│   │   │   │   └── release
+│   │   │   │       └── mergeDexRelease
+│   │   │   │           └── classes.dex
+│   │   │   ├── dex_archive_input_jar_hashes
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── dex_metadata_directory
+│   │   │   │   └── release
+│   │   │   │       └── compileReleaseArtProfile
+│   │   │   │           ├── 0
+│   │   │   │           ├── 1
+│   │   │   │           └── dex-metadata-map.properties
+│   │   │   ├── dex_number_of_buckets_file
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── duplicate_classes_check
+│   │   │   │   └── release
+│   │   │   │       └── checkReleaseDuplicateClasses
+│   │   │   ├── external_file_lib_dex_archives
+│   │   │   │   └── release
+│   │   │   │       └── desugarReleaseFileDependencies
+│   │   │   ├── external_libs_dex
+│   │   │   │   └── release
+│   │   │   │       └── mergeExtDexRelease
+│   │   │   │           └── classes.dex
+│   │   │   ├── external_libs_dex_archive
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── external_libs_dex_archive_with_artifact_transforms
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── global_synthetics_dex
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseGlobalSynthetics
+│   │   │   │           └── classes.dex
+│   │   │   ├── global_synthetics_external_lib
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── global_synthetics_external_libs_artifact_transform
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── global_synthetics_file_lib
+│   │   │   │   └── release
+│   │   │   │       └── desugarReleaseFileDependencies
+│   │   │   ├── global_synthetics_mixed_scope
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── global_synthetics_project
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   │               └── net
+│   │   │   │                   └── sourceforge
+│   │   │   │                       └── opencamera
+│   │   │   │                           ├── cameracontroller
+│   │   │   │                           │   ├── CameraController2$6.globals
+│   │   │   │                           │   └── CameraController2$MyExtensionCaptureCallback.globals
+│   │   │   │                           ├── KeyguardUtils$1.globals
+│   │   │   │                           ├── MyTileServiceFrontCamera.globals
+│   │   │   │                           ├── MyTileService.globals
+│   │   │   │                           └── MyTileServiceVideo.globals
+│   │   │   ├── global_synthetics_subproject
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── incremental
+│   │   │   │   ├── mergeReleaseAssets
+│   │   │   │   │   └── merger.xml
+│   │   │   │   ├── mergeReleaseJniLibFolders
+│   │   │   │   │   └── merger.xml
+│   │   │   │   ├── mergeReleaseShaders
+│   │   │   │   │   └── merger.xml
+│   │   │   │   ├── packageRelease
+│   │   │   │   │   └── tmp
+│   │   │   │   │       └── release
+│   │   │   │   │           ├── dex-renamer-state.txt
+│   │   │   │   │           └── zip-cache
+│   │   │   │   │               ├── androidResources
+│   │   │   │   │               └── javaResources0
+│   │   │   │   ├── release
+│   │   │   │   │   └── mergeReleaseResources
+│   │   │   │   │       ├── compile-file-map.properties
+│   │   │   │   │       ├── merged.dir
+│   │   │   │   │       │   ├── values
+│   │   │   │   │       │   │   └── values.xml
+│   │   │   │   │       │   ├── values-af
+│   │   │   │   │       │   │   └── values-af.xml
+│   │   │   │   │       │   ├── values-am
+│   │   │   │   │       │   │   └── values-am.xml
+│   │   │   │   │       │   ├── values-ar
+│   │   │   │   │       │   │   └── values-ar.xml
+│   │   │   │   │       │   ├── values-as
+│   │   │   │   │       │   │   └── values-as.xml
+│   │   │   │   │       │   ├── values-az
+│   │   │   │   │       │   │   └── values-az.xml
+│   │   │   │   │       │   ├── values-be
+│   │   │   │   │       │   │   └── values-be.xml
+│   │   │   │   │       │   ├── values-bg
+│   │   │   │   │       │   │   └── values-bg.xml
+│   │   │   │   │       │   ├── values-bn
+│   │   │   │   │       │   │   └── values-bn.xml
+│   │   │   │   │       │   ├── values-bs
+│   │   │   │   │       │   │   └── values-bs.xml
+│   │   │   │   │       │   ├── values-b+sr+Latn
+│   │   │   │   │       │   │   └── values-b+sr+Latn.xml
+│   │   │   │   │       │   ├── values-ca
+│   │   │   │   │       │   │   └── values-ca.xml
+│   │   │   │   │       │   ├── values-cs
+│   │   │   │   │       │   │   └── values-cs.xml
+│   │   │   │   │       │   ├── values-da
+│   │   │   │   │       │   │   └── values-da.xml
+│   │   │   │   │       │   ├── values-de
+│   │   │   │   │       │   │   └── values-de.xml
+│   │   │   │   │       │   ├── values-el
+│   │   │   │   │       │   │   └── values-el.xml
+│   │   │   │   │       │   ├── values-en-rAU
+│   │   │   │   │       │   │   └── values-en-rAU.xml
+│   │   │   │   │       │   ├── values-en-rCA
+│   │   │   │   │       │   │   └── values-en-rCA.xml
+│   │   │   │   │       │   ├── values-en-rGB
+│   │   │   │   │       │   │   └── values-en-rGB.xml
+│   │   │   │   │       │   ├── values-en-rIN
+│   │   │   │   │       │   │   └── values-en-rIN.xml
+│   │   │   │   │       │   ├── values-en-rXC
+│   │   │   │   │       │   │   └── values-en-rXC.xml
+│   │   │   │   │       │   ├── values-es
+│   │   │   │   │       │   │   └── values-es.xml
+│   │   │   │   │       │   ├── values-es-rUS
+│   │   │   │   │       │   │   └── values-es-rUS.xml
+│   │   │   │   │       │   ├── values-et
+│   │   │   │   │       │   │   └── values-et.xml
+│   │   │   │   │       │   ├── values-eu
+│   │   │   │   │       │   │   └── values-eu.xml
+│   │   │   │   │       │   ├── values-fa
+│   │   │   │   │       │   │   └── values-fa.xml
+│   │   │   │   │       │   ├── values-fi
+│   │   │   │   │       │   │   └── values-fi.xml
+│   │   │   │   │       │   ├── values-fr
+│   │   │   │   │       │   │   └── values-fr.xml
+│   │   │   │   │       │   ├── values-fr-rCA
+│   │   │   │   │       │   │   └── values-fr-rCA.xml
+│   │   │   │   │       │   ├── values-gl
+│   │   │   │   │       │   │   └── values-gl.xml
+│   │   │   │   │       │   ├── values-gu
+│   │   │   │   │       │   │   └── values-gu.xml
+│   │   │   │   │       │   ├── values-h720dp-v13
+│   │   │   │   │       │   │   └── values-h720dp-v13.xml
+│   │   │   │   │       │   ├── values-hdpi-v4
+│   │   │   │   │       │   │   └── values-hdpi-v4.xml
+│   │   │   │   │       │   ├── values-hi
+│   │   │   │   │       │   │   └── values-hi.xml
+│   │   │   │   │       │   ├── values-hr
+│   │   │   │   │       │   │   └── values-hr.xml
+│   │   │   │   │       │   ├── values-hu
+│   │   │   │   │       │   │   └── values-hu.xml
+│   │   │   │   │       │   ├── values-hy
+│   │   │   │   │       │   │   └── values-hy.xml
+│   │   │   │   │       │   ├── values-in
+│   │   │   │   │       │   │   └── values-in.xml
+│   │   │   │   │       │   ├── values-is
+│   │   │   │   │       │   │   └── values-is.xml
+│   │   │   │   │       │   ├── values-it
+│   │   │   │   │       │   │   └── values-it.xml
+│   │   │   │   │       │   ├── values-iw
+│   │   │   │   │       │   │   └── values-iw.xml
+│   │   │   │   │       │   ├── values-ja
+│   │   │   │   │       │   │   └── values-ja.xml
+│   │   │   │   │       │   ├── values-ka
+│   │   │   │   │       │   │   └── values-ka.xml
+│   │   │   │   │       │   ├── values-kk
+│   │   │   │   │       │   │   └── values-kk.xml
+│   │   │   │   │       │   ├── values-km
+│   │   │   │   │       │   │   └── values-km.xml
+│   │   │   │   │       │   ├── values-kn
+│   │   │   │   │       │   │   └── values-kn.xml
+│   │   │   │   │       │   ├── values-ko
+│   │   │   │   │       │   │   └── values-ko.xml
+│   │   │   │   │       │   ├── values-ky
+│   │   │   │   │       │   │   └── values-ky.xml
+│   │   │   │   │       │   ├── values-land
+│   │   │   │   │       │   │   └── values-land.xml
+│   │   │   │   │       │   ├── values-large-v4
+│   │   │   │   │       │   │   └── values-large-v4.xml
+│   │   │   │   │       │   ├── values-ldltr-v21
+│   │   │   │   │       │   │   └── values-ldltr-v21.xml
+│   │   │   │   │       │   ├── values-lo
+│   │   │   │   │       │   │   └── values-lo.xml
+│   │   │   │   │       │   ├── values-lt
+│   │   │   │   │       │   │   └── values-lt.xml
+│   │   │   │   │       │   ├── values-lv
+│   │   │   │   │       │   │   └── values-lv.xml
+│   │   │   │   │       │   ├── values-mk
+│   │   │   │   │       │   │   └── values-mk.xml
+│   │   │   │   │       │   ├── values-ml
+│   │   │   │   │       │   │   └── values-ml.xml
+│   │   │   │   │       │   ├── values-mn
+│   │   │   │   │       │   │   └── values-mn.xml
+│   │   │   │   │       │   ├── values-mr
+│   │   │   │   │       │   │   └── values-mr.xml
+│   │   │   │   │       │   ├── values-ms
+│   │   │   │   │       │   │   └── values-ms.xml
+│   │   │   │   │       │   ├── values-my
+│   │   │   │   │       │   │   └── values-my.xml
+│   │   │   │   │       │   ├── values-nb
+│   │   │   │   │       │   │   └── values-nb.xml
+│   │   │   │   │       │   ├── values-ne
+│   │   │   │   │       │   │   └── values-ne.xml
+│   │   │   │   │       │   ├── values-night-v8
+│   │   │   │   │       │   │   └── values-night-v8.xml
+│   │   │   │   │       │   ├── values-nl
+│   │   │   │   │       │   │   └── values-nl.xml
+│   │   │   │   │       │   ├── values-or
+│   │   │   │   │       │   │   └── values-or.xml
+│   │   │   │   │       │   ├── values-pa
+│   │   │   │   │       │   │   └── values-pa.xml
+│   │   │   │   │       │   ├── values-pl
+│   │   │   │   │       │   │   └── values-pl.xml
+│   │   │   │   │       │   ├── values-port
+│   │   │   │   │       │   │   └── values-port.xml
+│   │   │   │   │       │   ├── values-pt
+│   │   │   │   │       │   │   └── values-pt.xml
+│   │   │   │   │       │   ├── values-pt-rBR
+│   │   │   │   │       │   │   └── values-pt-rBR.xml
+│   │   │   │   │       │   ├── values-pt-rPT
+│   │   │   │   │       │   │   └── values-pt-rPT.xml
+│   │   │   │   │       │   ├── values-ro
+│   │   │   │   │       │   │   └── values-ro.xml
+│   │   │   │   │       │   ├── values-ru
+│   │   │   │   │       │   │   └── values-ru.xml
+│   │   │   │   │       │   ├── values-si
+│   │   │   │   │       │   │   └── values-si.xml
+│   │   │   │   │       │   ├── values-sk
+│   │   │   │   │       │   │   └── values-sk.xml
+│   │   │   │   │       │   ├── values-sl
+│   │   │   │   │       │   │   └── values-sl.xml
+│   │   │   │   │       │   ├── values-sq
+│   │   │   │   │       │   │   └── values-sq.xml
+│   │   │   │   │       │   ├── values-sr
+│   │   │   │   │       │   │   └── values-sr.xml
+│   │   │   │   │       │   ├── values-sv
+│   │   │   │   │       │   │   └── values-sv.xml
+│   │   │   │   │       │   ├── values-sw
+│   │   │   │   │       │   │   └── values-sw.xml
+│   │   │   │   │       │   ├── values-sw600dp-v13
+│   │   │   │   │       │   │   └── values-sw600dp-v13.xml
+│   │   │   │   │       │   ├── values-sw720dp-land-v13
+│   │   │   │   │       │   │   └── values-sw720dp-land-v13.xml
+│   │   │   │   │       │   ├── values-ta
+│   │   │   │   │       │   │   └── values-ta.xml
+│   │   │   │   │       │   ├── values-te
+│   │   │   │   │       │   │   └── values-te.xml
+│   │   │   │   │       │   ├── values-th
+│   │   │   │   │       │   │   └── values-th.xml
+│   │   │   │   │       │   ├── values-tl
+│   │   │   │   │       │   │   └── values-tl.xml
+│   │   │   │   │       │   ├── values-tr
+│   │   │   │   │       │   │   └── values-tr.xml
+│   │   │   │   │       │   ├── values-uk
+│   │   │   │   │       │   │   └── values-uk.xml
+│   │   │   │   │       │   ├── values-ur
+│   │   │   │   │       │   │   └── values-ur.xml
+│   │   │   │   │       │   ├── values-uz
+│   │   │   │   │       │   │   └── values-uz.xml
+│   │   │   │   │       │   ├── values-v16
+│   │   │   │   │       │   │   └── values-v16.xml
+│   │   │   │   │       │   ├── values-v17
+│   │   │   │   │       │   │   └── values-v17.xml
+│   │   │   │   │       │   ├── values-v18
+│   │   │   │   │       │   │   └── values-v18.xml
+│   │   │   │   │       │   ├── values-v21
+│   │   │   │   │       │   │   └── values-v21.xml
+│   │   │   │   │       │   ├── values-v22
+│   │   │   │   │       │   │   └── values-v22.xml
+│   │   │   │   │       │   ├── values-v23
+│   │   │   │   │       │   │   └── values-v23.xml
+│   │   │   │   │       │   ├── values-v24
+│   │   │   │   │       │   │   └── values-v24.xml
+│   │   │   │   │       │   ├── values-v25
+│   │   │   │   │       │   │   └── values-v25.xml
+│   │   │   │   │       │   ├── values-v26
+│   │   │   │   │       │   │   └── values-v26.xml
+│   │   │   │   │       │   ├── values-v28
+│   │   │   │   │       │   │   └── values-v28.xml
+│   │   │   │   │       │   ├── values-vi
+│   │   │   │   │       │   │   └── values-vi.xml
+│   │   │   │   │       │   ├── values-watch-v20
+│   │   │   │   │       │   │   └── values-watch-v20.xml
+│   │   │   │   │       │   ├── values-watch-v21
+│   │   │   │   │       │   │   └── values-watch-v21.xml
+│   │   │   │   │       │   ├── values-xlarge-v4
+│   │   │   │   │       │   │   └── values-xlarge-v4.xml
+│   │   │   │   │       │   ├── values-zh-rCN
+│   │   │   │   │       │   │   └── values-zh-rCN.xml
+│   │   │   │   │       │   ├── values-zh-rHK
+│   │   │   │   │       │   │   └── values-zh-rHK.xml
+│   │   │   │   │       │   ├── values-zh-rTW
+│   │   │   │   │       │   │   └── values-zh-rTW.xml
+│   │   │   │   │       │   └── values-zu
+│   │   │   │   │       │       └── values-zu.xml
+│   │   │   │   │       ├── merger.xml
+│   │   │   │   │       └── stripped.dir
+│   │   │   │   └── release-mergeJavaRes
+│   │   │   │       ├── merge-state
+│   │   │   │       └── zip-cache
+│   │   │   │           ├── 0fDMsc8ek85XG905g2T6Qg==
+│   │   │   │           ├── 1lUlIFjJ_PW0kYV0Nq5zAQ==
+│   │   │   │           ├── 2Z+KsnLFoy6q4UvsFSzbJQ==
+│   │   │   │           ├── 634sybsy7LaWjZ_ClXkjbw==
+│   │   │   │           ├── 6C6e7XAfEq2cdPeRJU1fxQ==
+│   │   │   │           ├── 7I959MR5wDkJiXWBT_2g0g==
+│   │   │   │           ├── 7KG70HGjBhfCNje_U4cN9g==
+│   │   │   │           ├── 8RZQsHTxcJ60v1z0lKU7ZA==
+│   │   │   │           ├── aMjHC2P6D3RrAYIhki_LsQ==
+│   │   │   │           ├── Ao8pGRS_rl2Mue56gZDXNA==
+│   │   │   │           ├── bj77Td6bQ8cmQLi9Is_NtQ==
+│   │   │   │           ├── cIZhwZS2QjubPyzNFIWeyA==
+│   │   │   │           ├── ClS1Lk1fn6JNBFRWHPl+Yg==
+│   │   │   │           ├── d13XXk9TJOkFZAO8hgX7Bg==
+│   │   │   │           ├── D4T6g7dcAeTVRxDb9r46Ig==
+│   │   │   │           ├── dEAt7Ske3U9iLICzCee+hA==
+│   │   │   │           ├── DqubcbeJ_1lkQE8TIPmuHQ==
+│   │   │   │           ├── duI+NaEn12CAcMR7doij3Q==
+│   │   │   │           ├── DydFpB1v5QVZpZPAoWkQ5g==
+│   │   │   │           ├── e2JYtlBR0Cv6zAblxqumHg==
+│   │   │   │           ├── e5q2vOimvArncxluyVlq2A==
+│   │   │   │           ├── _+EQWazwHxD5+d0de7pd9w==
+│   │   │   │           ├── ff7v8kWRKoH1yZY3gYSv0Q==
+│   │   │   │           ├── +gEipH5atdcOvn2_a47AAQ==
+│   │   │   │           ├── gS7dvYKAFfEx6F4kW6sYmQ==
+│   │   │   │           ├── hpnKtD4CwX_Dp25VMKXbQw==
+│   │   │   │           ├── hSosLe9AMOAB1lt6LbKA5Q==
+│   │   │   │           ├── hYoycdFVpeumnm1F2CN6sg==
+│   │   │   │           ├── j49G0XkGmn6OiEJYx07Neg==
+│   │   │   │           ├── JN+jy98un1liWqerqvVw9A==
+│   │   │   │           ├── kE6O6z7aUZDkc3vbU3Grmw==
+│   │   │   │           ├── lhaCtDAbocXyTLCCsjETtg==
+│   │   │   │           ├── LMIpIGUVWIvSgMqRlF1cow==
+│   │   │   │           ├── lS9S8lu7Dmuf91JEJ6ijCw==
+│   │   │   │           ├── m5URVEpEybjQelAucrDS0g==
+│   │   │   │           ├── NxNg1yufsq_pg5Mm+bht7Q==
+│   │   │   │           ├── PB4x_mncB8hBr+MtLRHV+A==
+│   │   │   │           ├── pQagB_Dt0KcQKsAxWcmygg==
+│   │   │   │           ├── QEeL406aK6Xdj0Xbl0_tcQ==
+│   │   │   │           ├── qPzuqoOcKJtJGTNH1nUsOw==
+│   │   │   │           ├── r3Z5lavfLWe15CUXNSGb7w==
+│   │   │   │           ├── RHTnaQhWfyxmr3H1sIBehg==
+│   │   │   │           ├── RJHTcVdjCbEW7PvKNN0c_g==
+│   │   │   │           ├── SiSQx3OHnWGtIsbO3vrC0g==
+│   │   │   │           ├── TeZMTAPsRm0uL+Vi6d0+JA==
+│   │   │   │           ├── Tky8L+S4G8beBErnqXVzwQ==
+│   │   │   │           ├── USzYhY7t9b7FJj0BJ2U1vQ==
+│   │   │   │           ├── V6T9OioaASC8RoXy0gYsFg==
+│   │   │   │           ├── VBvHSheJqULis0KEE7e4Dg==
+│   │   │   │           ├── vdYRoloCHHo8s_KKUnQxpQ==
+│   │   │   │           ├── VGZnQhKsxawtHd2N0At4NA==
+│   │   │   │           ├── VhvKdIUgKmsZQkPWIoMPUA==
+│   │   │   │           ├── WNr1bGe1nt58lta8oOAp8Q==
+│   │   │   │           ├── WwmYOrRu8Mq9WPm0CrgMyQ==
+│   │   │   │           ├── X02OpI_bDlX0HxjBpKYfew==
+│   │   │   │           ├── xm9Qf_EQydMsaFL8GKf46A==
+│   │   │   │           └── YEhOBk3gwctTwfKCOO3T2g==
+│   │   │   ├── javac
+│   │   │   │   └── release
+│   │   │   │       └── compileReleaseJavaWithJavac
+│   │   │   │           └── classes
+│   │   │   │               └── net
+│   │   │   │                   └── sourceforge
+│   │   │   │                       └── opencamera
+│   │   │   │                           ├── AudioListener$1.class
+│   │   │   │                           ├── AudioListener$AudioListenerCallback.class
+│   │   │   │                           ├── AudioListener.class
+│   │   │   │                           ├── cameracontroller
+│   │   │   │                           │   ├── Camera2Settings$1.class
+│   │   │   │                           │   ├── Camera2Settings.class
+│   │   │   │                           │   ├── CameraController$Area.class
+│   │   │   │                           │   ├── CameraController$AutoFocusCallback.class
+│   │   │   │                           │   ├── CameraController$BurstType.class
+│   │   │   │                           │   ├── CameraController$CameraFeaturesCache.class
+│   │   │   │                           │   ├── CameraController$CameraFeatures.class
+│   │   │   │                           │   ├── CameraController$ContinuousFocusMoveCallback.class
+│   │   │   │                           │   ├── CameraController$ErrorCallback.class
+│   │   │   │                           │   ├── CameraController$Face.class
+│   │   │   │                           │   ├── CameraController$FaceDetectionListener.class
+│   │   │   │                           │   ├── CameraController$Facing.class
+│   │   │   │                           │   ├── CameraController$PictureCallback.class
+│   │   │   │                           │   ├── CameraController$RangeSorter.class
+│   │   │   │                           │   ├── CameraController$Size.class
+│   │   │   │                           │   ├── CameraController$SizeSorter.class
+│   │   │   │                           │   ├── CameraController$SupportedValues.class
+│   │   │   │                           │   ├── CameraController$TonemapProfile.class
+│   │   │   │                           │   ├── CameraController1$1CameraFaceDetectionListener.class
+│   │   │   │                           │   ├── CameraController1$1.class
+│   │   │   │                           │   ├── CameraController1$1MyAutoFocusCallback$1.class
+│   │   │   │                           │   ├── CameraController1$1MyAutoFocusCallback.class
+│   │   │   │                           │   ├── CameraController1$2.class
+│   │   │   │                           │   ├── CameraController1$3$1.class
+│   │   │   │                           │   ├── CameraController1$3.class
+│   │   │   │                           │   ├── CameraController1$4.class
+│   │   │   │                           │   ├── CameraController1$CameraErrorCallback.class
+│   │   │   │                           │   ├── CameraController1$TakePictureShutterCallback.class
+│   │   │   │                           │   ├── CameraController1.class
+│   │   │   │                           │   ├── CameraController2$10.class
+│   │   │   │                           │   ├── CameraController2$11.class
+│   │   │   │                           │   ├── CameraController2$12.class
+│   │   │   │                           │   ├── CameraController2$13.class
+│   │   │   │                           │   ├── CameraController2$14.class
+│   │   │   │                           │   ├── CameraController2$15.class
+│   │   │   │                           │   ├── CameraController2$1.class
+│   │   │   │                           │   ├── CameraController2$1MyStateCallback.class
+│   │   │   │                           │   ├── CameraController2$2.class
+│   │   │   │                           │   ├── CameraController2$2MyStateCallback$1.class
+│   │   │   │                           │   ├── CameraController2$2MyStateCallback$2.class
+│   │   │   │                           │   ├── CameraController2$2MyStateCallback.class
+│   │   │   │                           │   ├── CameraController2$3.class
+│   │   │   │                           │   ├── CameraController2$4.class
+│   │   │   │                           │   ├── CameraController2$5$1.class
+│   │   │   │                           │   ├── CameraController2$5.class
+│   │   │   │                           │   ├── CameraController2$6.class
+│   │   │   │                           │   ├── CameraController2$7.class
+│   │   │   │                           │   ├── CameraController2$8.class
+│   │   │   │                           │   ├── CameraController2$9.class
+│   │   │   │                           │   ├── CameraController2$CreateCaptureSessionFunction.class
+│   │   │   │                           │   ├── CameraController2$MyCaptureCallback$1.class
+│   │   │   │                           │   ├── CameraController2$MyCaptureCallback$2.class
+│   │   │   │                           │   ├── CameraController2$MyCaptureCallback.class
+│   │   │   │                           │   ├── CameraController2$MyExtensionCaptureCallback$1.class
+│   │   │   │                           │   ├── CameraController2$MyExtensionCaptureCallback.class
+│   │   │   │                           │   ├── CameraController2$OnImageAvailableListener.class
+│   │   │   │                           │   ├── CameraController2$OnRawImageAvailableListener$1.class
+│   │   │   │                           │   ├── CameraController2$OnRawImageAvailableListener.class
+│   │   │   │                           │   ├── CameraController2$PostCapture.class
+│   │   │   │                           │   ├── CameraController2$RequestTagObject.class
+│   │   │   │                           │   ├── CameraController2$RequestTagType.class
+│   │   │   │                           │   ├── CameraController2$SessionType.class
+│   │   │   │                           │   ├── CameraController2.class
+│   │   │   │                           │   ├── CameraController.class
+│   │   │   │                           │   ├── CameraControllerException.class
+│   │   │   │                           │   ├── CameraControllerManager$CameraInfo.class
+│   │   │   │                           │   ├── CameraControllerManager1$1.class
+│   │   │   │                           │   ├── CameraControllerManager1.class
+│   │   │   │                           │   ├── CameraControllerManager2.class
+│   │   │   │                           │   ├── CameraControllerManager.class
+│   │   │   │                           │   └── RawImage.class
+│   │   │   │                           ├── ExifHandler$ExifInterfaceHolder.class
+│   │   │   │                           ├── ExifHandler.class
+│   │   │   │                           ├── GyroSensor$TargetCallback.class
+│   │   │   │                           ├── GyroSensor.class
+│   │   │   │                           ├── HDRProcessor$1BitmapInfo.class
+│   │   │   │                           ├── HDRProcessor$1.class
+│   │   │   │                           ├── HDRProcessor$AvgData.class
+│   │   │   │                           ├── HDRProcessor$BrightenFactors.class
+│   │   │   │                           ├── HDRProcessor$BrightnessDetails.class
+│   │   │   │                           ├── HDRProcessor$DROTonemappingAlgorithm.class
+│   │   │   │                           ├── HDRProcessor$HDRAlgorithm.class
+│   │   │   │                           ├── HDRProcessor$HistogramInfo.class
+│   │   │   │                           ├── HDRProcessor$HistogramType.class
+│   │   │   │                           ├── HDRProcessor$LuminanceInfo.class
+│   │   │   │                           ├── HDRProcessor$ResponseFunction.class
+│   │   │   │                           ├── HDRProcessor$SortCallback.class
+│   │   │   │                           ├── HDRProcessor$TonemappingAlgorithm.class
+│   │   │   │                           ├── HDRProcessor.class
+│   │   │   │                           ├── HDRProcessorException.class
+│   │   │   │                           ├── ImageSaver$1.class
+│   │   │   │                           ├── ImageSaver$2.class
+│   │   │   │                           ├── ImageSaver$3.class
+│   │   │   │                           ├── ImageSaver$GyroDebugInfo$GyroImageDebugInfo.class
+│   │   │   │                           ├── ImageSaver$GyroDebugInfo.class
+│   │   │   │                           ├── ImageSaver$IntRange.class
+│   │   │   │                           ├── ImageSaver$Request$ImageFormat.class
+│   │   │   │                           ├── ImageSaver$Request$ProcessType.class
+│   │   │   │                           ├── ImageSaver$Request$RemoveDeviceExif.class
+│   │   │   │                           ├── ImageSaver$Request$SaveBase.class
+│   │   │   │                           ├── ImageSaver$Request$Type.class
+│   │   │   │                           ├── ImageSaver$Request.class
+│   │   │   │                           ├── ImageSaver.class
+│   │   │   │                           ├── ImageUtils$LoadBitmapThread.class
+│   │   │   │                           ├── ImageUtils.class
+│   │   │   │                           ├── JavaImageFunctionsHDR$1.class
+│   │   │   │                           ├── JavaImageFunctionsHDR$AdjustHistogramApplyFunction.class
+│   │   │   │                           ├── JavaImageFunctionsHDR$AlignMTBApplyFunction.class
+│   │   │   │                           ├── JavaImageFunctionsHDR$AvgApplyFunction.class
+│   │   │   │                           ├── JavaImageFunctionsHDR$AvgBrightenApplyFunction.class
+│   │   │   │                           ├── JavaImageFunctionsHDR$ComputeHistogramApplyFunction$Type.class
+│   │   │   │                           ├── JavaImageFunctionsHDR$ComputeHistogramApplyFunction.class
+│   │   │   │                           ├── JavaImageFunctionsHDR$CreateMTBApplyFunction.class
+│   │   │   │                           ├── JavaImageFunctionsHDR$DROBrightenApplyFunction.class
+│   │   │   │                           ├── JavaImageFunctionsHDR$HDRApplyFunction.class
+│   │   │   │                           ├── JavaImageFunctionsHDR$HDRNApplyFunction.class
+│   │   │   │                           ├── JavaImageFunctionsHDR$RGBf_luminance.class
+│   │   │   │                           ├── JavaImageFunctionsHDR.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$AddBitmapFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$Blur1dXFullFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$Blur1dXFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$Blur1dYFullFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$Blur1dYFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ComputeDerivativesFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ConvertToGreyscaleFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$CornerDetectorFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ExpandBitmapFullFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ExpandBitmapFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$LocalMaximumFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$MergefFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$MergeFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$PyramidBlendingComputeErrorFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ReduceBitmapFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ReduceBitmapXFullFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ReduceBitmapXFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ReduceBitmapYFullFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ReduceBitmapYFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama$SubtractBitmapFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPanorama.class
+│   │   │   │                           ├── JavaImageFunctionsPreview$FocusPeakingApplyFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPreview$FocusPeakingFilteredApplyFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPreview$ZebraStripesApplyFunction.class
+│   │   │   │                           ├── JavaImageFunctionsPreview.class
+│   │   │   │                           ├── JavaImageProcessing$ApplyFunctionInterface.class
+│   │   │   │                           ├── JavaImageProcessing$ApplyFunctionThread.class
+│   │   │   │                           ├── JavaImageProcessing$CachedBitmap.class
+│   │   │   │                           ├── JavaImageProcessing$FastAccessBitmap.class
+│   │   │   │                           ├── JavaImageProcessing.class
+│   │   │   │                           ├── KeyguardUtils$1.class
+│   │   │   │                           ├── KeyguardUtils.class
+│   │   │   │                           ├── LocationSupplier$LocationInfo.class
+│   │   │   │                           ├── LocationSupplier$MyLocationListener.class
+│   │   │   │                           ├── LocationSupplier.class
+│   │   │   │                           ├── MagneticSensor$1.class
+│   │   │   │                           ├── MagneticSensor.class
+│   │   │   │                           ├── MainActivity$10.class
+│   │   │   │                           ├── MainActivity$11.class
+│   │   │   │                           ├── MainActivity$12.class
+│   │   │   │                           ├── MainActivity$13.class
+│   │   │   │                           ├── MainActivity$14$1.class
+│   │   │   │                           ├── MainActivity$14.class
+│   │   │   │                           ├── MainActivity$15.class
+│   │   │   │                           ├── MainActivity$16.class
+│   │   │   │                           ├── MainActivity$17.class
+│   │   │   │                           ├── MainActivity$18.class
+│   │   │   │                           ├── MainActivity$19.class
+│   │   │   │                           ├── MainActivity$1.class
+│   │   │   │                           ├── MainActivity$1PhysicalCamera.class
+│   │   │   │                           ├── MainActivity$20$1.class
+│   │   │   │                           ├── MainActivity$20.class
+│   │   │   │                           ├── MainActivity$21$1.class
+│   │   │   │                           ├── MainActivity$21.class
+│   │   │   │                           ├── MainActivity$22.class
+│   │   │   │                           ├── MainActivity$23$1.class
+│   │   │   │                           ├── MainActivity$23$2.class
+│   │   │   │                           ├── MainActivity$23$3.class
+│   │   │   │                           ├── MainActivity$23.class
+│   │   │   │                           ├── MainActivity$24.class
+│   │   │   │                           ├── MainActivity$25.class
+│   │   │   │                           ├── MainActivity$26.class
+│   │   │   │                           ├── MainActivity$27.class
+│   │   │   │                           ├── MainActivity$28.class
+│   │   │   │                           ├── MainActivity$29.class
+│   │   │   │                           ├── MainActivity$2.class
+│   │   │   │                           ├── MainActivity$30.class
+│   │   │   │                           ├── MainActivity$31.class
+│   │   │   │                           ├── MainActivity$32.class
+│   │   │   │                           ├── MainActivity$3.class
+│   │   │   │                           ├── MainActivity$4.class
+│   │   │   │                           ├── MainActivity$5.class
+│   │   │   │                           ├── MainActivity$6.class
+│   │   │   │                           ├── MainActivity$7.class
+│   │   │   │                           ├── MainActivity$8$1.class
+│   │   │   │                           ├── MainActivity$8.class
+│   │   │   │                           ├── MainActivity$9.class
+│   │   │   │                           ├── MainActivity$MyDisplayListener.class
+│   │   │   │                           ├── MainActivity$MyFolderChooserDialog.class
+│   │   │   │                           ├── MainActivity$MyGestureDetector.class
+│   │   │   │                           ├── MainActivity$PausePreviewOnBackPressedCallback.class
+│   │   │   │                           ├── MainActivity$PopupOnBackPressedCallback.class
+│   │   │   │                           ├── MainActivity$PreferencesListener.class
+│   │   │   │                           ├── MainActivity$ScreenLockOnBackPressedCallback.class
+│   │   │   │                           ├── MainActivity$SystemOrientation.class
+│   │   │   │                           ├── MainActivity.class
+│   │   │   │                           ├── MultiCamHandler$1.class
+│   │   │   │                           ├── MultiCamHandler.class
+│   │   │   │                           ├── MyApplicationInterface$1.class
+│   │   │   │                           ├── MyApplicationInterface$1SubtitleVideoTimerTask.class
+│   │   │   │                           ├── MyApplicationInterface$2.class
+│   │   │   │                           ├── MyApplicationInterface$3.class
+│   │   │   │                           ├── MyApplicationInterface$Alignment.class
+│   │   │   │                           ├── MyApplicationInterface$LastImage.class
+│   │   │   │                           ├── MyApplicationInterface$LastImagesType.class
+│   │   │   │                           ├── MyApplicationInterface$PhotoMode.class
+│   │   │   │                           ├── MyApplicationInterface$Shadow.class
+│   │   │   │                           ├── MyApplicationInterface.class
+│   │   │   │                           ├── MyAudioTriggerListenerCallback.class
+│   │   │   │                           ├── MyDebug.class
+│   │   │   │                           ├── MyPreferenceFragment$1.class
+│   │   │   │                           ├── MyPreferenceFragment$2.class
+│   │   │   │                           ├── MyPreferenceFragment$3.class
+│   │   │   │                           ├── MyPreferenceFragment$4$1.class
+│   │   │   │                           ├── MyPreferenceFragment$4$2.class
+│   │   │   │                           ├── MyPreferenceFragment$4.class
+│   │   │   │                           ├── MyPreferenceFragment$5.class
+│   │   │   │                           ├── MyPreferenceFragment$6.class
+│   │   │   │                           ├── MyPreferenceFragment$PreferenceFragmentOnBackPressedCallback.class
+│   │   │   │                           ├── MyPreferenceFragment$SaveFolderChooserDialog.class
+│   │   │   │                           ├── MyPreferenceFragment.class
+│   │   │   │                           ├── MyTileService.class
+│   │   │   │                           ├── MyTileServiceFrontCamera.class
+│   │   │   │                           ├── MyTileServiceVideo.class
+│   │   │   │                           ├── MyWidgetProviderTakePhoto.class
+│   │   │   │                           ├── OpenCameraApplication.class
+│   │   │   │                           ├── PanoramaProcessor$AutoAlignmentByFeatureResult.class
+│   │   │   │                           ├── PanoramaProcessor$ComputeDistancesBetweenMatchesThread.class
+│   │   │   │                           ├── PanoramaProcessor$FeatureMatch.class
+│   │   │   │                           ├── PanoramaProcessor$LaplacianPyramid.class
+│   │   │   │                           ├── PanoramaProcessor.class
+│   │   │   │                           ├── PanoramaProcessorException.class
+│   │   │   │                           ├── PermissionHandler$1.class
+│   │   │   │                           ├── PermissionHandler.class
+│   │   │   │                           ├── PostProcessing$PostProcessBitmapResult.class
+│   │   │   │                           ├── PostProcessing.class
+│   │   │   │                           ├── PreferenceKeys.class
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$1$1.class
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$1.class
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$2.class
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$3$1.class
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$3$2.class
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$3$3.class
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$3.class
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$4.class
+│   │   │   │                           ├── PreferenceSubCameraControlsMore.class
+│   │   │   │                           ├── PreferenceSubGUI.class
+│   │   │   │                           ├── PreferenceSubLicences$1.class
+│   │   │   │                           ├── PreferenceSubLicences$2.class
+│   │   │   │                           ├── PreferenceSubLicences$3.class
+│   │   │   │                           ├── PreferenceSubLicences$4.class
+│   │   │   │                           ├── PreferenceSubLicences$5.class
+│   │   │   │                           ├── PreferenceSubLicences.class
+│   │   │   │                           ├── PreferenceSubLocation.class
+│   │   │   │                           ├── PreferenceSubPhoto$1$1.class
+│   │   │   │                           ├── PreferenceSubPhoto$1$2.class
+│   │   │   │                           ├── PreferenceSubPhoto$1.class
+│   │   │   │                           ├── PreferenceSubPhoto.class
+│   │   │   │                           ├── PreferenceSubPreview$1.class
+│   │   │   │                           ├── PreferenceSubPreview.class
+│   │   │   │                           ├── PreferenceSubProcessing.class
+│   │   │   │                           ├── PreferenceSubRemoteCtrl.class
+│   │   │   │                           ├── PreferenceSubScreen.class
+│   │   │   │                           ├── PreferenceSubSettingsManager$1$1.class
+│   │   │   │                           ├── PreferenceSubSettingsManager$1$2.class
+│   │   │   │                           ├── PreferenceSubSettingsManager$1.class
+│   │   │   │                           ├── PreferenceSubSettingsManager$2.class
+│   │   │   │                           ├── PreferenceSubSettingsManager$3$1.class
+│   │   │   │                           ├── PreferenceSubSettingsManager$3$2.class
+│   │   │   │                           ├── PreferenceSubSettingsManager$3.class
+│   │   │   │                           ├── PreferenceSubSettingsManager$4.class
+│   │   │   │                           ├── PreferenceSubSettingsManager$5.class
+│   │   │   │                           ├── PreferenceSubSettingsManager$LoadSettingsFileChooserDialog.class
+│   │   │   │                           ├── PreferenceSubSettingsManager.class
+│   │   │   │                           ├── PreferenceSubVideo$1.class
+│   │   │   │                           ├── PreferenceSubVideo.class
+│   │   │   │                           ├── Preshots$MuxerInfo.class
+│   │   │   │                           ├── Preshots.class
+│   │   │   │                           ├── preview
+│   │   │   │                           │   ├── ApplicationInterface$CameraResolutionConstraints.class
+│   │   │   │                           │   ├── ApplicationInterface$NoFreeStorageException.class
+│   │   │   │                           │   ├── ApplicationInterface$NRModePref.class
+│   │   │   │                           │   ├── ApplicationInterface$RawPref.class
+│   │   │   │                           │   ├── ApplicationInterface$VideoMaxFileSize.class
+│   │   │   │                           │   ├── ApplicationInterface$VideoMethod.class
+│   │   │   │                           │   ├── ApplicationInterface.class
+│   │   │   │                           │   ├── BasicApplicationInterface.class
+│   │   │   │                           │   ├── camerasurface
+│   │   │   │                           │   │   ├── CameraSurface.class
+│   │   │   │                           │   │   ├── MySurfaceView$1.class
+│   │   │   │                           │   │   ├── MySurfaceView.class
+│   │   │   │                           │   │   └── MyTextureView.class
+│   │   │   │                           │   ├── CanvasView$1.class
+│   │   │   │                           │   ├── CanvasView.class
+│   │   │   │                           │   ├── Preview$10.class
+│   │   │   │                           │   ├── Preview$11.class
+│   │   │   │                           │   ├── Preview$12.class
+│   │   │   │                           │   ├── Preview$13$1.class
+│   │   │   │                           │   ├── Preview$13.class
+│   │   │   │                           │   ├── Preview$14$1.class
+│   │   │   │                           │   ├── Preview$14.class
+│   │   │   │                           │   ├── Preview$15.class
+│   │   │   │                           │   ├── Preview$16.class
+│   │   │   │                           │   ├── Preview$17.class
+│   │   │   │                           │   ├── Preview$18.class
+│   │   │   │                           │   ├── Preview$19.class
+│   │   │   │                           │   ├── Preview$1BatteryCheckVideoTimerTask$1.class
+│   │   │   │                           │   ├── Preview$1BatteryCheckVideoTimerTask.class
+│   │   │   │                           │   ├── Preview$1BeepTimerTask.class
+│   │   │   │                           │   ├── Preview$1.class
+│   │   │   │                           │   ├── Preview$1FlashVideoTimerTask$1.class
+│   │   │   │                           │   ├── Preview$1FlashVideoTimerTask.class
+│   │   │   │                           │   ├── Preview$1MyFaceDetectionListener$1.class
+│   │   │   │                           │   ├── Preview$1MyFaceDetectionListener$2.class
+│   │   │   │                           │   ├── Preview$1MyFaceDetectionListener$3.class
+│   │   │   │                           │   ├── Preview$1MyFaceDetectionListener.class
+│   │   │   │                           │   ├── Preview$1TakePictureTimerTask$1.class
+│   │   │   │                           │   ├── Preview$1TakePictureTimerTask.class
+│   │   │   │                           │   ├── Preview$20.class
+│   │   │   │                           │   ├── Preview$21.class
+│   │   │   │                           │   ├── Preview$22.class
+│   │   │   │                           │   ├── Preview$23.class
+│   │   │   │                           │   ├── Preview$24.class
+│   │   │   │                           │   ├── Preview$25$1.class
+│   │   │   │                           │   ├── Preview$25.class
+│   │   │   │                           │   ├── Preview$26.class
+│   │   │   │                           │   ├── Preview$27.class
+│   │   │   │                           │   ├── Preview$28.class
+│   │   │   │                           │   ├── Preview$2.class
+│   │   │   │                           │   ├── Preview$3.class
+│   │   │   │                           │   ├── Preview$4.class
+│   │   │   │                           │   ├── Preview$5.class
+│   │   │   │                           │   ├── Preview$6.class
+│   │   │   │                           │   ├── Preview$7$1.class
+│   │   │   │                           │   ├── Preview$7$2.class
+│   │   │   │                           │   ├── Preview$7.class
+│   │   │   │                           │   ├── Preview$8.class
+│   │   │   │                           │   ├── Preview$9.class
+│   │   │   │                           │   ├── Preview$CameraOpenState.class
+│   │   │   │                           │   ├── Preview$CloseCameraCallback.class
+│   │   │   │                           │   ├── Preview$CloseCameraTask.class
+│   │   │   │                           │   ├── Preview$DoubleTapListener.class
+│   │   │   │                           │   ├── Preview$FaceLocation.class
+│   │   │   │                           │   ├── Preview$HistogramType.class
+│   │   │   │                           │   ├── Preview$RefreshPreviewBitmapTask.class
+│   │   │   │                           │   ├── Preview$RefreshPreviewBitmapTaskResult.class
+│   │   │   │                           │   ├── Preview$RingBuffer.class
+│   │   │   │                           │   ├── Preview$ScaleListener.class
+│   │   │   │                           │   ├── Preview$VideoFileInfo.class
+│   │   │   │                           │   ├── Preview.class
+│   │   │   │                           │   ├── VideoProfile.class
+│   │   │   │                           │   ├── VideoQualityHandler$Dimension2D.class
+│   │   │   │                           │   ├── VideoQualityHandler$SortVideoSizesComparator.class
+│   │   │   │                           │   └── VideoQualityHandler.class
+│   │   │   │                           ├── remotecontrol
+│   │   │   │                           │   ├── BluetoothLeService$1.class
+│   │   │   │                           │   ├── BluetoothLeService$2$1.class
+│   │   │   │                           │   ├── BluetoothLeService$2.class
+│   │   │   │                           │   ├── BluetoothLeService$3.class
+│   │   │   │                           │   ├── BluetoothLeService$LocalBinder.class
+│   │   │   │                           │   ├── BluetoothLeService.class
+│   │   │   │                           │   ├── BluetoothRemoteControl$1$1.class
+│   │   │   │                           │   ├── BluetoothRemoteControl$1.class
+│   │   │   │                           │   ├── BluetoothRemoteControl$2.class
+│   │   │   │                           │   ├── BluetoothRemoteControl.class
+│   │   │   │                           │   ├── DeviceScanner$1.class
+│   │   │   │                           │   ├── DeviceScanner$2.class
+│   │   │   │                           │   ├── DeviceScanner$3.class
+│   │   │   │                           │   ├── DeviceScanner$4.class
+│   │   │   │                           │   ├── DeviceScanner$5$1.class
+│   │   │   │                           │   ├── DeviceScanner$5.class
+│   │   │   │                           │   ├── DeviceScanner$LeDeviceListAdapter.class
+│   │   │   │                           │   ├── DeviceScanner$ViewHolder.class
+│   │   │   │                           │   ├── DeviceScanner.class
+│   │   │   │                           │   └── KrakenGattAttributes.class
+│   │   │   │                           ├── SaveLocationHandler$1.class
+│   │   │   │                           ├── SaveLocationHandler$2.class
+│   │   │   │                           ├── SaveLocationHandler$CheckSaveLocationResult.class
+│   │   │   │                           ├── SaveLocationHandler.class
+│   │   │   │                           ├── SaveLocationHistory.class
+│   │   │   │                           ├── SettingsManager.class
+│   │   │   │                           ├── SoundPoolManager.class
+│   │   │   │                           ├── StorageUtils$1.class
+│   │   │   │                           ├── StorageUtils$Media.class
+│   │   │   │                           ├── StorageUtils$UriType.class
+│   │   │   │                           ├── StorageUtils.class
+│   │   │   │                           ├── TakePhoto.class
+│   │   │   │                           ├── TextFormatter.class
+│   │   │   │                           ├── ToastBoxer.class
+│   │   │   │                           └── ui
+│   │   │   │                               ├── ArraySeekBarPreference$1.class
+│   │   │   │                               ├── ArraySeekBarPreference$SavedState$1.class
+│   │   │   │                               ├── ArraySeekBarPreference$SavedState.class
+│   │   │   │                               ├── ArraySeekBarPreference.class
+│   │   │   │                               ├── DrawPreview$1$1.class
+│   │   │   │                               ├── DrawPreview$1$2.class
+│   │   │   │                               ├── DrawPreview$1.class
+│   │   │   │                               ├── DrawPreview$DimPreview.class
+│   │   │   │                               ├── DrawPreview.class
+│   │   │   │                               ├── FolderChooserDialog$1.class
+│   │   │   │                               ├── FolderChooserDialog$2$1.class
+│   │   │   │                               ├── FolderChooserDialog$2$2.class
+│   │   │   │                               ├── FolderChooserDialog$2.class
+│   │   │   │                               ├── FolderChooserDialog$3.class
+│   │   │   │                               ├── FolderChooserDialog$FileWrapper.class
+│   │   │   │                               ├── FolderChooserDialog$NewFolderInputFilter.class
+│   │   │   │                               ├── FolderChooserDialog.class
+│   │   │   │                               ├── MainUI$1.class
+│   │   │   │                               ├── MainUI$2.class
+│   │   │   │                               ├── MainUI$3.class
+│   │   │   │                               ├── MainUI$4.class
+│   │   │   │                               ├── MainUI$5.class
+│   │   │   │                               ├── MainUI$6.class
+│   │   │   │                               ├── MainUI$7.class
+│   │   │   │                               ├── MainUI$8.class
+│   │   │   │                               ├── MainUI$9.class
+│   │   │   │                               ├── MainUI$UIPlacement.class
+│   │   │   │                               ├── MainUI.class
+│   │   │   │                               ├── ManualSeekbars.class
+│   │   │   │                               ├── MyEditTextPreference$SavedState$1.class
+│   │   │   │                               ├── MyEditTextPreference$SavedState.class
+│   │   │   │                               ├── MyEditTextPreference.class
+│   │   │   │                               ├── OnScreenIcons$1.class
+│   │   │   │                               ├── OnScreenIcons$2.class
+│   │   │   │                               ├── OnScreenIcons.class
+│   │   │   │                               ├── PopupView$10.class
+│   │   │   │                               ├── PopupView$11.class
+│   │   │   │                               ├── PopupView$12.class
+│   │   │   │                               ├── PopupView$13.class
+│   │   │   │                               ├── PopupView$14$1.class
+│   │   │   │                               ├── PopupView$14.class
+│   │   │   │                               ├── PopupView$15.class
+│   │   │   │                               ├── PopupView$16.class
+│   │   │   │                               ├── PopupView$17.class
+│   │   │   │                               ├── PopupView$18.class
+│   │   │   │                               ├── PopupView$19.class
+│   │   │   │                               ├── PopupView$1.class
+│   │   │   │                               ├── PopupView$20.class
+│   │   │   │                               ├── PopupView$21.class
+│   │   │   │                               ├── PopupView$22.class
+│   │   │   │                               ├── PopupView$23$1.class
+│   │   │   │                               ├── PopupView$23.class
+│   │   │   │                               ├── PopupView$24.class
+│   │   │   │                               ├── PopupView$25.class
+│   │   │   │                               ├── PopupView$26.class
+│   │   │   │                               ├── PopupView$27.class
+│   │   │   │                               ├── PopupView$2.class
+│   │   │   │                               ├── PopupView$4.class
+│   │   │   │                               ├── PopupView$5.class
+│   │   │   │                               ├── PopupView$6.class
+│   │   │   │                               ├── PopupView$7$1.class
+│   │   │   │                               ├── PopupView$7.class
+│   │   │   │                               ├── PopupView$8$1.class
+│   │   │   │                               ├── PopupView$8.class
+│   │   │   │                               ├── PopupView$9.class
+│   │   │   │                               ├── PopupView$ArrayOptionsPopupListener.class
+│   │   │   │                               ├── PopupView$ButtonOptionsPopupListener.class
+│   │   │   │                               ├── PopupView$RadioOptionsListener.class
+│   │   │   │                               └── PopupView.class
+│   │   │   ├── linked_resources_binary_format
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   │           ├── linked-resources-binary-format-release.ap_
+│   │   │   │           └── output-metadata.json
+│   │   │   ├── manifest_merge_blame_file
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseMainManifest
+│   │   │   │           └── manifest-merger-blame-release-report.txt
+│   │   │   ├── merged_art_profile
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseArtProfile
+│   │   │   │           └── baseline-prof.txt
+│   │   │   ├── merged_java_res
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseJavaResource
+│   │   │   │           └── base.jar
+│   │   │   ├── merged_jni_libs
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseJniLibFolders
+│   │   │   │           └── out
+│   │   │   ├── merged_manifest
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseMainManifest
+│   │   │   │           └── AndroidManifest.xml
+│   │   │   ├── merged_manifests
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseManifest
+│   │   │   │           ├── AndroidManifest.xml
+│   │   │   │           └── output-metadata.json
+│   │   │   ├── merged_res
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseResources
+│   │   │   │           ├── animator_button_animation.xml.flat
+│   │   │   │           ├── anim_fade_in.xml.flat
+│   │   │   │           ├── anim_slide_in_bottom.xml.flat
+│   │   │   │           ├── anim_slide_out_bottom.xml.flat
+│   │   │   │           ├── drawable_circle_background.xml.flat
+│   │   │   │           ├── drawable-hdpi_baseline_add_a_photo_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_bedtime_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_bluetooth_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_check_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_close_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_delete_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_face_retouching_natural_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_filter_vintage_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_folder_open_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_highlight_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_panorama_horizontal_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_photo_library_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_portrait_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_remove_red_eye_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_rotate_left_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_rotate_right_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_shutter_speed_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_text_fields_red_48.png.flat
+│   │   │   │           ├── drawable-hdpi_baseline_text_fields_white_48.png.flat
+│   │   │   │           ├── drawable-hdpi_flash_auto.png.flat
+│   │   │   │           ├── drawable-hdpi_flash_off.png.flat
+│   │   │   │           ├── drawable-hdpi_flash_on.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_burst_mode_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_colorize_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_exposure_red_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_exposure_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_face_red_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_face_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_fast_forward_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_gps_fixed_red_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_gps_fixed_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_gps_off_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_hdr_on_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_help_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_info_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_launcher_take_photo.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_mic_off_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_mic_red_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_mic_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_more_horiz_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_pause_circle_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_photo_camera_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_photo_size_select_large_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_play_circle_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_power_settings_new_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_save_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_slow_motion_video_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_text_format_red_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_text_format_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_timelapse_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_timer_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_touch_app_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_ic_videocam_white_48dp.png.flat
+│   │   │   │           ├── drawable-hdpi_settings.png.flat
+│   │   │   │           ├── drawable-hdpi_share.png.flat
+│   │   │   │           ├── drawable_ic_launcher_foreground.xml.flat
+│   │   │   │           ├── drawable_key_visualizer_red.xml.flat
+│   │   │   │           ├── drawable_key_visualizer.xml.flat
+│   │   │   │           ├── drawable-mdpi_auto_stabilise_icon.png.flat
+│   │   │   │           ├── drawable-mdpi_auto_stabilise_icon_red.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_add_a_photo_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_bedtime_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_bluetooth_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_check_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_close_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_delete_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_face_retouching_natural_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_filter_vintage_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_folder_open_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_highlight_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_panorama_horizontal_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_photo_library_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_portrait_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_remove_red_eye_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_rotate_left_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_rotate_right_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_shutter_speed_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_text_fields_red_48.png.flat
+│   │   │   │           ├── drawable-mdpi_baseline_text_fields_white_48.png.flat
+│   │   │   │           ├── drawable-mdpi_dro_icon.png.flat
+│   │   │   │           ├── drawable-mdpi_expo_icon.png.flat
+│   │   │   │           ├── drawable-mdpi_exposure_locked.png.flat
+│   │   │   │           ├── drawable-mdpi_exposure_unlocked.png.flat
+│   │   │   │           ├── drawable-mdpi_flash_auto.png.flat
+│   │   │   │           ├── drawable-mdpi_flash_off.png.flat
+│   │   │   │           ├── drawable-mdpi_flash_on.png.flat
+│   │   │   │           ├── drawable-mdpi_focus_mode_auto.png.flat
+│   │   │   │           ├── drawable-mdpi_focus_mode_continuous_picture.png.flat
+│   │   │   │           ├── drawable-mdpi_focus_mode_continuous_video.png.flat
+│   │   │   │           ├── drawable-mdpi_focus_mode_edof.png.flat
+│   │   │   │           ├── drawable-mdpi_focus_mode_fixed.png.flat
+│   │   │   │           ├── drawable-mdpi_focus_mode_infinity.png.flat
+│   │   │   │           ├── drawable-mdpi_focus_mode_locked.png.flat
+│   │   │   │           ├── drawable-mdpi_focus_mode_manual.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_burst_mode_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_colorize_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_exposure_red_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_exposure_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_face_red_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_face_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_fast_forward_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_gps_fixed_red_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_gps_fixed_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_gps_off_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_hdr_on_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_help_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_info_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_launcher_take_photo.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_mic_off_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_mic_red_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_mic_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_more_horiz_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_pause_circle_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_photo_camera_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_photo_size_select_large_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_play_circle_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_power_settings_new_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_save_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_slow_motion_video_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_stat_notify_take_photo.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_text_format_red_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_text_format_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_timelapse_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_timer_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_touch_app_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_ic_videocam_white_48dp.png.flat
+│   │   │   │           ├── drawable-mdpi_iso_icon.png.flat
+│   │   │   │           ├── drawable-mdpi_nr_icon.png.flat
+│   │   │   │           ├── drawable-mdpi_popup_flash_auto.png.flat
+│   │   │   │           ├── drawable-mdpi_popup_flash_off.png.flat
+│   │   │   │           ├── drawable-mdpi_popup_flash_on.png.flat
+│   │   │   │           ├── drawable-mdpi_popup_flash_red_eye.png.flat
+│   │   │   │           ├── drawable-mdpi_popup_flash_torch.png.flat
+│   │   │   │           ├── drawable-mdpi_popup.png.flat
+│   │   │   │           ├── drawable-mdpi_raw_icon.png.flat
+│   │   │   │           ├── drawable-mdpi_raw_off_icon.png.flat
+│   │   │   │           ├── drawable-mdpi_raw_only_icon.png.flat
+│   │   │   │           ├── drawable-mdpi_settings.png.flat
+│   │   │   │           ├── drawable-mdpi_share.png.flat
+│   │   │   │           ├── drawable-mdpi_switch_camera.png.flat
+│   │   │   │           ├── drawable-mdpi_take_photo.png.flat
+│   │   │   │           ├── drawable-mdpi_take_photo_pref.png.flat
+│   │   │   │           ├── drawable-mdpi_take_video.png.flat
+│   │   │   │           ├── drawable-mdpi_take_video_pref.png.flat
+│   │   │   │           ├── drawable-mdpi_white_balance_locked.png.flat
+│   │   │   │           ├── drawable-mdpi_white_balance_unlocked.png.flat
+│   │   │   │           ├── drawable_mobile_lock_landscape_48px_red.xml.flat
+│   │   │   │           ├── drawable_mobile_lock_portrait_48px_red.xml.flat
+│   │   │   │           ├── drawable_mobile_unlock_48px.xml.flat
+│   │   │   │           ├── drawable_motion_photos_on_48px_red.xml.flat
+│   │   │   │           ├── drawable_motion_photos_on_48px.xml.flat
+│   │   │   │           ├── drawable_shortcut_gallery.xml.flat
+│   │   │   │           ├── drawable_shortcut_ic_face_white_48dp.xml.flat
+│   │   │   │           ├── drawable_shortcut_ic_photo_camera_white_48dp.xml.flat
+│   │   │   │           ├── drawable_shortcut_ic_videocam_white_48dp.xml.flat
+│   │   │   │           ├── drawable_shortcut_settings.xml.flat
+│   │   │   │           ├── drawable_take_photo_selector.xml.flat
+│   │   │   │           ├── drawable_take_photo_shutter_pressed.xml.flat
+│   │   │   │           ├── drawable_take_photo_shutter.xml.flat
+│   │   │   │           ├── drawable_take_video_recording.xml.flat
+│   │   │   │           ├── drawable_take_video_selector.xml.flat
+│   │   │   │           ├── drawable_take_video_shutter_pressed.xml.flat
+│   │   │   │           ├── drawable_take_video_shutter.xml.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_add_a_photo_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_bedtime_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_bluetooth_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_check_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_close_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_delete_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_face_retouching_natural_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_filter_vintage_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_folder_open_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_highlight_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_panorama_horizontal_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_photo_library_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_portrait_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_remove_red_eye_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_rotate_left_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_rotate_right_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_shutter_speed_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_text_fields_red_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_baseline_text_fields_white_48.png.flat
+│   │   │   │           ├── drawable-xhdpi_flash_auto.png.flat
+│   │   │   │           ├── drawable-xhdpi_flash_off.png.flat
+│   │   │   │           ├── drawable-xhdpi_flash_on.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_burst_mode_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_colorize_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_exposure_red_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_exposure_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_face_red_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_face_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_fast_forward_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_gps_fixed_red_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_gps_fixed_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_gps_off_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_hdr_on_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_help_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_info_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_launcher_take_photo.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_mic_off_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_mic_red_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_mic_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_more_horiz_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_pause_circle_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_photo_camera_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_photo_size_select_large_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_play_circle_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_power_settings_new_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_save_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_slow_motion_video_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_text_format_red_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_text_format_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_timelapse_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_timer_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_touch_app_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_ic_videocam_white_48dp.png.flat
+│   │   │   │           ├── drawable-xhdpi_settings.png.flat
+│   │   │   │           ├── drawable-xhdpi_share.png.flat
+│   │   │   │           ├── drawable-xhdpi_take_photo.png.flat
+│   │   │   │           ├── drawable-xhdpi_take_photo_pref.png.flat
+│   │   │   │           ├── drawable-xhdpi_take_video.png.flat
+│   │   │   │           ├── drawable-xhdpi_take_video_pref.png.flat
+│   │   │   │           ├── drawable-xxhdpi_auto_stabilise_icon.png.flat
+│   │   │   │           ├── drawable-xxhdpi_auto_stabilise_icon_red.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_add_a_photo_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_bedtime_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_bluetooth_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_check_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_close_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_delete_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_face_retouching_natural_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_filter_vintage_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_folder_open_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_highlight_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_panorama_horizontal_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_photo_library_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_portrait_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_remove_red_eye_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_rotate_left_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_rotate_right_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_shutter_speed_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_text_fields_red_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_baseline_text_fields_white_48.png.flat
+│   │   │   │           ├── drawable-xxhdpi_dro_icon.png.flat
+│   │   │   │           ├── drawable-xxhdpi_expo_icon.png.flat
+│   │   │   │           ├── drawable-xxhdpi_flash_auto.png.flat
+│   │   │   │           ├── drawable-xxhdpi_flash_off.png.flat
+│   │   │   │           ├── drawable-xxhdpi_flash_on.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_burst_mode_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_colorize_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_exposure_red_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_exposure_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_face_red_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_face_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_fast_forward_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_gps_fixed_red_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_gps_fixed_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_gps_off_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_hdr_on_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_help_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_info_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_launcher_take_photo.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_mic_off_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_mic_red_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_mic_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_more_horiz_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_pause_circle_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_photo_camera_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_photo_size_select_large_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_play_circle_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_power_settings_new_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_save_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_slow_motion_video_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_stat_notify_take_photo.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_text_format_red_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_text_format_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_timelapse_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_timer_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_touch_app_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_ic_videocam_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxhdpi_iso_icon.png.flat
+│   │   │   │           ├── drawable-xxhdpi_nr_icon.png.flat
+│   │   │   │           ├── drawable-xxhdpi_raw_icon.png.flat
+│   │   │   │           ├── drawable-xxhdpi_raw_off_icon.png.flat
+│   │   │   │           ├── drawable-xxhdpi_raw_only_icon.png.flat
+│   │   │   │           ├── drawable-xxhdpi_settings.png.flat
+│   │   │   │           ├── drawable-xxhdpi_share.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_add_a_photo_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_bedtime_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_bluetooth_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_check_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_close_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_delete_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_face_retouching_natural_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_filter_vintage_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_folder_open_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_highlight_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_panorama_horizontal_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_photo_library_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_portrait_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_remove_red_eye_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_rotate_left_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_rotate_right_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_shutter_speed_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_text_fields_red_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_baseline_text_fields_white_48.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_flash_auto.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_flash_off.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_flash_on.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_burst_mode_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_colorize_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_exposure_red_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_exposure_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_face_red_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_face_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_fast_forward_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_gps_fixed_red_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_gps_fixed_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_gps_off_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_hdr_on_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_help_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_info_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_mic_off_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_more_horiz_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_pause_circle_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_photo_camera_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_photo_size_select_large_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_play_circle_outline_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_power_settings_new_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_save_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_slow_motion_video_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_text_format_red_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_text_format_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_timelapse_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_timer_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_touch_app_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_ic_videocam_white_48dp.png.flat
+│   │   │   │           ├── drawable-xxxhdpi_settings.png.flat
+│   │   │   │           ├── layout_activity_device_select.xml.flat
+│   │   │   │           ├── layout_activity_main.xml.flat
+│   │   │   │           ├── layout_alertdialog_edittext.xml.flat
+│   │   │   │           ├── layout_alertdialog_textview.xml.flat
+│   │   │   │           ├── layout_arrayseekbarpreference.xml.flat
+│   │   │   │           ├── layout_listitem_device.xml.flat
+│   │   │   │           ├── layout_myedittextpreference.xml.flat
+│   │   │   │           ├── layout_popupview_arrayoptions.xml.flat
+│   │   │   │           ├── layout_popupview_button.xml.flat
+│   │   │   │           ├── layout_popupview_radiobutton.xml.flat
+│   │   │   │           ├── layout_popupview_switch.xml.flat
+│   │   │   │           ├── layout_popupview_textview.xml.flat
+│   │   │   │           ├── layout_stamp_image_text.xml.flat
+│   │   │   │           ├── layout_toast_textview.xml.flat
+│   │   │   │           ├── layout_widget_layout_take_photo.xml.flat
+│   │   │   │           ├── layout_widget_layout.xml.flat
+│   │   │   │           ├── menu_main.xml.flat
+│   │   │   │           ├── mipmap-anydpi-v26_ic_launcher_round.xml.flat
+│   │   │   │           ├── mipmap-anydpi-v26_ic_launcher.xml.flat
+│   │   │   │           ├── mipmap-hdpi_ic_launcher_background.png.flat
+│   │   │   │           ├── mipmap-hdpi_ic_launcher_foreground.png.flat
+│   │   │   │           ├── mipmap-hdpi_ic_launcher.png.flat
+│   │   │   │           ├── mipmap-mdpi_ic_launcher_background.png.flat
+│   │   │   │           ├── mipmap-mdpi_ic_launcher_foreground.png.flat
+│   │   │   │           ├── mipmap-mdpi_ic_launcher.png.flat
+│   │   │   │           ├── mipmap-xhdpi_ic_launcher_background.png.flat
+│   │   │   │           ├── mipmap-xhdpi_ic_launcher_foreground.png.flat
+│   │   │   │           ├── mipmap-xhdpi_ic_launcher.png.flat
+│   │   │   │           ├── mipmap-xxhdpi_ic_launcher_background.png.flat
+│   │   │   │           ├── mipmap-xxhdpi_ic_launcher_foreground.png.flat
+│   │   │   │           ├── mipmap-xxhdpi_ic_launcher.png.flat
+│   │   │   │           ├── mipmap-xxxhdpi_ic_launcher_background.png.flat
+│   │   │   │           ├── mipmap-xxxhdpi_ic_launcher_foreground.png.flat
+│   │   │   │           ├── mipmap-xxxhdpi_ic_launcher.png.flat
+│   │   │   │           ├── raw_mybeep_hi.ogg.flat
+│   │   │   │           ├── raw_mybeep.ogg.flat
+│   │   │   │           ├── values-af_values-af.arsc.flat
+│   │   │   │           ├── values-am_values-am.arsc.flat
+│   │   │   │           ├── values-ar_values-ar.arsc.flat
+│   │   │   │           ├── values-as_values-as.arsc.flat
+│   │   │   │           ├── values-az_values-az.arsc.flat
+│   │   │   │           ├── values-be_values-be.arsc.flat
+│   │   │   │           ├── values-bg_values-bg.arsc.flat
+│   │   │   │           ├── values-bn_values-bn.arsc.flat
+│   │   │   │           ├── values-b+sr+Latn_values-b+sr+Latn.arsc.flat
+│   │   │   │           ├── values-bs_values-bs.arsc.flat
+│   │   │   │           ├── values-ca_values-ca.arsc.flat
+│   │   │   │           ├── values-cs_values-cs.arsc.flat
+│   │   │   │           ├── values-da_values-da.arsc.flat
+│   │   │   │           ├── values-de_values-de.arsc.flat
+│   │   │   │           ├── values-el_values-el.arsc.flat
+│   │   │   │           ├── values-en-rAU_values-en-rAU.arsc.flat
+│   │   │   │           ├── values-en-rCA_values-en-rCA.arsc.flat
+│   │   │   │           ├── values-en-rGB_values-en-rGB.arsc.flat
+│   │   │   │           ├── values-en-rIN_values-en-rIN.arsc.flat
+│   │   │   │           ├── values-en-rXC_values-en-rXC.arsc.flat
+│   │   │   │           ├── values-es-rUS_values-es-rUS.arsc.flat
+│   │   │   │           ├── values-es_values-es.arsc.flat
+│   │   │   │           ├── values-et_values-et.arsc.flat
+│   │   │   │           ├── values-eu_values-eu.arsc.flat
+│   │   │   │           ├── values-fa_values-fa.arsc.flat
+│   │   │   │           ├── values-fi_values-fi.arsc.flat
+│   │   │   │           ├── values-fr-rCA_values-fr-rCA.arsc.flat
+│   │   │   │           ├── values-fr_values-fr.arsc.flat
+│   │   │   │           ├── values-gl_values-gl.arsc.flat
+│   │   │   │           ├── values-gu_values-gu.arsc.flat
+│   │   │   │           ├── values-h720dp-v13_values-h720dp-v13.arsc.flat
+│   │   │   │           ├── values-hdpi-v4_values-hdpi-v4.arsc.flat
+│   │   │   │           ├── values-hi_values-hi.arsc.flat
+│   │   │   │           ├── values-hr_values-hr.arsc.flat
+│   │   │   │           ├── values-hu_values-hu.arsc.flat
+│   │   │   │           ├── values-hy_values-hy.arsc.flat
+│   │   │   │           ├── values-in_values-in.arsc.flat
+│   │   │   │           ├── values-is_values-is.arsc.flat
+│   │   │   │           ├── values-it_values-it.arsc.flat
+│   │   │   │           ├── values-iw_values-iw.arsc.flat
+│   │   │   │           ├── values-ja_values-ja.arsc.flat
+│   │   │   │           ├── values-ka_values-ka.arsc.flat
+│   │   │   │           ├── values-kk_values-kk.arsc.flat
+│   │   │   │           ├── values-km_values-km.arsc.flat
+│   │   │   │           ├── values-kn_values-kn.arsc.flat
+│   │   │   │           ├── values-ko_values-ko.arsc.flat
+│   │   │   │           ├── values-ky_values-ky.arsc.flat
+│   │   │   │           ├── values-land_values-land.arsc.flat
+│   │   │   │           ├── values-large-v4_values-large-v4.arsc.flat
+│   │   │   │           ├── values-ldltr-v21_values-ldltr-v21.arsc.flat
+│   │   │   │           ├── values-lo_values-lo.arsc.flat
+│   │   │   │           ├── values-lt_values-lt.arsc.flat
+│   │   │   │           ├── values-lv_values-lv.arsc.flat
+│   │   │   │           ├── values-mk_values-mk.arsc.flat
+│   │   │   │           ├── values-ml_values-ml.arsc.flat
+│   │   │   │           ├── values-mn_values-mn.arsc.flat
+│   │   │   │           ├── values-mr_values-mr.arsc.flat
+│   │   │   │           ├── values-ms_values-ms.arsc.flat
+│   │   │   │           ├── values-my_values-my.arsc.flat
+│   │   │   │           ├── values-nb_values-nb.arsc.flat
+│   │   │   │           ├── values-ne_values-ne.arsc.flat
+│   │   │   │           ├── values-night-v8_values-night-v8.arsc.flat
+│   │   │   │           ├── values-nl_values-nl.arsc.flat
+│   │   │   │           ├── values-or_values-or.arsc.flat
+│   │   │   │           ├── values-pa_values-pa.arsc.flat
+│   │   │   │           ├── values-pl_values-pl.arsc.flat
+│   │   │   │           ├── values-port_values-port.arsc.flat
+│   │   │   │           ├── values-pt-rBR_values-pt-rBR.arsc.flat
+│   │   │   │           ├── values-pt-rPT_values-pt-rPT.arsc.flat
+│   │   │   │           ├── values-pt_values-pt.arsc.flat
+│   │   │   │           ├── values-ro_values-ro.arsc.flat
+│   │   │   │           ├── values-ru_values-ru.arsc.flat
+│   │   │   │           ├── values-si_values-si.arsc.flat
+│   │   │   │           ├── values-sk_values-sk.arsc.flat
+│   │   │   │           ├── values-sl_values-sl.arsc.flat
+│   │   │   │           ├── values-sq_values-sq.arsc.flat
+│   │   │   │           ├── values-sr_values-sr.arsc.flat
+│   │   │   │           ├── values-sv_values-sv.arsc.flat
+│   │   │   │           ├── values-sw600dp-v13_values-sw600dp-v13.arsc.flat
+│   │   │   │           ├── values-sw720dp-land-v13_values-sw720dp-land-v13.arsc.flat
+│   │   │   │           ├── values-sw_values-sw.arsc.flat
+│   │   │   │           ├── values-ta_values-ta.arsc.flat
+│   │   │   │           ├── values-te_values-te.arsc.flat
+│   │   │   │           ├── values-th_values-th.arsc.flat
+│   │   │   │           ├── values-tl_values-tl.arsc.flat
+│   │   │   │           ├── values-tr_values-tr.arsc.flat
+│   │   │   │           ├── values-uk_values-uk.arsc.flat
+│   │   │   │           ├── values-ur_values-ur.arsc.flat
+│   │   │   │           ├── values-uz_values-uz.arsc.flat
+│   │   │   │           ├── values-v16_values-v16.arsc.flat
+│   │   │   │           ├── values-v17_values-v17.arsc.flat
+│   │   │   │           ├── values-v18_values-v18.arsc.flat
+│   │   │   │           ├── values-v21_values-v21.arsc.flat
+│   │   │   │           ├── values-v22_values-v22.arsc.flat
+│   │   │   │           ├── values-v23_values-v23.arsc.flat
+│   │   │   │           ├── values-v24_values-v24.arsc.flat
+│   │   │   │           ├── values-v25_values-v25.arsc.flat
+│   │   │   │           ├── values-v26_values-v26.arsc.flat
+│   │   │   │           ├── values-v28_values-v28.arsc.flat
+│   │   │   │           ├── values_values.arsc.flat
+│   │   │   │           ├── values-vi_values-vi.arsc.flat
+│   │   │   │           ├── values-watch-v20_values-watch-v20.arsc.flat
+│   │   │   │           ├── values-watch-v21_values-watch-v21.arsc.flat
+│   │   │   │           ├── values-xlarge-v4_values-xlarge-v4.arsc.flat
+│   │   │   │           ├── values-zh-rCN_values-zh-rCN.arsc.flat
+│   │   │   │           ├── values-zh-rHK_values-zh-rHK.arsc.flat
+│   │   │   │           ├── values-zh-rTW_values-zh-rTW.arsc.flat
+│   │   │   │           ├── values-zu_values-zu.arsc.flat
+│   │   │   │           ├── xml_preferences_sub_camera_controls_more.xml.flat
+│   │   │   │           ├── xml_preferences_sub_gui.xml.flat
+│   │   │   │           ├── xml_preferences_sub_licences.xml.flat
+│   │   │   │           ├── xml_preferences_sub_location.xml.flat
+│   │   │   │           ├── xml_preferences_sub_photo.xml.flat
+│   │   │   │           ├── xml_preferences_sub_preview.xml.flat
+│   │   │   │           ├── xml_preferences_sub_processing.xml.flat
+│   │   │   │           ├── xml_preferences_sub_remote_ctrl.xml.flat
+│   │   │   │           ├── xml_preferences_sub_settings_manager.xml.flat
+│   │   │   │           ├── xml_preferences_sub_video.xml.flat
+│   │   │   │           ├── xml_preferences.xml.flat
+│   │   │   │           ├── xml-v25_shortcuts.xml.flat
+│   │   │   │           └── xml_widget_info_take_photo.xml.flat
+│   │   │   ├── merged_res_blame_folder
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseResources
+│   │   │   │           └── out
+│   │   │   │               ├── multi-v2
+│   │   │   │               │   ├── mergeReleaseResources.json
+│   │   │   │               │   ├── values-af.json
+│   │   │   │               │   ├── values-am.json
+│   │   │   │               │   ├── values-ar.json
+│   │   │   │               │   ├── values-as.json
+│   │   │   │               │   ├── values-az.json
+│   │   │   │               │   ├── values-be.json
+│   │   │   │               │   ├── values-bg.json
+│   │   │   │               │   ├── values-bn.json
+│   │   │   │               │   ├── values-bs.json
+│   │   │   │               │   ├── values-b+sr+Latn.json
+│   │   │   │               │   ├── values-ca.json
+│   │   │   │               │   ├── values-cs.json
+│   │   │   │               │   ├── values-da.json
+│   │   │   │               │   ├── values-de.json
+│   │   │   │               │   ├── values-el.json
+│   │   │   │               │   ├── values-en-rAU.json
+│   │   │   │               │   ├── values-en-rCA.json
+│   │   │   │               │   ├── values-en-rGB.json
+│   │   │   │               │   ├── values-en-rIN.json
+│   │   │   │               │   ├── values-en-rXC.json
+│   │   │   │               │   ├── values-es.json
+│   │   │   │               │   ├── values-es-rUS.json
+│   │   │   │               │   ├── values-et.json
+│   │   │   │               │   ├── values-eu.json
+│   │   │   │               │   ├── values-fa.json
+│   │   │   │               │   ├── values-fi.json
+│   │   │   │               │   ├── values-fr.json
+│   │   │   │               │   ├── values-fr-rCA.json
+│   │   │   │               │   ├── values-gl.json
+│   │   │   │               │   ├── values-gu.json
+│   │   │   │               │   ├── values-h720dp-v13.json
+│   │   │   │               │   ├── values-hdpi-v4.json
+│   │   │   │               │   ├── values-hi.json
+│   │   │   │               │   ├── values-hr.json
+│   │   │   │               │   ├── values-hu.json
+│   │   │   │               │   ├── values-hy.json
+│   │   │   │               │   ├── values-in.json
+│   │   │   │               │   ├── values-is.json
+│   │   │   │               │   ├── values-it.json
+│   │   │   │               │   ├── values-iw.json
+│   │   │   │               │   ├── values-ja.json
+│   │   │   │               │   ├── values.json
+│   │   │   │               │   ├── values-ka.json
+│   │   │   │               │   ├── values-kk.json
+│   │   │   │               │   ├── values-km.json
+│   │   │   │               │   ├── values-kn.json
+│   │   │   │               │   ├── values-ko.json
+│   │   │   │               │   ├── values-ky.json
+│   │   │   │               │   ├── values-land.json
+│   │   │   │               │   ├── values-large-v4.json
+│   │   │   │               │   ├── values-ldltr-v21.json
+│   │   │   │               │   ├── values-lo.json
+│   │   │   │               │   ├── values-lt.json
+│   │   │   │               │   ├── values-lv.json
+│   │   │   │               │   ├── values-mk.json
+│   │   │   │               │   ├── values-ml.json
+│   │   │   │               │   ├── values-mn.json
+│   │   │   │               │   ├── values-mr.json
+│   │   │   │               │   ├── values-ms.json
+│   │   │   │               │   ├── values-my.json
+│   │   │   │               │   ├── values-nb.json
+│   │   │   │               │   ├── values-ne.json
+│   │   │   │               │   ├── values-night-v8.json
+│   │   │   │               │   ├── values-nl.json
+│   │   │   │               │   ├── values-or.json
+│   │   │   │               │   ├── values-pa.json
+│   │   │   │               │   ├── values-pl.json
+│   │   │   │               │   ├── values-port.json
+│   │   │   │               │   ├── values-pt.json
+│   │   │   │               │   ├── values-pt-rBR.json
+│   │   │   │               │   ├── values-pt-rPT.json
+│   │   │   │               │   ├── values-ro.json
+│   │   │   │               │   ├── values-ru.json
+│   │   │   │               │   ├── values-si.json
+│   │   │   │               │   ├── values-sk.json
+│   │   │   │               │   ├── values-sl.json
+│   │   │   │               │   ├── values-sq.json
+│   │   │   │               │   ├── values-sr.json
+│   │   │   │               │   ├── values-sv.json
+│   │   │   │               │   ├── values-sw600dp-v13.json
+│   │   │   │               │   ├── values-sw720dp-land-v13.json
+│   │   │   │               │   ├── values-sw.json
+│   │   │   │               │   ├── values-ta.json
+│   │   │   │               │   ├── values-te.json
+│   │   │   │               │   ├── values-th.json
+│   │   │   │               │   ├── values-tl.json
+│   │   │   │               │   ├── values-tr.json
+│   │   │   │               │   ├── values-uk.json
+│   │   │   │               │   ├── values-ur.json
+│   │   │   │               │   ├── values-uz.json
+│   │   │   │               │   ├── values-v16.json
+│   │   │   │               │   ├── values-v17.json
+│   │   │   │               │   ├── values-v18.json
+│   │   │   │               │   ├── values-v21.json
+│   │   │   │               │   ├── values-v22.json
+│   │   │   │               │   ├── values-v23.json
+│   │   │   │               │   ├── values-v24.json
+│   │   │   │               │   ├── values-v25.json
+│   │   │   │               │   ├── values-v26.json
+│   │   │   │               │   ├── values-v28.json
+│   │   │   │               │   ├── values-vi.json
+│   │   │   │               │   ├── values-watch-v20.json
+│   │   │   │               │   ├── values-watch-v21.json
+│   │   │   │               │   ├── values-xlarge-v4.json
+│   │   │   │               │   ├── values-zh-rCN.json
+│   │   │   │               │   ├── values-zh-rHK.json
+│   │   │   │               │   ├── values-zh-rTW.json
+│   │   │   │               │   └── values-zu.json
+│   │   │   │               └── single
+│   │   │   │                   └── mergeReleaseResources.json
+│   │   │   ├── merged_shaders
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseShaders
+│   │   │   │           └── out
+│   │   │   ├── metadata_library_dependencies_report
+│   │   │   │   └── release
+│   │   │   │       └── collectReleaseDependencies
+│   │   │   │           └── dependencies.pb
+│   │   │   ├── mixed_scope_dex_archive
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── navigation_json
+│   │   │   │   └── release
+│   │   │   │       └── extractDeepLinksRelease
+│   │   │   │           └── navigation.json
+│   │   │   ├── nested_resources_validation_report
+│   │   │   │   └── release
+│   │   │   │       └── generateReleaseResources
+│   │   │   │           └── nestedResourcesValidationReport.txt
+│   │   │   ├── optimized_processed_res
+│   │   │   │   └── release
+│   │   │   │       └── optimizeReleaseResources
+│   │   │   │           ├── output-metadata.json
+│   │   │   │           └── resources-release-optimize.ap_
+│   │   │   ├── packaged_manifests
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseManifestForPackage
+│   │   │   │           ├── AndroidManifest.xml
+│   │   │   │           └── output-metadata.json
+│   │   │   ├── project_dex_archive
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   │               ├── f8e0f21ecbdbb848f446495d4e8764255acffa72b01702f2d8692acee5810011_0.jar
+│   │   │   │               ├── f8e0f21ecbdbb848f446495d4e8764255acffa72b01702f2d8692acee5810011_1.jar
+│   │   │   │               ├── f8e0f21ecbdbb848f446495d4e8764255acffa72b01702f2d8692acee5810011_2.jar
+│   │   │   │               ├── f8e0f21ecbdbb848f446495d4e8764255acffa72b01702f2d8692acee5810011_3.jar
+│   │   │   │               └── net
+│   │   │   │                   └── sourceforge
+│   │   │   │                       └── opencamera
+│   │   │   │                           ├── AudioListener$1.dex
+│   │   │   │                           ├── AudioListener$AudioListenerCallback.dex
+│   │   │   │                           ├── AudioListener.dex
+│   │   │   │                           ├── cameracontroller
+│   │   │   │                           │   ├── Camera2Settings$1.dex
+│   │   │   │                           │   ├── Camera2Settings.dex
+│   │   │   │                           │   ├── CameraController$Area.dex
+│   │   │   │                           │   ├── CameraController$AutoFocusCallback.dex
+│   │   │   │                           │   ├── CameraController$BurstType.dex
+│   │   │   │                           │   ├── CameraController$CameraFeaturesCache.dex
+│   │   │   │                           │   ├── CameraController$CameraFeatures.dex
+│   │   │   │                           │   ├── CameraController$ContinuousFocusMoveCallback.dex
+│   │   │   │                           │   ├── CameraController$ErrorCallback.dex
+│   │   │   │                           │   ├── CameraController$FaceDetectionListener.dex
+│   │   │   │                           │   ├── CameraController$Face.dex
+│   │   │   │                           │   ├── CameraController$Facing.dex
+│   │   │   │                           │   ├── CameraController$PictureCallback.dex
+│   │   │   │                           │   ├── CameraController$RangeSorter.dex
+│   │   │   │                           │   ├── CameraController$Size.dex
+│   │   │   │                           │   ├── CameraController$SizeSorter.dex
+│   │   │   │                           │   ├── CameraController$SupportedValues.dex
+│   │   │   │                           │   ├── CameraController$TonemapProfile.dex
+│   │   │   │                           │   ├── CameraController1$1CameraFaceDetectionListener.dex
+│   │   │   │                           │   ├── CameraController1$1.dex
+│   │   │   │                           │   ├── CameraController1$1MyAutoFocusCallback$1.dex
+│   │   │   │                           │   ├── CameraController1$1MyAutoFocusCallback.dex
+│   │   │   │                           │   ├── CameraController1$2.dex
+│   │   │   │                           │   ├── CameraController1$3$1.dex
+│   │   │   │                           │   ├── CameraController1$3.dex
+│   │   │   │                           │   ├── CameraController1$4.dex
+│   │   │   │                           │   ├── CameraController1$CameraErrorCallback.dex
+│   │   │   │                           │   ├── CameraController1$TakePictureShutterCallback.dex
+│   │   │   │                           │   ├── CameraController1.dex
+│   │   │   │                           │   ├── CameraController2$10.dex
+│   │   │   │                           │   ├── CameraController2$11.dex
+│   │   │   │                           │   ├── CameraController2$12.dex
+│   │   │   │                           │   ├── CameraController2$13.dex
+│   │   │   │                           │   ├── CameraController2$14.dex
+│   │   │   │                           │   ├── CameraController2$15.dex
+│   │   │   │                           │   ├── CameraController2$1.dex
+│   │   │   │                           │   ├── CameraController2$1MyStateCallback.dex
+│   │   │   │                           │   ├── CameraController2$2.dex
+│   │   │   │                           │   ├── CameraController2$2MyStateCallback$1.dex
+│   │   │   │                           │   ├── CameraController2$2MyStateCallback$2.dex
+│   │   │   │                           │   ├── CameraController2$2MyStateCallback.dex
+│   │   │   │                           │   ├── CameraController2$3.dex
+│   │   │   │                           │   ├── CameraController2$4.dex
+│   │   │   │                           │   ├── CameraController2$5$1.dex
+│   │   │   │                           │   ├── CameraController2$5.dex
+│   │   │   │                           │   ├── CameraController2$6.dex
+│   │   │   │                           │   ├── CameraController2$7.dex
+│   │   │   │                           │   ├── CameraController2$8.dex
+│   │   │   │                           │   ├── CameraController2$9.dex
+│   │   │   │                           │   ├── CameraController2$CreateCaptureSessionFunction.dex
+│   │   │   │                           │   ├── CameraController2$MyCaptureCallback$1.dex
+│   │   │   │                           │   ├── CameraController2$MyCaptureCallback$2.dex
+│   │   │   │                           │   ├── CameraController2$MyCaptureCallback.dex
+│   │   │   │                           │   ├── CameraController2$MyExtensionCaptureCallback$1.dex
+│   │   │   │                           │   ├── CameraController2$MyExtensionCaptureCallback.dex
+│   │   │   │                           │   ├── CameraController2$OnImageAvailableListener.dex
+│   │   │   │                           │   ├── CameraController2$OnRawImageAvailableListener$1.dex
+│   │   │   │                           │   ├── CameraController2$OnRawImageAvailableListener.dex
+│   │   │   │                           │   ├── CameraController2$PostCapture.dex
+│   │   │   │                           │   ├── CameraController2$RequestTagObject.dex
+│   │   │   │                           │   ├── CameraController2$RequestTagType.dex
+│   │   │   │                           │   ├── CameraController2$SessionType.dex
+│   │   │   │                           │   ├── CameraController2.dex
+│   │   │   │                           │   ├── CameraController.dex
+│   │   │   │                           │   ├── CameraControllerException.dex
+│   │   │   │                           │   ├── CameraControllerManager$CameraInfo.dex
+│   │   │   │                           │   ├── CameraControllerManager1$1.dex
+│   │   │   │                           │   ├── CameraControllerManager1.dex
+│   │   │   │                           │   ├── CameraControllerManager2.dex
+│   │   │   │                           │   ├── CameraControllerManager.dex
+│   │   │   │                           │   └── RawImage.dex
+│   │   │   │                           ├── ExifHandler$ExifInterfaceHolder.dex
+│   │   │   │                           ├── ExifHandler.dex
+│   │   │   │                           ├── GyroSensor$TargetCallback.dex
+│   │   │   │                           ├── GyroSensor.dex
+│   │   │   │                           ├── HDRProcessor$1BitmapInfo.dex
+│   │   │   │                           ├── HDRProcessor$1.dex
+│   │   │   │                           ├── HDRProcessor$AvgData.dex
+│   │   │   │                           ├── HDRProcessor$BrightenFactors.dex
+│   │   │   │                           ├── HDRProcessor$BrightnessDetails.dex
+│   │   │   │                           ├── HDRProcessor$DROTonemappingAlgorithm.dex
+│   │   │   │                           ├── HDRProcessor$HDRAlgorithm.dex
+│   │   │   │                           ├── HDRProcessor$HistogramInfo.dex
+│   │   │   │                           ├── HDRProcessor$HistogramType.dex
+│   │   │   │                           ├── HDRProcessor$LuminanceInfo.dex
+│   │   │   │                           ├── HDRProcessor$ResponseFunction.dex
+│   │   │   │                           ├── HDRProcessor$SortCallback.dex
+│   │   │   │                           ├── HDRProcessor$TonemappingAlgorithm.dex
+│   │   │   │                           ├── HDRProcessor.dex
+│   │   │   │                           ├── HDRProcessorException.dex
+│   │   │   │                           ├── ImageSaver$1.dex
+│   │   │   │                           ├── ImageSaver$2.dex
+│   │   │   │                           ├── ImageSaver$3.dex
+│   │   │   │                           ├── ImageSaver$GyroDebugInfo$GyroImageDebugInfo.dex
+│   │   │   │                           ├── ImageSaver$GyroDebugInfo.dex
+│   │   │   │                           ├── ImageSaver$IntRange.dex
+│   │   │   │                           ├── ImageSaver$Request$ImageFormat.dex
+│   │   │   │                           ├── ImageSaver$Request$ProcessType.dex
+│   │   │   │                           ├── ImageSaver$Request$RemoveDeviceExif.dex
+│   │   │   │                           ├── ImageSaver$Request$SaveBase.dex
+│   │   │   │                           ├── ImageSaver$Request$Type.dex
+│   │   │   │                           ├── ImageSaver$Request.dex
+│   │   │   │                           ├── ImageSaver.dex
+│   │   │   │                           ├── ImageUtils$LoadBitmapThread.dex
+│   │   │   │                           ├── ImageUtils.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR$1.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR$AdjustHistogramApplyFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR$AlignMTBApplyFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR$AvgApplyFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR$AvgBrightenApplyFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR$ComputeHistogramApplyFunction$Type.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR$ComputeHistogramApplyFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR$CreateMTBApplyFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR$DROBrightenApplyFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR$HDRApplyFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR$HDRNApplyFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR$RGBf_luminance.dex
+│   │   │   │                           ├── JavaImageFunctionsHDR.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$AddBitmapFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$Blur1dXFullFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$Blur1dXFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$Blur1dYFullFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$Blur1dYFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ComputeDerivativesFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ConvertToGreyscaleFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$CornerDetectorFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ExpandBitmapFullFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ExpandBitmapFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$LocalMaximumFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$MergefFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$MergeFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$PyramidBlendingComputeErrorFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ReduceBitmapFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ReduceBitmapXFullFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ReduceBitmapXFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ReduceBitmapYFullFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$ReduceBitmapYFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama$SubtractBitmapFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPanorama.dex
+│   │   │   │                           ├── JavaImageFunctionsPreview$FocusPeakingApplyFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPreview$FocusPeakingFilteredApplyFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPreview$ZebraStripesApplyFunction.dex
+│   │   │   │                           ├── JavaImageFunctionsPreview.dex
+│   │   │   │                           ├── JavaImageProcessing$ApplyFunctionInterface.dex
+│   │   │   │                           ├── JavaImageProcessing$ApplyFunctionThread.dex
+│   │   │   │                           ├── JavaImageProcessing$CachedBitmap.dex
+│   │   │   │                           ├── JavaImageProcessing$FastAccessBitmap.dex
+│   │   │   │                           ├── JavaImageProcessing.dex
+│   │   │   │                           ├── KeyguardUtils$1.dex
+│   │   │   │                           ├── KeyguardUtils.dex
+│   │   │   │                           ├── LocationSupplier$LocationInfo.dex
+│   │   │   │                           ├── LocationSupplier$MyLocationListener.dex
+│   │   │   │                           ├── LocationSupplier.dex
+│   │   │   │                           ├── MagneticSensor$1.dex
+│   │   │   │                           ├── MagneticSensor.dex
+│   │   │   │                           ├── MainActivity$10.dex
+│   │   │   │                           ├── MainActivity$11.dex
+│   │   │   │                           ├── MainActivity$12.dex
+│   │   │   │                           ├── MainActivity$13.dex
+│   │   │   │                           ├── MainActivity$14$1.dex
+│   │   │   │                           ├── MainActivity$14.dex
+│   │   │   │                           ├── MainActivity$15.dex
+│   │   │   │                           ├── MainActivity$16.dex
+│   │   │   │                           ├── MainActivity$17.dex
+│   │   │   │                           ├── MainActivity$18.dex
+│   │   │   │                           ├── MainActivity$19.dex
+│   │   │   │                           ├── MainActivity$1.dex
+│   │   │   │                           ├── MainActivity$1PhysicalCamera.dex
+│   │   │   │                           ├── MainActivity$20$1.dex
+│   │   │   │                           ├── MainActivity$20.dex
+│   │   │   │                           ├── MainActivity$21$1.dex
+│   │   │   │                           ├── MainActivity$21.dex
+│   │   │   │                           ├── MainActivity$22.dex
+│   │   │   │                           ├── MainActivity$23$1.dex
+│   │   │   │                           ├── MainActivity$23$2.dex
+│   │   │   │                           ├── MainActivity$23$3.dex
+│   │   │   │                           ├── MainActivity$23.dex
+│   │   │   │                           ├── MainActivity$24.dex
+│   │   │   │                           ├── MainActivity$25.dex
+│   │   │   │                           ├── MainActivity$26.dex
+│   │   │   │                           ├── MainActivity$27.dex
+│   │   │   │                           ├── MainActivity$28.dex
+│   │   │   │                           ├── MainActivity$29.dex
+│   │   │   │                           ├── MainActivity$2.dex
+│   │   │   │                           ├── MainActivity$30.dex
+│   │   │   │                           ├── MainActivity$31.dex
+│   │   │   │                           ├── MainActivity$32.dex
+│   │   │   │                           ├── MainActivity$3.dex
+│   │   │   │                           ├── MainActivity$4.dex
+│   │   │   │                           ├── MainActivity$5.dex
+│   │   │   │                           ├── MainActivity$6.dex
+│   │   │   │                           ├── MainActivity$7.dex
+│   │   │   │                           ├── MainActivity$8$1.dex
+│   │   │   │                           ├── MainActivity$8.dex
+│   │   │   │                           ├── MainActivity$9.dex
+│   │   │   │                           ├── MainActivity$MyDisplayListener.dex
+│   │   │   │                           ├── MainActivity$MyFolderChooserDialog.dex
+│   │   │   │                           ├── MainActivity$MyGestureDetector.dex
+│   │   │   │                           ├── MainActivity$PausePreviewOnBackPressedCallback.dex
+│   │   │   │                           ├── MainActivity$PopupOnBackPressedCallback.dex
+│   │   │   │                           ├── MainActivity$PreferencesListener.dex
+│   │   │   │                           ├── MainActivity$ScreenLockOnBackPressedCallback.dex
+│   │   │   │                           ├── MainActivity$SystemOrientation.dex
+│   │   │   │                           ├── MainActivity.dex
+│   │   │   │                           ├── MultiCamHandler$1.dex
+│   │   │   │                           ├── MultiCamHandler.dex
+│   │   │   │                           ├── MyApplicationInterface$1.dex
+│   │   │   │                           ├── MyApplicationInterface$1SubtitleVideoTimerTask.dex
+│   │   │   │                           ├── MyApplicationInterface$2.dex
+│   │   │   │                           ├── MyApplicationInterface$3.dex
+│   │   │   │                           ├── MyApplicationInterface$Alignment.dex
+│   │   │   │                           ├── MyApplicationInterface$LastImage.dex
+│   │   │   │                           ├── MyApplicationInterface$LastImagesType.dex
+│   │   │   │                           ├── MyApplicationInterface$PhotoMode.dex
+│   │   │   │                           ├── MyApplicationInterface$Shadow.dex
+│   │   │   │                           ├── MyApplicationInterface.dex
+│   │   │   │                           ├── MyAudioTriggerListenerCallback.dex
+│   │   │   │                           ├── MyDebug.dex
+│   │   │   │                           ├── MyPreferenceFragment$1.dex
+│   │   │   │                           ├── MyPreferenceFragment$2.dex
+│   │   │   │                           ├── MyPreferenceFragment$3.dex
+│   │   │   │                           ├── MyPreferenceFragment$4$1.dex
+│   │   │   │                           ├── MyPreferenceFragment$4$2.dex
+│   │   │   │                           ├── MyPreferenceFragment$4.dex
+│   │   │   │                           ├── MyPreferenceFragment$5.dex
+│   │   │   │                           ├── MyPreferenceFragment$6.dex
+│   │   │   │                           ├── MyPreferenceFragment$PreferenceFragmentOnBackPressedCallback.dex
+│   │   │   │                           ├── MyPreferenceFragment$SaveFolderChooserDialog.dex
+│   │   │   │                           ├── MyPreferenceFragment.dex
+│   │   │   │                           ├── MyTileService.dex
+│   │   │   │                           ├── MyTileServiceFrontCamera.dex
+│   │   │   │                           ├── MyTileServiceVideo.dex
+│   │   │   │                           ├── MyWidgetProviderTakePhoto.dex
+│   │   │   │                           ├── OpenCameraApplication.dex
+│   │   │   │                           ├── PanoramaProcessor$AutoAlignmentByFeatureResult.dex
+│   │   │   │                           ├── PanoramaProcessor$ComputeDistancesBetweenMatchesThread.dex
+│   │   │   │                           ├── PanoramaProcessor$FeatureMatch.dex
+│   │   │   │                           ├── PanoramaProcessor$LaplacianPyramid.dex
+│   │   │   │                           ├── PanoramaProcessor.dex
+│   │   │   │                           ├── PanoramaProcessorException.dex
+│   │   │   │                           ├── PermissionHandler$1.dex
+│   │   │   │                           ├── PermissionHandler.dex
+│   │   │   │                           ├── PostProcessing$PostProcessBitmapResult.dex
+│   │   │   │                           ├── PostProcessing.dex
+│   │   │   │                           ├── PreferenceKeys.dex
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$1$1.dex
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$1.dex
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$2.dex
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$3$1.dex
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$3$2.dex
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$3$3.dex
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$3.dex
+│   │   │   │                           ├── PreferenceSubCameraControlsMore$4.dex
+│   │   │   │                           ├── PreferenceSubCameraControlsMore.dex
+│   │   │   │                           ├── PreferenceSubGUI.dex
+│   │   │   │                           ├── PreferenceSubLicences$1.dex
+│   │   │   │                           ├── PreferenceSubLicences$2.dex
+│   │   │   │                           ├── PreferenceSubLicences$3.dex
+│   │   │   │                           ├── PreferenceSubLicences$4.dex
+│   │   │   │                           ├── PreferenceSubLicences$5.dex
+│   │   │   │                           ├── PreferenceSubLicences.dex
+│   │   │   │                           ├── PreferenceSubLocation.dex
+│   │   │   │                           ├── PreferenceSubPhoto$1$1.dex
+│   │   │   │                           ├── PreferenceSubPhoto$1$2.dex
+│   │   │   │                           ├── PreferenceSubPhoto$1.dex
+│   │   │   │                           ├── PreferenceSubPhoto.dex
+│   │   │   │                           ├── PreferenceSubPreview$1.dex
+│   │   │   │                           ├── PreferenceSubPreview.dex
+│   │   │   │                           ├── PreferenceSubProcessing.dex
+│   │   │   │                           ├── PreferenceSubRemoteCtrl.dex
+│   │   │   │                           ├── PreferenceSubScreen.dex
+│   │   │   │                           ├── PreferenceSubSettingsManager$1$1.dex
+│   │   │   │                           ├── PreferenceSubSettingsManager$1$2.dex
+│   │   │   │                           ├── PreferenceSubSettingsManager$1.dex
+│   │   │   │                           ├── PreferenceSubSettingsManager$2.dex
+│   │   │   │                           ├── PreferenceSubSettingsManager$3$1.dex
+│   │   │   │                           ├── PreferenceSubSettingsManager$3$2.dex
+│   │   │   │                           ├── PreferenceSubSettingsManager$3.dex
+│   │   │   │                           ├── PreferenceSubSettingsManager$4.dex
+│   │   │   │                           ├── PreferenceSubSettingsManager$5.dex
+│   │   │   │                           ├── PreferenceSubSettingsManager$LoadSettingsFileChooserDialog.dex
+│   │   │   │                           ├── PreferenceSubSettingsManager.dex
+│   │   │   │                           ├── PreferenceSubVideo$1.dex
+│   │   │   │                           ├── PreferenceSubVideo.dex
+│   │   │   │                           ├── Preshots$MuxerInfo.dex
+│   │   │   │                           ├── Preshots.dex
+│   │   │   │                           ├── preview
+│   │   │   │                           │   ├── ApplicationInterface$CameraResolutionConstraints.dex
+│   │   │   │                           │   ├── ApplicationInterface$NoFreeStorageException.dex
+│   │   │   │                           │   ├── ApplicationInterface$NRModePref.dex
+│   │   │   │                           │   ├── ApplicationInterface$RawPref.dex
+│   │   │   │                           │   ├── ApplicationInterface$VideoMaxFileSize.dex
+│   │   │   │                           │   ├── ApplicationInterface$VideoMethod.dex
+│   │   │   │                           │   ├── ApplicationInterface.dex
+│   │   │   │                           │   ├── BasicApplicationInterface.dex
+│   │   │   │                           │   ├── camerasurface
+│   │   │   │                           │   │   ├── CameraSurface.dex
+│   │   │   │                           │   │   ├── MySurfaceView$1.dex
+│   │   │   │                           │   │   ├── MySurfaceView.dex
+│   │   │   │                           │   │   └── MyTextureView.dex
+│   │   │   │                           │   ├── CanvasView$1.dex
+│   │   │   │                           │   ├── CanvasView.dex
+│   │   │   │                           │   ├── Preview$10.dex
+│   │   │   │                           │   ├── Preview$11.dex
+│   │   │   │                           │   ├── Preview$12.dex
+│   │   │   │                           │   ├── Preview$13$1.dex
+│   │   │   │                           │   ├── Preview$13.dex
+│   │   │   │                           │   ├── Preview$14$1.dex
+│   │   │   │                           │   ├── Preview$14.dex
+│   │   │   │                           │   ├── Preview$15.dex
+│   │   │   │                           │   ├── Preview$16.dex
+│   │   │   │                           │   ├── Preview$17.dex
+│   │   │   │                           │   ├── Preview$18.dex
+│   │   │   │                           │   ├── Preview$19.dex
+│   │   │   │                           │   ├── Preview$1BatteryCheckVideoTimerTask$1.dex
+│   │   │   │                           │   ├── Preview$1BatteryCheckVideoTimerTask.dex
+│   │   │   │                           │   ├── Preview$1BeepTimerTask.dex
+│   │   │   │                           │   ├── Preview$1.dex
+│   │   │   │                           │   ├── Preview$1FlashVideoTimerTask$1.dex
+│   │   │   │                           │   ├── Preview$1FlashVideoTimerTask.dex
+│   │   │   │                           │   ├── Preview$1MyFaceDetectionListener$1.dex
+│   │   │   │                           │   ├── Preview$1MyFaceDetectionListener$2.dex
+│   │   │   │                           │   ├── Preview$1MyFaceDetectionListener$3.dex
+│   │   │   │                           │   ├── Preview$1MyFaceDetectionListener.dex
+│   │   │   │                           │   ├── Preview$1TakePictureTimerTask$1.dex
+│   │   │   │                           │   ├── Preview$1TakePictureTimerTask.dex
+│   │   │   │                           │   ├── Preview$20.dex
+│   │   │   │                           │   ├── Preview$21.dex
+│   │   │   │                           │   ├── Preview$22.dex
+│   │   │   │                           │   ├── Preview$23.dex
+│   │   │   │                           │   ├── Preview$24.dex
+│   │   │   │                           │   ├── Preview$25$1.dex
+│   │   │   │                           │   ├── Preview$25.dex
+│   │   │   │                           │   ├── Preview$26.dex
+│   │   │   │                           │   ├── Preview$27.dex
+│   │   │   │                           │   ├── Preview$28.dex
+│   │   │   │                           │   ├── Preview$2.dex
+│   │   │   │                           │   ├── Preview$3.dex
+│   │   │   │                           │   ├── Preview$4.dex
+│   │   │   │                           │   ├── Preview$5.dex
+│   │   │   │                           │   ├── Preview$6.dex
+│   │   │   │                           │   ├── Preview$7$1.dex
+│   │   │   │                           │   ├── Preview$7$2.dex
+│   │   │   │                           │   ├── Preview$7.dex
+│   │   │   │                           │   ├── Preview$8.dex
+│   │   │   │                           │   ├── Preview$9.dex
+│   │   │   │                           │   ├── Preview$CameraOpenState.dex
+│   │   │   │                           │   ├── Preview$CloseCameraCallback.dex
+│   │   │   │                           │   ├── Preview$CloseCameraTask.dex
+│   │   │   │                           │   ├── Preview$DoubleTapListener.dex
+│   │   │   │                           │   ├── Preview$FaceLocation.dex
+│   │   │   │                           │   ├── Preview$HistogramType.dex
+│   │   │   │                           │   ├── Preview$RefreshPreviewBitmapTask.dex
+│   │   │   │                           │   ├── Preview$RefreshPreviewBitmapTaskResult.dex
+│   │   │   │                           │   ├── Preview$RingBuffer.dex
+│   │   │   │                           │   ├── Preview$ScaleListener.dex
+│   │   │   │                           │   ├── Preview$VideoFileInfo.dex
+│   │   │   │                           │   ├── Preview.dex
+│   │   │   │                           │   ├── VideoProfile.dex
+│   │   │   │                           │   ├── VideoQualityHandler$Dimension2D.dex
+│   │   │   │                           │   ├── VideoQualityHandler$SortVideoSizesComparator.dex
+│   │   │   │                           │   └── VideoQualityHandler.dex
+│   │   │   │                           ├── remotecontrol
+│   │   │   │                           │   ├── BluetoothLeService$1.dex
+│   │   │   │                           │   ├── BluetoothLeService$2$1.dex
+│   │   │   │                           │   ├── BluetoothLeService$2.dex
+│   │   │   │                           │   ├── BluetoothLeService$3.dex
+│   │   │   │                           │   ├── BluetoothLeService$LocalBinder.dex
+│   │   │   │                           │   ├── BluetoothLeService.dex
+│   │   │   │                           │   ├── BluetoothRemoteControl$1$1.dex
+│   │   │   │                           │   ├── BluetoothRemoteControl$1.dex
+│   │   │   │                           │   ├── BluetoothRemoteControl$2.dex
+│   │   │   │                           │   ├── BluetoothRemoteControl.dex
+│   │   │   │                           │   ├── DeviceScanner$1.dex
+│   │   │   │                           │   ├── DeviceScanner$2.dex
+│   │   │   │                           │   ├── DeviceScanner$3.dex
+│   │   │   │                           │   ├── DeviceScanner$4.dex
+│   │   │   │                           │   ├── DeviceScanner$5$1.dex
+│   │   │   │                           │   ├── DeviceScanner$5.dex
+│   │   │   │                           │   ├── DeviceScanner$LeDeviceListAdapter.dex
+│   │   │   │                           │   ├── DeviceScanner$ViewHolder.dex
+│   │   │   │                           │   ├── DeviceScanner.dex
+│   │   │   │                           │   └── KrakenGattAttributes.dex
+│   │   │   │                           ├── SaveLocationHandler$1.dex
+│   │   │   │                           ├── SaveLocationHandler$2.dex
+│   │   │   │                           ├── SaveLocationHandler$CheckSaveLocationResult.dex
+│   │   │   │                           ├── SaveLocationHandler.dex
+│   │   │   │                           ├── SaveLocationHistory.dex
+│   │   │   │                           ├── SettingsManager.dex
+│   │   │   │                           ├── SoundPoolManager.dex
+│   │   │   │                           ├── StorageUtils$1.dex
+│   │   │   │                           ├── StorageUtils$Media.dex
+│   │   │   │                           ├── StorageUtils$UriType.dex
+│   │   │   │                           ├── StorageUtils.dex
+│   │   │   │                           ├── TakePhoto.dex
+│   │   │   │                           ├── TextFormatter.dex
+│   │   │   │                           ├── ToastBoxer.dex
+│   │   │   │                           └── ui
+│   │   │   │                               ├── ArraySeekBarPreference$1.dex
+│   │   │   │                               ├── ArraySeekBarPreference$SavedState$1.dex
+│   │   │   │                               ├── ArraySeekBarPreference$SavedState.dex
+│   │   │   │                               ├── ArraySeekBarPreference.dex
+│   │   │   │                               ├── DrawPreview$1$1.dex
+│   │   │   │                               ├── DrawPreview$1$2.dex
+│   │   │   │                               ├── DrawPreview$1.dex
+│   │   │   │                               ├── DrawPreview$DimPreview.dex
+│   │   │   │                               ├── DrawPreview.dex
+│   │   │   │                               ├── FolderChooserDialog$1.dex
+│   │   │   │                               ├── FolderChooserDialog$2$1.dex
+│   │   │   │                               ├── FolderChooserDialog$2$2.dex
+│   │   │   │                               ├── FolderChooserDialog$2.dex
+│   │   │   │                               ├── FolderChooserDialog$3.dex
+│   │   │   │                               ├── FolderChooserDialog$FileWrapper.dex
+│   │   │   │                               ├── FolderChooserDialog$NewFolderInputFilter.dex
+│   │   │   │                               ├── FolderChooserDialog.dex
+│   │   │   │                               ├── MainUI$1.dex
+│   │   │   │                               ├── MainUI$2.dex
+│   │   │   │                               ├── MainUI$3.dex
+│   │   │   │                               ├── MainUI$4.dex
+│   │   │   │                               ├── MainUI$5.dex
+│   │   │   │                               ├── MainUI$6.dex
+│   │   │   │                               ├── MainUI$7.dex
+│   │   │   │                               ├── MainUI$8.dex
+│   │   │   │                               ├── MainUI$9.dex
+│   │   │   │                               ├── MainUI$UIPlacement.dex
+│   │   │   │                               ├── MainUI.dex
+│   │   │   │                               ├── ManualSeekbars.dex
+│   │   │   │                               ├── MyEditTextPreference$SavedState$1.dex
+│   │   │   │                               ├── MyEditTextPreference$SavedState.dex
+│   │   │   │                               ├── MyEditTextPreference.dex
+│   │   │   │                               ├── OnScreenIcons$1.dex
+│   │   │   │                               ├── OnScreenIcons$2.dex
+│   │   │   │                               ├── OnScreenIcons.dex
+│   │   │   │                               ├── PopupView$10.dex
+│   │   │   │                               ├── PopupView$11.dex
+│   │   │   │                               ├── PopupView$12.dex
+│   │   │   │                               ├── PopupView$13.dex
+│   │   │   │                               ├── PopupView$14$1.dex
+│   │   │   │                               ├── PopupView$14.dex
+│   │   │   │                               ├── PopupView$15.dex
+│   │   │   │                               ├── PopupView$16.dex
+│   │   │   │                               ├── PopupView$17.dex
+│   │   │   │                               ├── PopupView$18.dex
+│   │   │   │                               ├── PopupView$19.dex
+│   │   │   │                               ├── PopupView$1.dex
+│   │   │   │                               ├── PopupView$20.dex
+│   │   │   │                               ├── PopupView$21.dex
+│   │   │   │                               ├── PopupView$22.dex
+│   │   │   │                               ├── PopupView$23$1.dex
+│   │   │   │                               ├── PopupView$23.dex
+│   │   │   │                               ├── PopupView$24.dex
+│   │   │   │                               ├── PopupView$25.dex
+│   │   │   │                               ├── PopupView$26.dex
+│   │   │   │                               ├── PopupView$27.dex
+│   │   │   │                               ├── PopupView$2.dex
+│   │   │   │                               ├── PopupView$4.dex
+│   │   │   │                               ├── PopupView$5.dex
+│   │   │   │                               ├── PopupView$6.dex
+│   │   │   │                               ├── PopupView$7$1.dex
+│   │   │   │                               ├── PopupView$7.dex
+│   │   │   │                               ├── PopupView$8$1.dex
+│   │   │   │                               ├── PopupView$8.dex
+│   │   │   │                               ├── PopupView$9.dex
+│   │   │   │                               ├── PopupView$ArrayOptionsPopupListener.dex
+│   │   │   │                               ├── PopupView$ButtonOptionsPopupListener.dex
+│   │   │   │                               ├── PopupView$RadioOptionsListener.dex
+│   │   │   │                               └── PopupView.dex
+│   │   │   ├── runtime_symbol_list
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   │           └── R.txt
+│   │   │   ├── sdk_dependency_data
+│   │   │   │   └── release
+│   │   │   │       └── sdkReleaseDependencyData
+│   │   │   │           └── sdkDependencyData.pb
+│   │   │   ├── signing_config_versions
+│   │   │   │   └── release
+│   │   │   │       └── writeReleaseSigningConfigVersions
+│   │   │   │           └── signing-config-versions.json
+│   │   │   ├── source_set_path_map
+│   │   │   │   └── release
+│   │   │   │       └── mapReleaseSourceSetPaths
+│   │   │   │           └── file-map.txt
+│   │   │   ├── stable_resource_ids_file
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   │           └── stableIds.txt
+│   │   │   ├── sub_project_dex_archive
+│   │   │   │   └── release
+│   │   │   │       └── dexBuilderRelease
+│   │   │   │           └── out
+│   │   │   ├── symbol_list_with_package_name
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   │           └── package-aware-r.txt
+│   │   │   └── version_control_info_file
+│   │   │       └── release
+│   │   │           └── extractReleaseVersionControlInfo
+│   │   │               └── version-control-info.textproto
+│   │   ├── outputs
+│   │   │   ├── apk
+│   │   │   │   └── release
+│   │   │   │       ├── app-release-unsigned.apk
+│   │   │   │       ├── baselineProfiles
+│   │   │   │       │   ├── 0
+│   │   │   │       │   │   └── app-release-unsigned.dm
+│   │   │   │       │   └── 1
+│   │   │   │       │       └── app-release-unsigned.dm
+│   │   │   │       └── output-metadata.json
+│   │   │   ├── logs
+│   │   │   │   └── manifest-merger-release-report.txt
+│   │   │   └── sdk-dependencies
+│   │   │       └── release
+│   │   │           └── sdkDependencies.txt
+│   │   └── tmp
+│   │       └── compileReleaseJavaWithJavac
+│   │           └── previous-compilation-data.bin
+│   ├── build.gradle
+│   └── src
+│       ├── androidTest
+│       │   ├── java
+│       │   │   └── net
+│       │   │       └── sourceforge
+│       │   │           └── opencamera
+│       │   │               ├── AvgInstrumentedTests.java
+│       │   │               ├── HDRInstrumentedTests.java
+│       │   │               ├── HDRNInstrumentedTests.java
+│       │   │               ├── InstrumentedTest.java
+│       │   │               ├── MainInstrumentedTests.java
+│       │   │               ├── Nexus7InstrumentedTests.java
+│       │   │               ├── OldDeviceInstrumentedTests.java
+│       │   │               ├── PanoramaInstrumentedTests.java
+│       │   │               ├── PhotoCamera2InstrumentedTests.java
+│       │   │               ├── PhotoInstrumentedTests.java
+│       │   │               ├── test
+│       │   │               │   ├── AvgTests.java
+│       │   │               │   ├── HDRNTests.java
+│       │   │               │   ├── HDRTests.java
+│       │   │               │   ├── MainActivityTest.java
+│       │   │               │   ├── MainTests.java
+│       │   │               │   ├── MultiCameraTests.java
+│       │   │               │   ├── Nexus7Tests.java
+│       │   │               │   ├── OldDeviceTests.java
+│       │   │               │   ├── PanoramaTests.java
+│       │   │               │   ├── PhotoCamera2Tests.java
+│       │   │               │   ├── PhotoTests.java
+│       │   │               │   ├── TempTests.java
+│       │   │               │   └── VideoTests.java
+│       │   │               ├── TestUtils.java
+│       │   │               └── VideoInstrumentedTests.java
+│       │   └── res
+│       │       ├── drawable-hdpi
+│       │       │   └── ic_launcher.png
+│       │       ├── drawable-ldpi
+│       │       │   └── ic_launcher.png
+│       │       ├── drawable-mdpi
+│       │       │   └── ic_launcher.png
+│       │       ├── drawable-xhdpi
+│       │       │   └── ic_launcher.png
+│       │       └── values
+│       │           └── strings.xml
+│       ├── main
+│       │   ├── AndroidManifest.xml
+│       │   ├── assets
+│       │   │   ├── androidx_LICENSE-2.0.txt
+│       │   │   ├── google_material_design_icons_LICENSE-2.0.txt
+│       │   │   └── gpl-3.0.txt
+│       │   ├── java
+│       │   │   └── net
+│       │   │       └── sourceforge
+│       │   │           └── opencamera
+│       │   │               ├── AudioListener.java
+│       │   │               ├── cameracontroller
+│       │   │               │   ├── Camera2Settings.java
+│       │   │               │   ├── CameraController1.java
+│       │   │               │   ├── CameraController2.java
+│       │   │               │   ├── CameraControllerException.java
+│       │   │               │   ├── CameraController.java
+│       │   │               │   ├── CameraControllerManager1.java
+│       │   │               │   ├── CameraControllerManager2.java
+│       │   │               │   ├── CameraControllerManager.java
+│       │   │               │   └── RawImage.java
+│       │   │               ├── ExifHandler.java
+│       │   │               ├── GyroSensor.java
+│       │   │               ├── HDRProcessorException.java
+│       │   │               ├── HDRProcessor.java
+│       │   │               ├── ImageSaver.java
+│       │   │               ├── ImageUtils.java
+│       │   │               ├── JavaImageFunctionsHDR.java
+│       │   │               ├── JavaImageFunctionsPanorama.java
+│       │   │               ├── JavaImageFunctionsPreview.java
+│       │   │               ├── JavaImageProcessing.java
+│       │   │               ├── KeyguardUtils.java
+│       │   │               ├── LocationSupplier.java
+│       │   │               ├── MagneticSensor.java
+│       │   │               ├── MainActivity.java
+│       │   │               ├── MultiCamHandler.java
+│       │   │               ├── MyApplicationInterface.java
+│       │   │               ├── MyAudioTriggerListenerCallback.java
+│       │   │               ├── MyDebug.java
+│       │   │               ├── MyPreferenceFragment.java
+│       │   │               ├── MyTileServiceFrontCamera.java
+│       │   │               ├── MyTileService.java
+│       │   │               ├── MyTileServiceVideo.java
+│       │   │               ├── MyWidgetProviderTakePhoto.java
+│       │   │               ├── OpenCameraApplication.java
+│       │   │               ├── PanoramaProcessorException.java
+│       │   │               ├── PanoramaProcessor.java
+│       │   │               ├── PermissionHandler.java
+│       │   │               ├── PostProcessing.java
+│       │   │               ├── PreferenceKeys.java
+│       │   │               ├── PreferenceSubCameraControlsMore.java
+│       │   │               ├── PreferenceSubGUI.java
+│       │   │               ├── PreferenceSubLicences.java
+│       │   │               ├── PreferenceSubLocation.java
+│       │   │               ├── PreferenceSubPhoto.java
+│       │   │               ├── PreferenceSubPreview.java
+│       │   │               ├── PreferenceSubProcessing.java
+│       │   │               ├── PreferenceSubRemoteCtrl.java
+│       │   │               ├── PreferenceSubScreen.java
+│       │   │               ├── PreferenceSubSettingsManager.java
+│       │   │               ├── PreferenceSubVideo.java
+│       │   │               ├── Preshots.java
+│       │   │               ├── preview
+│       │   │               │   ├── ApplicationInterface.java
+│       │   │               │   ├── BasicApplicationInterface.java
+│       │   │               │   ├── camerasurface
+│       │   │               │   │   ├── CameraSurface.java
+│       │   │               │   │   ├── MySurfaceView.java
+│       │   │               │   │   └── MyTextureView.java
+│       │   │               │   ├── CanvasView.java
+│       │   │               │   ├── Preview.java
+│       │   │               │   ├── VideoProfile.java
+│       │   │               │   └── VideoQualityHandler.java
+│       │   │               ├── remotecontrol
+│       │   │               │   ├── BluetoothLeService.java
+│       │   │               │   ├── BluetoothRemoteControl.java
+│       │   │               │   ├── DeviceScanner.java
+│       │   │               │   └── KrakenGattAttributes.java
+│       │   │               ├── SaveLocationHandler.java
+│       │   │               ├── SaveLocationHistory.java
+│       │   │               ├── SettingsManager.java
+│       │   │               ├── SoundPoolManager.java
+│       │   │               ├── StorageUtils.java
+│       │   │               ├── TakePhoto.java
+│       │   │               ├── TextFormatter.java
+│       │   │               ├── ToastBoxer.java
+│       │   │               └── ui
+│       │   │                   ├── ArraySeekBarPreference.java
+│       │   │                   ├── DrawPreview.java
+│       │   │                   ├── FolderChooserDialog.java
+│       │   │                   ├── MainUI.java
+│       │   │                   ├── ManualSeekbars.java
+│       │   │                   ├── MyEditTextPreference.java
+│       │   │                   ├── OnScreenIcons.java
+│       │   │                   └── PopupView.java
+│       │   └── res
+│       │       ├── anim
+│       │       │   ├── fade_in.xml
+│       │       │   ├── slide_in_bottom.xml
+│       │       │   └── slide_out_bottom.xml
+│       │       ├── animator
+│       │       │   └── button_animation.xml
+│       │       ├── drawable
+│       │       │   ├── circle_background.xml
+│       │       │   ├── ic_launcher_foreground.xml
+│       │       │   ├── key_visualizer_red.xml
+│       │       │   ├── key_visualizer.xml
+│       │       │   ├── mobile_lock_landscape_48px_red.xml
+│       │       │   ├── mobile_lock_portrait_48px_red.xml
+│       │       │   ├── mobile_unlock_48px.xml
+│       │       │   ├── motion_photos_on_48px_red.xml
+│       │       │   ├── motion_photos_on_48px.xml
+│       │       │   ├── shortcut_gallery.xml
+│       │       │   ├── shortcut_ic_face_white_48dp.xml
+│       │       │   ├── shortcut_ic_photo_camera_white_48dp.xml
+│       │       │   ├── shortcut_ic_videocam_white_48dp.xml
+│       │       │   ├── shortcut_settings.xml
+│       │       │   ├── take_photo_selector.xml
+│       │       │   ├── take_photo_shutter_pressed.xml
+│       │       │   ├── take_photo_shutter.xml
+│       │       │   ├── take_video_recording.xml
+│       │       │   ├── take_video_selector.xml
+│       │       │   ├── take_video_shutter_pressed.xml
+│       │       │   └── take_video_shutter.xml
+│       │       ├── drawable-hdpi
+│       │       │   ├── baseline_add_a_photo_white_48.png
+│       │       │   ├── baseline_bedtime_white_48.png
+│       │       │   ├── baseline_bluetooth_white_48.png
+│       │       │   ├── baseline_check_white_48.png
+│       │       │   ├── baseline_close_white_48.png
+│       │       │   ├── baseline_delete_white_48.png
+│       │       │   ├── baseline_face_retouching_natural_white_48.png
+│       │       │   ├── baseline_filter_vintage_white_48.png
+│       │       │   ├── baseline_folder_open_white_48.png
+│       │       │   ├── baseline_highlight_white_48.png
+│       │       │   ├── baseline_panorama_horizontal_white_48.png
+│       │       │   ├── baseline_photo_library_white_48.png
+│       │       │   ├── baseline_portrait_white_48.png
+│       │       │   ├── baseline_remove_red_eye_white_48.png
+│       │       │   ├── baseline_rotate_left_white_48.png
+│       │       │   ├── baseline_rotate_right_white_48.png
+│       │       │   ├── baseline_shutter_speed_white_48.png
+│       │       │   ├── baseline_text_fields_red_48.png
+│       │       │   ├── baseline_text_fields_white_48.png
+│       │       │   ├── flash_auto.png
+│       │       │   ├── flash_off.png
+│       │       │   ├── flash_on.png
+│       │       │   ├── ic_burst_mode_white_48dp.png
+│       │       │   ├── ic_colorize_white_48dp.png
+│       │       │   ├── ic_exposure_red_48dp.png
+│       │       │   ├── ic_exposure_white_48dp.png
+│       │       │   ├── ic_face_red_48dp.png
+│       │       │   ├── ic_face_white_48dp.png
+│       │       │   ├── ic_fast_forward_white_48dp.png
+│       │       │   ├── ic_gps_fixed_red_48dp.png
+│       │       │   ├── ic_gps_fixed_white_48dp.png
+│       │       │   ├── ic_gps_off_white_48dp.png
+│       │       │   ├── ic_hdr_on_white_48dp.png
+│       │       │   ├── ic_help_outline_white_48dp.png
+│       │       │   ├── ic_info_outline_white_48dp.png
+│       │       │   ├── ic_launcher_take_photo.png
+│       │       │   ├── ic_mic_off_white_48dp.png
+│       │       │   ├── ic_mic_red_48dp.png
+│       │       │   ├── ic_mic_white_48dp.png
+│       │       │   ├── ic_more_horiz_white_48dp.png
+│       │       │   ├── ic_pause_circle_outline_white_48dp.png
+│       │       │   ├── ic_photo_camera_white_48dp.png
+│       │       │   ├── ic_photo_size_select_large_white_48dp.png
+│       │       │   ├── ic_play_circle_outline_white_48dp.png
+│       │       │   ├── ic_power_settings_new_white_48dp.png
+│       │       │   ├── ic_save_white_48dp.png
+│       │       │   ├── ic_slow_motion_video_white_48dp.png
+│       │       │   ├── ic_text_format_red_48dp.png
+│       │       │   ├── ic_text_format_white_48dp.png
+│       │       │   ├── ic_timelapse_white_48dp.png
+│       │       │   ├── ic_timer_white_48dp.png
+│       │       │   ├── ic_touch_app_white_48dp.png
+│       │       │   ├── ic_videocam_white_48dp.png
+│       │       │   ├── settings.png
+│       │       │   └── share.png
+│       │       ├── drawable-mdpi
+│       │       │   ├── auto_stabilise_icon.png
+│       │       │   ├── auto_stabilise_icon_red.png
+│       │       │   ├── baseline_add_a_photo_white_48.png
+│       │       │   ├── baseline_bedtime_white_48.png
+│       │       │   ├── baseline_bluetooth_white_48.png
+│       │       │   ├── baseline_check_white_48.png
+│       │       │   ├── baseline_close_white_48.png
+│       │       │   ├── baseline_delete_white_48.png
+│       │       │   ├── baseline_face_retouching_natural_white_48.png
+│       │       │   ├── baseline_filter_vintage_white_48.png
+│       │       │   ├── baseline_folder_open_white_48.png
+│       │       │   ├── baseline_highlight_white_48.png
+│       │       │   ├── baseline_panorama_horizontal_white_48.png
+│       │       │   ├── baseline_photo_library_white_48.png
+│       │       │   ├── baseline_portrait_white_48.png
+│       │       │   ├── baseline_remove_red_eye_white_48.png
+│       │       │   ├── baseline_rotate_left_white_48.png
+│       │       │   ├── baseline_rotate_right_white_48.png
+│       │       │   ├── baseline_shutter_speed_white_48.png
+│       │       │   ├── baseline_text_fields_red_48.png
+│       │       │   ├── baseline_text_fields_white_48.png
+│       │       │   ├── dro_icon.png
+│       │       │   ├── expo_icon.png
+│       │       │   ├── exposure_locked.png
+│       │       │   ├── exposure_unlocked.png
+│       │       │   ├── flash_auto.png
+│       │       │   ├── flash_off.png
+│       │       │   ├── flash_on.png
+│       │       │   ├── focus_mode_auto.png
+│       │       │   ├── focus_mode_continuous_picture.png
+│       │       │   ├── focus_mode_continuous_video.png
+│       │       │   ├── focus_mode_edof.png
+│       │       │   ├── focus_mode_fixed.png
+│       │       │   ├── focus_mode_infinity.png
+│       │       │   ├── focus_mode_locked.png
+│       │       │   ├── focus_mode_manual.png
+│       │       │   ├── ic_burst_mode_white_48dp.png
+│       │       │   ├── ic_colorize_white_48dp.png
+│       │       │   ├── ic_exposure_red_48dp.png
+│       │       │   ├── ic_exposure_white_48dp.png
+│       │       │   ├── ic_face_red_48dp.png
+│       │       │   ├── ic_face_white_48dp.png
+│       │       │   ├── ic_fast_forward_white_48dp.png
+│       │       │   ├── ic_gps_fixed_red_48dp.png
+│       │       │   ├── ic_gps_fixed_white_48dp.png
+│       │       │   ├── ic_gps_off_white_48dp.png
+│       │       │   ├── ic_hdr_on_white_48dp.png
+│       │       │   ├── ic_help_outline_white_48dp.png
+│       │       │   ├── ic_info_outline_white_48dp.png
+│       │       │   ├── ic_launcher_take_photo.png
+│       │       │   ├── ic_mic_off_white_48dp.png
+│       │       │   ├── ic_mic_red_48dp.png
+│       │       │   ├── ic_mic_white_48dp.png
+│       │       │   ├── ic_more_horiz_white_48dp.png
+│       │       │   ├── ic_pause_circle_outline_white_48dp.png
+│       │       │   ├── ic_photo_camera_white_48dp.png
+│       │       │   ├── ic_photo_size_select_large_white_48dp.png
+│       │       │   ├── ic_play_circle_outline_white_48dp.png
+│       │       │   ├── ic_power_settings_new_white_48dp.png
+│       │       │   ├── ic_save_white_48dp.png
+│       │       │   ├── ic_slow_motion_video_white_48dp.png
+│       │       │   ├── ic_stat_notify_take_photo.png
+│       │       │   ├── ic_text_format_red_48dp.png
+│       │       │   ├── ic_text_format_white_48dp.png
+│       │       │   ├── ic_timelapse_white_48dp.png
+│       │       │   ├── ic_timer_white_48dp.png
+│       │       │   ├── ic_touch_app_white_48dp.png
+│       │       │   ├── ic_videocam_white_48dp.png
+│       │       │   ├── iso_icon.png
+│       │       │   ├── nr_icon.png
+│       │       │   ├── popup_flash_auto.png
+│       │       │   ├── popup_flash_off.png
+│       │       │   ├── popup_flash_on.png
+│       │       │   ├── popup_flash_red_eye.png
+│       │       │   ├── popup_flash_torch.png
+│       │       │   ├── popup.png
+│       │       │   ├── raw_icon.png
+│       │       │   ├── raw_off_icon.png
+│       │       │   ├── raw_only_icon.png
+│       │       │   ├── settings.png
+│       │       │   ├── share.png
+│       │       │   ├── switch_camera.png
+│       │       │   ├── take_photo.png
+│       │       │   ├── take_photo_pref.png
+│       │       │   ├── take_video.png
+│       │       │   ├── take_video_pref.png
+│       │       │   ├── white_balance_locked.png
+│       │       │   └── white_balance_unlocked.png
+│       │       ├── drawable-xhdpi
+│       │       │   ├── baseline_add_a_photo_white_48.png
+│       │       │   ├── baseline_bedtime_white_48.png
+│       │       │   ├── baseline_bluetooth_white_48.png
+│       │       │   ├── baseline_check_white_48.png
+│       │       │   ├── baseline_close_white_48.png
+│       │       │   ├── baseline_delete_white_48.png
+│       │       │   ├── baseline_face_retouching_natural_white_48.png
+│       │       │   ├── baseline_filter_vintage_white_48.png
+│       │       │   ├── baseline_folder_open_white_48.png
+│       │       │   ├── baseline_highlight_white_48.png
+│       │       │   ├── baseline_panorama_horizontal_white_48.png
+│       │       │   ├── baseline_photo_library_white_48.png
+│       │       │   ├── baseline_portrait_white_48.png
+│       │       │   ├── baseline_remove_red_eye_white_48.png
+│       │       │   ├── baseline_rotate_left_white_48.png
+│       │       │   ├── baseline_rotate_right_white_48.png
+│       │       │   ├── baseline_shutter_speed_white_48.png
+│       │       │   ├── baseline_text_fields_red_48.png
+│       │       │   ├── baseline_text_fields_white_48.png
+│       │       │   ├── flash_auto.png
+│       │       │   ├── flash_off.png
+│       │       │   ├── flash_on.png
+│       │       │   ├── ic_burst_mode_white_48dp.png
+│       │       │   ├── ic_colorize_white_48dp.png
+│       │       │   ├── ic_exposure_red_48dp.png
+│       │       │   ├── ic_exposure_white_48dp.png
+│       │       │   ├── ic_face_red_48dp.png
+│       │       │   ├── ic_face_white_48dp.png
+│       │       │   ├── ic_fast_forward_white_48dp.png
+│       │       │   ├── ic_gps_fixed_red_48dp.png
+│       │       │   ├── ic_gps_fixed_white_48dp.png
+│       │       │   ├── ic_gps_off_white_48dp.png
+│       │       │   ├── ic_hdr_on_white_48dp.png
+│       │       │   ├── ic_help_outline_white_48dp.png
+│       │       │   ├── ic_info_outline_white_48dp.png
+│       │       │   ├── ic_launcher_take_photo.png
+│       │       │   ├── ic_mic_off_white_48dp.png
+│       │       │   ├── ic_mic_red_48dp.png
+│       │       │   ├── ic_mic_white_48dp.png
+│       │       │   ├── ic_more_horiz_white_48dp.png
+│       │       │   ├── ic_pause_circle_outline_white_48dp.png
+│       │       │   ├── ic_photo_camera_white_48dp.png
+│       │       │   ├── ic_photo_size_select_large_white_48dp.png
+│       │       │   ├── ic_play_circle_outline_white_48dp.png
+│       │       │   ├── ic_power_settings_new_white_48dp.png
+│       │       │   ├── ic_save_white_48dp.png
+│       │       │   ├── ic_slow_motion_video_white_48dp.png
+│       │       │   ├── ic_text_format_red_48dp.png
+│       │       │   ├── ic_text_format_white_48dp.png
+│       │       │   ├── ic_timelapse_white_48dp.png
+│       │       │   ├── ic_timer_white_48dp.png
+│       │       │   ├── ic_touch_app_white_48dp.png
+│       │       │   ├── ic_videocam_white_48dp.png
+│       │       │   ├── settings.png
+│       │       │   ├── share.png
+│       │       │   ├── take_photo.png
+│       │       │   ├── take_photo_pref.png
+│       │       │   ├── take_video.png
+│       │       │   └── take_video_pref.png
+│       │       ├── drawable-xxhdpi
+│       │       │   ├── auto_stabilise_icon.png
+│       │       │   ├── auto_stabilise_icon_red.png
+│       │       │   ├── baseline_add_a_photo_white_48.png
+│       │       │   ├── baseline_bedtime_white_48.png
+│       │       │   ├── baseline_bluetooth_white_48.png
+│       │       │   ├── baseline_check_white_48.png
+│       │       │   ├── baseline_close_white_48.png
+│       │       │   ├── baseline_delete_white_48.png
+│       │       │   ├── baseline_face_retouching_natural_white_48.png
+│       │       │   ├── baseline_filter_vintage_white_48.png
+│       │       │   ├── baseline_folder_open_white_48.png
+│       │       │   ├── baseline_highlight_white_48.png
+│       │       │   ├── baseline_panorama_horizontal_white_48.png
+│       │       │   ├── baseline_photo_library_white_48.png
+│       │       │   ├── baseline_portrait_white_48.png
+│       │       │   ├── baseline_remove_red_eye_white_48.png
+│       │       │   ├── baseline_rotate_left_white_48.png
+│       │       │   ├── baseline_rotate_right_white_48.png
+│       │       │   ├── baseline_shutter_speed_white_48.png
+│       │       │   ├── baseline_text_fields_red_48.png
+│       │       │   ├── baseline_text_fields_white_48.png
+│       │       │   ├── dro_icon.png
+│       │       │   ├── expo_icon.png
+│       │       │   ├── flash_auto.png
+│       │       │   ├── flash_off.png
+│       │       │   ├── flash_on.png
+│       │       │   ├── ic_burst_mode_white_48dp.png
+│       │       │   ├── ic_colorize_white_48dp.png
+│       │       │   ├── ic_exposure_red_48dp.png
+│       │       │   ├── ic_exposure_white_48dp.png
+│       │       │   ├── ic_face_red_48dp.png
+│       │       │   ├── ic_face_white_48dp.png
+│       │       │   ├── ic_fast_forward_white_48dp.png
+│       │       │   ├── ic_gps_fixed_red_48dp.png
+│       │       │   ├── ic_gps_fixed_white_48dp.png
+│       │       │   ├── ic_gps_off_white_48dp.png
+│       │       │   ├── ic_hdr_on_white_48dp.png
+│       │       │   ├── ic_help_outline_white_48dp.png
+│       │       │   ├── ic_info_outline_white_48dp.png
+│       │       │   ├── ic_launcher_take_photo.png
+│       │       │   ├── ic_mic_off_white_48dp.png
+│       │       │   ├── ic_mic_red_48dp.png
+│       │       │   ├── ic_mic_white_48dp.png
+│       │       │   ├── ic_more_horiz_white_48dp.png
+│       │       │   ├── ic_pause_circle_outline_white_48dp.png
+│       │       │   ├── ic_photo_camera_white_48dp.png
+│       │       │   ├── ic_photo_size_select_large_white_48dp.png
+│       │       │   ├── ic_play_circle_outline_white_48dp.png
+│       │       │   ├── ic_power_settings_new_white_48dp.png
+│       │       │   ├── ic_save_white_48dp.png
+│       │       │   ├── ic_slow_motion_video_white_48dp.png
+│       │       │   ├── ic_stat_notify_take_photo.png
+│       │       │   ├── ic_text_format_red_48dp.png
+│       │       │   ├── ic_text_format_white_48dp.png
+│       │       │   ├── ic_timelapse_white_48dp.png
+│       │       │   ├── ic_timer_white_48dp.png
+│       │       │   ├── ic_touch_app_white_48dp.png
+│       │       │   ├── ic_videocam_white_48dp.png
+│       │       │   ├── iso_icon.png
+│       │       │   ├── nr_icon.png
+│       │       │   ├── raw_icon.png
+│       │       │   ├── raw_off_icon.png
+│       │       │   ├── raw_only_icon.png
+│       │       │   ├── settings.png
+│       │       │   └── share.png
+│       │       ├── drawable-xxxhdpi
+│       │       │   ├── baseline_add_a_photo_white_48.png
+│       │       │   ├── baseline_bedtime_white_48.png
+│       │       │   ├── baseline_bluetooth_white_48.png
+│       │       │   ├── baseline_check_white_48.png
+│       │       │   ├── baseline_close_white_48.png
+│       │       │   ├── baseline_delete_white_48.png
+│       │       │   ├── baseline_face_retouching_natural_white_48.png
+│       │       │   ├── baseline_filter_vintage_white_48.png
+│       │       │   ├── baseline_folder_open_white_48.png
+│       │       │   ├── baseline_highlight_white_48.png
+│       │       │   ├── baseline_panorama_horizontal_white_48.png
+│       │       │   ├── baseline_photo_library_white_48.png
+│       │       │   ├── baseline_portrait_white_48.png
+│       │       │   ├── baseline_remove_red_eye_white_48.png
+│       │       │   ├── baseline_rotate_left_white_48.png
+│       │       │   ├── baseline_rotate_right_white_48.png
+│       │       │   ├── baseline_shutter_speed_white_48.png
+│       │       │   ├── baseline_text_fields_red_48.png
+│       │       │   ├── baseline_text_fields_white_48.png
+│       │       │   ├── flash_auto.png
+│       │       │   ├── flash_off.png
+│       │       │   ├── flash_on.png
+│       │       │   ├── ic_burst_mode_white_48dp.png
+│       │       │   ├── ic_colorize_white_48dp.png
+│       │       │   ├── ic_exposure_red_48dp.png
+│       │       │   ├── ic_exposure_white_48dp.png
+│       │       │   ├── ic_face_red_48dp.png
+│       │       │   ├── ic_face_white_48dp.png
+│       │       │   ├── ic_fast_forward_white_48dp.png
+│       │       │   ├── ic_gps_fixed_red_48dp.png
+│       │       │   ├── ic_gps_fixed_white_48dp.png
+│       │       │   ├── ic_gps_off_white_48dp.png
+│       │       │   ├── ic_hdr_on_white_48dp.png
+│       │       │   ├── ic_help_outline_white_48dp.png
+│       │       │   ├── ic_info_outline_white_48dp.png
+│       │       │   ├── ic_mic_off_white_48dp.png
+│       │       │   ├── ic_more_horiz_white_48dp.png
+│       │       │   ├── ic_pause_circle_outline_white_48dp.png
+│       │       │   ├── ic_photo_camera_white_48dp.png
+│       │       │   ├── ic_photo_size_select_large_white_48dp.png
+│       │       │   ├── ic_play_circle_outline_white_48dp.png
+│       │       │   ├── ic_power_settings_new_white_48dp.png
+│       │       │   ├── ic_save_white_48dp.png
+│       │       │   ├── ic_slow_motion_video_white_48dp.png
+│       │       │   ├── ic_text_format_red_48dp.png
+│       │       │   ├── ic_text_format_white_48dp.png
+│       │       │   ├── ic_timelapse_white_48dp.png
+│       │       │   ├── ic_timer_white_48dp.png
+│       │       │   ├── ic_touch_app_white_48dp.png
+│       │       │   ├── ic_videocam_white_48dp.png
+│       │       │   └── settings.png
+│       │       ├── layout
+│       │       │   ├── activity_device_select.xml
+│       │       │   ├── activity_main.xml
+│       │       │   ├── alertdialog_edittext.xml
+│       │       │   ├── alertdialog_textview.xml
+│       │       │   ├── arrayseekbarpreference.xml
+│       │       │   ├── listitem_device.xml
+│       │       │   ├── myedittextpreference.xml
+│       │       │   ├── popupview_arrayoptions.xml
+│       │       │   ├── popupview_button.xml
+│       │       │   ├── popupview_radiobutton.xml
+│       │       │   ├── popupview_switch.xml
+│       │       │   ├── popupview_textview.xml
+│       │       │   ├── stamp_image_text.xml
+│       │       │   ├── toast_textview.xml
+│       │       │   ├── widget_layout_take_photo.xml
+│       │       │   └── widget_layout.xml
+│       │       ├── menu
+│       │       │   └── main.xml
+│       │       ├── mipmap-anydpi-v26
+│       │       │   ├── ic_launcher_round.xml
+│       │       │   └── ic_launcher.xml
+│       │       ├── mipmap-hdpi
+│       │       │   ├── ic_launcher_background.png
+│       │       │   ├── ic_launcher_foreground.png
+│       │       │   └── ic_launcher.png
+│       │       ├── mipmap-mdpi
+│       │       │   ├── ic_launcher_background.png
+│       │       │   ├── ic_launcher_foreground.png
+│       │       │   └── ic_launcher.png
+│       │       ├── mipmap-xhdpi
+│       │       │   ├── ic_launcher_background.png
+│       │       │   ├── ic_launcher_foreground.png
+│       │       │   └── ic_launcher.png
+│       │       ├── mipmap-xxhdpi
+│       │       │   ├── ic_launcher_background.png
+│       │       │   ├── ic_launcher_foreground.png
+│       │       │   └── ic_launcher.png
+│       │       ├── mipmap-xxxhdpi
+│       │       │   ├── ic_launcher_background.png
+│       │       │   ├── ic_launcher_foreground.png
+│       │       │   └── ic_launcher.png
+│       │       ├── raw
+│       │       │   ├── mybeep_hi.ogg
+│       │       │   └── mybeep.ogg
+│       │       ├── values
+│       │       │   ├── arrays.xml
+│       │       │   ├── colors.xml
+│       │       │   ├── dimens.xml
+│       │       │   ├── strings.xml
+│       │       │   └── styles.xml
+│       │       ├── values-az
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-be
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-ca
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-cs
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-de
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-el
+│       │       │   └── strings.xml
+│       │       ├── values-es
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-fr
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-hu
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-it
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-ja
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-ko
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-nb
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-pl
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-pt-rBR
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-pt-rPT
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-ru
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-sl
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-sw600dp
+│       │       │   └── dimens.xml
+│       │       ├── values-sw720dp-land
+│       │       │   └── dimens.xml
+│       │       ├── values-tr
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-uk
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-vi
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-zh-rCN
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── values-zh-rTW
+│       │       │   ├── arrays.xml
+│       │       │   └── strings.xml
+│       │       ├── xml
+│       │       │   ├── preferences_sub_camera_controls_more.xml
+│       │       │   ├── preferences_sub_gui.xml
+│       │       │   ├── preferences_sub_licences.xml
+│       │       │   ├── preferences_sub_location.xml
+│       │       │   ├── preferences_sub_photo.xml
+│       │       │   ├── preferences_sub_preview.xml
+│       │       │   ├── preferences_sub_processing.xml
+│       │       │   ├── preferences_sub_remote_ctrl.xml
+│       │       │   ├── preferences_sub_settings_manager.xml
+│       │       │   ├── preferences_sub_video.xml
+│       │       │   ├── preferences.xml
+│       │       │   └── widget_info_take_photo.xml
+│       │       └── xml-v25
+│       │           └── shortcuts.xml
+│       └── test
+│           └── java
+│               └── net
+│                   └── sourceforge
+│                       └── opencamera
+│                           └── test
+│                               └── UnitTest.java
+├── art
+│   ├── icon.png
+│   ├── icon.svg
+│   └── io.github.digvijaylp.OpenTeleScopeVR.png
+├── build
+│   └── reports
+│       └── problems
+│           └── problems-report.html
+├── build.gradle
+├── check
+├── _docs
+│   ├── baseline_add_a_photo_white_48.png
+│   ├── baseline_delete_white_48.png
+│   ├── baseline_filter_vintage_white_48.png
+│   ├── credits.html
+│   ├── devices.html
+│   ├── exposure_locked.png
+│   ├── exposure_unlocked.png
+│   ├── focus_mode_auto.png
+│   ├── focus_mode_continuous_picture.png
+│   ├── focus_mode_edof.png
+│   ├── focus_mode_fixed.png
+│   ├── focus_mode_infinity.png
+│   ├── focus_mode_locked.png
+│   ├── focus_mode_manual.png
+│   ├── google_material_design_icons_LICENSE-2.0.txt
+│   ├── help.html
+│   ├── history.html
+│   ├── ic_exposure_white_48dp.png
+│   ├── ic_gps_fixed_white_48dp.png
+│   ├── ic_launcher.png
+│   ├── ic_mic_white_48dp.png
+│   ├── ic_pause_circle_outline_white_48dp.png
+│   ├── index.html
+│   ├── info.html
+│   ├── popup.png
+│   ├── privacy_oc.html
+│   ├── settings.png
+│   ├── share.png
+│   ├── stylesheet.css
+│   ├── switch_camera.png
+│   ├── take_photo.png
+│   └── take_video.png
+├── fastlane
+│   └── metadata
+│       └── android
+│           └── en-US
+│               ├── full_description.txt
+│               ├── images
+│               │   ├── icon.png
+│               │   └── phoneScreenshots
+│               │       ├── 1.png
+│               │       ├── 2.png
+│               │       └── 3.png
+│               └── short_description.txt
+├── google_material_design_icons_LICENSE-2.0.txt
+├── gpl-3.0.txt
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── io.github.digvijaylp.OpenTeleScopeVR.yml
+├── LICENSE
+├── local.properties
+├── log
+├── makesrcarchive.bat
+├── opencamera_source.txt
+├── privacy.md
+├── README.md
+└── settings.gradle
+
+462 directories, 2405 files
