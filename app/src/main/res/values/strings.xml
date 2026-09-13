@@ -1056,6 +1056,21 @@
     <string name="preference_remote_video_mode_standard">Standard (start/stop video)</string>
     <string name="preference_remote_video_mode_pause">Pause/resume video (stop on-screen only)</string>
 
+    <!-- Preferences Main Screen -->
+    <string name="preference_max_zoom_boost">Digital zoom boost limit</string>
+    <string name="preference_max_zoom_boost_summary">Over-zoom beyond device hardware limits (may cause pixelation or preview lag on some devices)</string>
+    <string name="preference_manual_camera_ids">Manual camera IDs</string>
+    <string name="preference_manual_camera_ids_dialog_title">Enter camera IDs</string>
+    <string name="preference_screen_photo_video_settings">Additional settings</string>
+    <string name="preference_screen_photo_video_settings_summary">Video and controls</string>
+    <string name="preference_screen_app_info">App info and help</string>
+
+    <!-- Preferences Sub GUI Screen -->
+    <string name="preference_color_filters_type">Color filters menu</string>
+    <string name="preference_color_filters_type_summary">%s (HWS filters usually only work on Samsung devices)</string>
+    <string name="preference_show_take_video">Show Video icon</string>
+    <string name="preference_show_take_video_summary">Show video shutter and switch button</string>
+
     <!-- The following strings should not be translated (and shouldn't be included in language-specific strings.xml), in case they need updating -->
 
     <string name="preference_privacy_policy" translatable="false">Privacy policy</string>

@@ -736,6 +736,10 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         if( !sharedPreferences.contains(PreferenceKeys.ShowExposureLockPreferenceKey) ) {
             editor.putBoolean(PreferenceKeys.ShowExposureLockPreferenceKey, false);
         }
+        // Enforce immersive mode (Hide everything)[cite: 4]
+        if( !sharedPreferences.contains(PreferenceKeys.ImmersiveModePreferenceKey) ) {
+            editor.putString(PreferenceKeys.ImmersiveModePreferenceKey, "immersive_mode_everything");
+        }
         editor.apply();
     }
     /*public float getBatteryTemperature() {
