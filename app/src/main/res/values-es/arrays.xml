@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="focus_mode_entries">
+        <item>Enfoque automático</item>
+        <item>Enfoque infinito</item>
+        <item>Macro</item>
+        <item>Enfoque bloqueado</item>
+        <item>Enfoque manual</item>
+        <item>Enfoque fijo</item>
+        <item>Enfoque EDOF</item>
+        <item>Enfoque continuo (foto)</item>
+        <item>Enfoque continuo (vídeo)</item>
+    </string-array>
+
+    <string-array name="preference_lock_orientation_entries">
+        <item>Sin bloqueo</item>
+        <item>Bloquear en horizontal</item>
+        <item>Bloquear en vertical</item>
+    </string-array>
+
+    <string-array name="preference_timer_entries">
+        <item>Desactivado</item>
+        <item>1 s</item>
+        <item>2 s</item>
+        <item>3 s</item>
+        <item>5 s</item>
+        <item>10 s</item>
+        <item>15 s</item>
+        <item>20 s</item>
+        <item>30 s</item>
+        <item>1 min</item>
+        <item>2 min</item>
+        <item>5 min</item>
+    </string-array>
+
+    <string-array name="preference_preview_size_entries">
+        <item>Maximizar tamaño de vista previa</item>
+        <item>Ajustar al tamaño de foto (WYSIWYG)</item>
+    </string-array>
+
+    <string-array name="preference_touch_capture_entries">
+        <item>Ninguno</item>
+        <item>Un toque</item>
+        <item>Doble toque</item>
+    </string-array>
+
+    <string-array name="preference_volume_keys_entries">
+        <item>Tomar foto (o iniciar/detener vídeo)</item>
+        <item>Enfocar</item>
+        <item>Zoom</item>
+        <item>Cambiar nivel de exposición</item>
+        <item>Activar/desactivar autonivelación</item>
+        <item>Cambiar volumen del dispositivo</item>
+        <item>No hacer nada</item>
+    </string-array>
+
+    <string-array name="preference_rotate_preview_entries">
+        <item>No rotar</item>
+        <item>Rotar 180 grados</item>
+    </string-array>
+
+    <string-array name="preference_angle_highlight_color_entries">
+        <item>Rojo</item>
+        <item>Verde</item>
+        <item>Azul</item>
+        <item>Amarillo</item>
+        <item>Morado</item>
+        <item>Blanco</item>
+    </string-array>
+
+    <string-array name="preference_grid_entries">
+        <item>Ninguna</item>
+        <item>3x3</item>
+        <item>Phi 3x3</item>
+        <item>4x2</item>
+        <item>Punto de mira</item>
+        <item>Dorada (1)</item>
+        <item>Dorada (2)</item>
+        <item>Dorada (3)</item>
+        <item>Dorada (4)</item>
+        <item>Triángulo (1)</item>
+        <item>Triángulo (2)</item>
+        <item>Diagonales</item>
+    </string-array>
+
+    <string-array name="preference_stamp_entries">
+        <item>Sin estampar</item>
+        <item>Estampar fotos</item>
+    </string-array>
+
+    <string-array name="preference_stamp_timeformat_entries">
+        <item>Predeterminado</item>
+        <item>12 horas</item>
+        <item>24 horas</item>
+        <item>Ninguno</item>
+    </string-array>
+
+    <string-array name="preference_stamp_gpsformat_entries">
+        <item>Predeterminado</item>
+        <item>Grados/minutos/segundos</item>
+        <item>Ninguno</item>
+    </string-array>
+
+    <string-array name="preference_video_restart_entries">
+        <item>No reiniciar</item>
+        <item>Repetir 1 vez</item>
+        <item>Repetir 2 veces</item>
+        <item>Repetir 3 veces</item>
+        <item>Repetir 4 veces</item>
+        <item>Repetir 5 veces</item>
+        <item>Repetir 6 veces</item>
+        <item>Repetir 7 veces</item>
+        <item>Repetir 8 veces</item>
+        <item>Repetir 9 veces</item>
+        <item>Repetir 10 veces</item>
+    </string-array>
+
+    <string-array name="preference_record_audio_channels_entries">
+        <item>Predeterminado</item>
+        <item>Mono</item>
+        <item>Estéreo (solo en dispositivos compatibles)</item>
+    </string-array>
+
+    <string-array name="preference_save_zulu_time_entries">
+        <item>Hora local</item>
+        <item>UTC (Zulú)</item>
+    </string-array>
+
+    <string-array name="preference_front_camera_mirror_entries">
+        <item>No reflejar</item>
+        <item>Reflejar foto (efecto espejo)</item>
+    </string-array>
+
+    <string-array name="preference_video_subtitle_entries">
+        <item>Sin subtítulos</item>
+        <item>Grabar subtítulos</item>
+    </string-array>
+
+    <string-array name="preference_max_zoom_boost_entries">
+        <item>Límite estándar de hardware (1.0x)</item>
+        <item>+10% amplificación (1.1x)</item>
+        <item>+25% amplificación (1.25x)</item>
+        <item>+50% amplificación (1.5x)</item>
+        <item>+100% zoom digital extra (2.0x)</item>
+    </string-array>
+
+    <string-array name="preference_color_filters_entries">
+        <item>Filtros OTVR (predeterminado)</item>
+        <item>Filtros por hardware (HWS)</item>
+        <item>Ambos</item>
+        <item>Ninguno</item>
+    </string-array>
+</resources>

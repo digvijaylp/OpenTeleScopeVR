@@ -249,6 +249,8 @@ public class PreferenceKeys {
     
     public static final String ColorFiltersTypePreferenceKey = "preference_color_filters_type"; //gemini_81dlp//
 
+    //public static final String SettingsFontSizePreferenceKey = "preference_settings_font_size"; //gemini_81dlp//
+
     public static final String ShowFaceDetectionPreferenceKey = "preference_show_face_detection";
 
     public static final String ShowCycleLockOrientationPreferenceKey = "preference_show_cycle_lock_orientation";

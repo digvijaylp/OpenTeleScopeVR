@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="focus_mode_entries">
+        <item>自动对焦</item>
+        <item>无限远</item>
+        <item>微距</item>
+        <item>锁定对焦</item>
+        <item>手动对焦</item>
+        <item>固定对焦</item>
+        <item>景深扩展 (EDOF)</item>
+        <item>连续自动对焦 (照片)</item>
+        <item>连续自动对焦 (视频)</item>
+    </string-array>
+
+    <string-array name="preference_lock_orientation_entries">
+        <item>不锁定</item>
+        <item>锁定为横向</item>
+        <item>锁定为纵向</item>
+    </string-array>
+
+    <string-array name="preference_timer_entries">
+        <item>关闭</item>
+        <item>1秒</item>
+        <item>2秒</item>
+        <item>3秒</item>
+        <item>5秒</item>
+        <item>10秒</item>
+        <item>15秒</item>
+        <item>20秒</item>
+        <item>30秒</item>
+        <item>1分钟</item>
+        <item>2分钟</item>
+        <item>5分钟</item>
+    </string-array>
+
+    <string-array name="preference_preview_size_entries">
+        <item>最大化预览画面</item>
+        <item>匹配成片画幅 (所见即所得)</item>
+    </string-array>
+
+    <string-array name="preference_touch_capture_entries">
+        <item>无</item>
+        <item>单点触摸</item>
+        <item>双击拍摄</item>
+    </string-array>
+
+    <string-array name="preference_volume_keys_entries">
+        <item>拍照 (或开始/停止录像)</item>
+        <item>对焦</item>
+        <item>变焦缩放</item>
+        <item>调节曝光补偿</item>
+        <item>开关自动水平校准</item>
+        <item>调节系统音量</item>
+        <item>无操作</item>
+    </string-array>
+
+    <string-array name="preference_rotate_preview_entries">
+        <item>不旋转</item>
+        <item>旋转180度</item>
+    </string-array>
+
+    <string-array name="preference_angle_highlight_color_entries">
+        <item>红色</item>
+        <item>绿色</item>
+        <item>蓝色</item>
+        <item>黄色</item>
+        <item>紫色</item>
+        <item>白色</item>
+    </string-array>
+
+    <string-array name="preference_grid_entries">
+        <item>无</item>
+        <item>九宫格 3x3</item>
+        <item>黄金分割 3x3</item>
+        <item>4x2</item>
+        <item>准星中心线</item>
+        <item>黄金螺线 (1)</item>
+        <item>黄金螺线 (2)</item>
+        <item>黄金螺线 (3)</item>
+        <item>黄金螺线 (4)</item>
+        <item>三角构图 (1)</item>
+        <item>三角构图 (2)</item>
+        <item>对角线</item>
+    </string-array>
+
+    <string-array name="preference_stamp_entries">
+        <item>不加水印</item>
+        <item>在照片上压印水印</item>
+    </string-array>
+
+    <string-array name="preference_stamp_timeformat_entries">
+        <item>默认</item>
+        <item>12小时制</item>
+        <item>24小时制</item>
+        <item>不显示</item>
+    </string-array>
+
+    <string-array name="preference_stamp_gpsformat_entries">
+        <item>默认</item>
+        <item>度/分/秒</item>
+        <item>不显示</item>
+    </string-array>
+
+    <string-array name="preference_video_restart_entries">
+        <item>不重新开始</item>
+        <item>重复 1 次</item>
+        <item>重复 2 次</item>
+        <item>重复 3 次</item>
+        <item>重复 4 次</item>
+        <item>重复 5 次</item>
+        <item>重复 6 次</item>
+        <item>重复 7 次</item>
+        <item>重复 8 次</item>
+        <item>重复 9 次</item>
+        <item>重复 10 次</item>
+    </string-array>
+
+    <string-array name="preference_record_audio_channels_entries">
+        <item>默认</item>
+        <item>单声道</item>
+        <item>立体声 (仅兼容设备可用)</item>
+    </string-array>
+
+    <string-array name="preference_save_zulu_time_entries">
+        <item>本地时间</item>
+        <item>UTC (祖鲁标准时间)</item>
+    </string-array>
+
+    <string-array name="preference_front_camera_mirror_entries">
+        <item>不镜像</item>
+        <item>水平翻转照片 (镜像效果)</item>
+    </string-array>
+
+    <string-array name="preference_video_subtitle_entries">
+        <item>无字幕</item>
+        <item>记录内置时间戳字幕轨</item>
+    </string-array>
+
+    <string-array name="preference_max_zoom_boost_entries">
+        <item>标准硬件上限 (1.0x)</item>
+        <item>+10% 增强放大 (1.1x)</item>
+        <item>+25% 增强放大 (1.25x)</item>
+        <item>+50% 增强放大 (1.5x)</item>
+        <item>+100% 额外数码变焦 (2.0x)</item>
+    </string-array>
+
+    <string-array name="preference_color_filters_entries">
+        <item>OTVR专用滤镜 (默认)</item>
+        <item>系统硬件(HWS)滤镜</item>
+        <item>全部启用</item>
+        <item>完全禁用</item>
+    </string-array>
+</resources>
