@@ -1127,4 +1127,6 @@
             Settings/On screen GUI/Show What\'s New dialog.]</small>
         \n\n<b>v0.2:</b>\n
     </string>
+    <string name="preference_force_english">Force English language</string>
+    <string name="preference_force_english_summary">Switch between English and Android system default</string>
 </resources>

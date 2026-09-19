@@ -28,6 +28,29 @@ public class PreferenceSubSettingsManager extends PreferenceSubScreen {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.preferences_sub_settings_manager);
+        //gemini_81dlp// langulage switcher// 
+        // note to self: Turn on when multi-lang/multilang support
+        /**
+        Preference forceEnglishPref = findPreference("preference_force_english");
+        if( forceEnglishPref != null ) {
+            forceEnglishPref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    boolean isEnglish = (Boolean) newValue;
+
+                    // Commit synchronously so attachBaseContext reads the updated value on recreate()
+                    SharedPreferences.Editor editor = preference.getSharedPreferences().edit();
+                    editor.putBoolean("preference_force_english", isEnglish);
+                    editor.commit();
+
+                    if( getActivity() != null ) {
+                        getActivity().recreate();
+                    }
+                    return true;
+                }
+            });
+        }**/
+        //gemini_81dlp//
 
         final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
 
