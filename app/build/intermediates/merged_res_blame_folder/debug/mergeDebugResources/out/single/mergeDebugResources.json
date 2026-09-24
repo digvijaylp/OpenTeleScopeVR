@@ -20,12 +20,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/baseline_highlight_white_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_baseline_shutter_speed_white_48.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxxhdpi/baseline_shutter_speed_white_48.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_launcher_take_photo.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_launcher_take_photo.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_baseline_shutter_speed_white_48.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxxhdpi/baseline_shutter_speed_white_48.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_ic_face_red_48dp.png.flat",
@@ -76,12 +76,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/exposure_unlocked.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_settings.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/settings.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_ic_gps_fixed_red_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/ic_gps_fixed_red_48dp.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_settings.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/settings.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_white_balance_unlocked.png.flat",
@@ -92,12 +92,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/raw_only_icon.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_gps_fixed_red_48dp.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/ic_gps_fixed_red_48dp.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_ic_launcher_take_photo.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/ic_launcher_take_photo.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_gps_fixed_red_48dp.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/ic_gps_fixed_red_48dp.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_baseline_check_white_48.png.flat",
@@ -160,20 +160,20 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/ic_gps_off_white_48dp.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_touch_app_white_48dp.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_touch_app_white_48dp.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_pause_circle_outline_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/ic_pause_circle_outline_white_48dp.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_flash_on.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/flash_on.png"
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_touch_app_white_48dp.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_touch_app_white_48dp.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_baseline_bluetooth_white_48.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/baseline_bluetooth_white_48.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_flash_on.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/flash_on.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_face_white_48dp.png.flat",
@@ -248,12 +248,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/baseline_portrait_white_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_gps_fixed_white_48dp.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/ic_gps_fixed_white_48dp.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_gps_fixed_white_48dp.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/ic_gps_fixed_white_48dp.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable_motion_photos_on_48px.xml.flat",
@@ -356,12 +356,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/baseline_text_fields_red_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_ic_colorize_white_48dp.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/ic_colorize_white_48dp.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_baseline_folder_open_white_48.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/baseline_folder_open_white_48.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_ic_colorize_white_48dp.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/ic_colorize_white_48dp.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_baseline_bedtime_white_48.png.flat",
@@ -372,12 +372,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable/motion_photos_on_48px_red.xml"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_popup_flash_auto.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/popup_flash_auto.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_flash_off.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/flash_off.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_popup_flash_auto.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/popup_flash_auto.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable_mobile_lock_landscape_48px_red.xml.flat",
@@ -436,12 +436,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/baseline_text_fields_red_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_baseline_bluetooth_white_48.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/baseline_bluetooth_white_48.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_more_horiz_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_more_horiz_white_48dp.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_baseline_bluetooth_white_48.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/baseline_bluetooth_white_48.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_baseline_check_white_48.png.flat",
@@ -452,12 +452,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/layout/arrayseekbarpreference.xml"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_focus_mode_locked.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/focus_mode_locked.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_fast_forward_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/ic_fast_forward_white_48dp.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_focus_mode_locked.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/focus_mode_locked.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_baseline_add_a_photo_white_48.png.flat",
@@ -504,12 +504,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/ic_touch_app_white_48dp.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_settings.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/settings.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_ic_text_format_red_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxxhdpi/ic_text_format_red_48dp.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_settings.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/settings.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_popup_flash_on.png.flat",
@@ -528,12 +528,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxxhdpi/baseline_filter_vintage_white_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/layout_stamp_image_text.xml.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/layout/stamp_image_text.xml"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_photo_size_select_large_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/ic_photo_size_select_large_white_48dp.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/layout_stamp_image_text.xml.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/layout/stamp_image_text.xml"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_ic_power_settings_new_white_48dp.png.flat",
@@ -544,12 +544,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxxhdpi/ic_colorize_white_48dp.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_focus_mode_edof.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/focus_mode_edof.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_power_settings_new_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_power_settings_new_white_48dp.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_focus_mode_edof.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/focus_mode_edof.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_face_red_48dp.png.flat",
@@ -580,12 +580,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/baseline_shutter_speed_white_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_baseline_remove_red_eye_white_48.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/baseline_remove_red_eye_white_48.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_save_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/ic_save_white_48dp.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_baseline_remove_red_eye_white_48.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/baseline_remove_red_eye_white_48.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_ic_power_settings_new_white_48dp.png.flat",
@@ -748,12 +748,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxxhdpi/baseline_folder_open_white_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_baseline_panorama_horizontal_white_48.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/baseline_panorama_horizontal_white_48.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_burst_mode_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/ic_burst_mode_white_48dp.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_baseline_panorama_horizontal_white_48.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/baseline_panorama_horizontal_white_48.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_ic_save_white_48dp.png.flat",
@@ -762,10 +762,6 @@
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/layout_popupview_button.xml.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/layout/popupview_button.xml"
-    },
-    {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable_shortcut_ic_face_white_48dp.xml.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable/shortcut_ic_face_white_48dp.xml"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_flash_auto.png.flat",
@@ -808,12 +804,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/baseline_face_retouching_natural_white_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_baseline_close_white_48.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxxhdpi/baseline_close_white_48.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_flash_off.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/flash_off.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_baseline_close_white_48.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxxhdpi/baseline_close_white_48.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_gps_fixed_white_48dp.png.flat",
@@ -824,12 +820,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/xml/preferences_sub_photo_video.xml"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_ic_videocam_white_48dp.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/ic_videocam_white_48dp.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/xml_preferences_sub_licences.xml.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/xml/preferences_sub_licences.xml"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_ic_videocam_white_48dp.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/ic_videocam_white_48dp.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_baseline_add_a_photo_white_48.png.flat",
@@ -840,12 +836,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/mipmap-xxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/mipmap-xxhdpi/ic_launcher.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_flash_off.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/flash_off.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_info_outline_white_48dp.png.flat",
@@ -952,12 +948,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_exposure_white_48dp.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_photo_size_select_large_white_48dp.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/ic_photo_size_select_large_white_48dp.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_baseline_bluetooth_white_48.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxxhdpi/baseline_bluetooth_white_48.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_photo_size_select_large_white_48dp.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/ic_photo_size_select_large_white_48dp.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_power_settings_new_white_48dp.png.flat",
@@ -1080,10 +1076,6 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/ic_timelapse_white_48dp.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable_shortcut_gallery.xml.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable/shortcut_gallery.xml"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/layout_toast_textview.xml.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/layout/toast_textview.xml"
     },
@@ -1106,10 +1098,6 @@
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_exposure_red_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/ic_exposure_red_48dp.png"
-    },
-    {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable_shortcut_ic_videocam_white_48dp.xml.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable/shortcut_ic_videocam_white_48dp.xml"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_baseline_bluetooth_white_48.png.flat",
@@ -1192,12 +1180,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/layout/widget_layout.xml"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/xml_preferences_sub_settings_manager.xml.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/xml/preferences_sub_settings_manager.xml"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_touch_app_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/ic_touch_app_white_48dp.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/xml_preferences_sub_settings_manager.xml.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/xml/preferences_sub_settings_manager.xml"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_launcher_take_photo.png.flat",
@@ -1232,12 +1220,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_burst_mode_white_48dp.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_fast_forward_white_48dp.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_fast_forward_white_48dp.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_ic_stat_notify_take_photo.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/ic_stat_notify_take_photo.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_fast_forward_white_48dp.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_fast_forward_white_48dp.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/layout_activity_device_select.xml.flat",
@@ -1280,24 +1268,24 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/baseline_rotate_right_white_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_burst_mode_white_48dp.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/ic_burst_mode_white_48dp.png"
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_settings.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/settings.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_help_outline_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_help_outline_white_48dp.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_settings.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/settings.png"
-    },
-    {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_timelapse_white_48dp.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_timelapse_white_48dp.png"
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_burst_mode_white_48dp.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/ic_burst_mode_white_48dp.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_baseline_delete_white_48.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxxhdpi/baseline_delete_white_48.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_timelapse_white_48dp.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_timelapse_white_48dp.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable_take_video_selector.xml.flat",
@@ -1312,12 +1300,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/raw_off_icon.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_flash_auto.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/flash_auto.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_baseline_photo_library_white_48.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/baseline_photo_library_white_48.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_flash_auto.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/flash_auto.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_popup_flash_torch.png.flat",
@@ -1334,10 +1322,6 @@
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_baseline_add_a_photo_white_48.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/baseline_add_a_photo_white_48.png"
-    },
-    {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable_shortcut_settings.xml.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable/shortcut_settings.xml"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxxhdpi_ic_photo_size_select_large_white_48dp.png.flat",
@@ -1380,16 +1364,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/baseline_check_white_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_hdr_on_white_48dp.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/ic_hdr_on_white_48dp.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_baseline_face_retouching_natural_white_48.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/baseline_face_retouching_natural_white_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/xml_widget_info_take_photo.xml.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/xml/widget_info_take_photo.xml"
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_hdr_on_white_48dp.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/ic_hdr_on_white_48dp.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_flash_on.png.flat",
@@ -1436,10 +1416,6 @@
         "source": "net.sourceforge.opencamera.app-main-28:/mipmap-hdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable_shortcut_ic_photo_camera_white_48dp.xml.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable/shortcut_ic_photo_camera_white_48dp.xml"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_exposure_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/ic_exposure_white_48dp.png"
     },
@@ -1476,10 +1452,6 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable/circle_background.xml"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/xml-v25_shortcuts.xml.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/xml-v25/shortcuts.xml"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_ic_videocam_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/ic_videocam_white_48dp.png"
     },
@@ -1496,12 +1468,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/baseline_panorama_horizontal_white_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_text_format_white_48dp.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_text_format_white_48dp.png"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/layout_myedittextpreference.xml.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/layout/myedittextpreference.xml"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_text_format_white_48dp.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/ic_text_format_white_48dp.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_more_horiz_white_48dp.png.flat",
@@ -1512,12 +1484,16 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xhdpi/ic_text_format_white_48dp.png"
     },
     {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_baseline_rotate_left_white_48.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/baseline_rotate_left_white_48.png"
+    },
+    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_baseline_filter_vintage_white_48.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/baseline_filter_vintage_white_48.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_baseline_rotate_left_white_48.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-mdpi/baseline_rotate_left_white_48.png"
+        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_baseline_photo_library_white_48.png.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/baseline_photo_library_white_48.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-mdpi_ic_stat_notify_take_photo.png.flat",
@@ -1526,10 +1502,6 @@
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/mipmap-hdpi_ic_launcher_background.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/mipmap-hdpi/ic_launcher_background.png"
-    },
-    {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_baseline_photo_library_white_48.png.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/drawable-hdpi/baseline_photo_library_white_48.png"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-hdpi_ic_play_circle_outline_white_48dp.png.flat",
@@ -1556,12 +1528,12 @@
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxxhdpi/ic_burst_mode_white_48dp.png"
     },
     {
-        "merged": "net.sourceforge.opencamera.app-debug-26:/xml_preferences_sub_video.xml.flat",
-        "source": "net.sourceforge.opencamera.app-main-28:/xml/preferences_sub_video.xml"
-    },
-    {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xxhdpi_ic_slow_motion_video_white_48dp.png.flat",
         "source": "net.sourceforge.opencamera.app-main-28:/drawable-xxhdpi/ic_slow_motion_video_white_48dp.png"
+    },
+    {
+        "merged": "net.sourceforge.opencamera.app-debug-26:/xml_preferences_sub_video.xml.flat",
+        "source": "net.sourceforge.opencamera.app-main-28:/xml/preferences_sub_video.xml"
     },
     {
         "merged": "net.sourceforge.opencamera.app-debug-26:/drawable-xhdpi_baseline_remove_red_eye_white_48.png.flat",

@@ -2,22 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.samsung.android.OpenTeleScopeVR"
     android:installLocation="auto"
-    android:versionCode="3"
-    android:versionName="0.3.oc.1.56.2" >
+    android:versionCode="6"
+    android:versionName="0.4.6.oc.1.56.2" >
 
     <uses-sdk
         android:minSdkVersion="23"
         android:targetSdkVersion="36" />
-    <!-- ignore GoogleAppIndexingWarning as we don't want to implement that -->
 
+    <!-- Restrict to phone form-factor displays (excludes 7"+ and 10"+ tablets) -->
     <supports-screens
         android:anyDensity="true"
-        android:largeScreens="true"
+        android:largeScreens="false"
         android:normalScreens="true"
         android:smallScreens="true"
-        android:xlargeScreens="true" />
+        android:xlargeScreens="false" />
 
-    <!-- if adding permissions, remember to review privacy policy; also features accessing sensitive information must be listed in Google Play listing -->
+    <!-- Permissions -->
     <uses-permission
         android:name="android.permission.BLUETOOTH_SCAN"
         android:usesPermissionFlags="neverForLocation" />
@@ -27,14 +27,30 @@
         android:maxSdkVersion="28" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <!-- see note above if adding permissions -->
 
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.microphone" />
+    <!-- Hardware requirements strictly matching smartphones -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <!-- Optional peripherals -->
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
     <uses-feature
         android:name="android.hardware.bluetooth_le"
         android:required="false" />
-    <!-- needed for targetting Android 11 - see https://developer.android.com/about/versions/11/behavior-changes-11 -->
+
+    <!-- Queries needed for TTS on Android 11+ -->
     <queries>
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
@@ -57,55 +73,17 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:theme="@style/AppTheme" >
-
-        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
         <activity
             android:name="net.sourceforge.opencamera.MainActivity"
             android:clearTaskOnLaunch="true"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true" >
-
-            <!-- clearTaskOnLaunch set to true, so if user goes to gallery then returns to home, we return to the camera rather than remaining in gallery if user relaunches Open Camera -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.media.action.IMAGE_CAPTURE" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.media.action.IMAGE_CAPTURE_SECURE" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.media.action.STILL_IMAGE_CAMERA_SECURE" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.media.action.VIDEO_CAMERA" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.media.action.VIDEO_CAPTURE" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts" />
         </activity>
         <activity
             android:name="net.sourceforge.opencamera.remotecontrol.DeviceScanner"
@@ -113,63 +91,6 @@
             android:label="@string/scan_ble" >
         </activity>
 
-        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-        <activity
-            android:name="net.sourceforge.opencamera.TakePhoto"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:icon="@drawable/ic_launcher_take_photo"
-            android:label="@string/take_photo"
-            android:taskAffinity="" >
-        </activity>
-        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-        <receiver
-            android:name="net.sourceforge.opencamera.MyWidgetProviderTakePhoto"
-            android:exported="true"
-            android:icon="@drawable/ic_launcher_take_photo"
-            android:label="@string/take_photo" >
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/widget_info_take_photo" />
-        </receiver>
-        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-        <service
-            android:name="net.sourceforge.opencamera.MyTileService"
-            android:exported="true"
-            android:icon="@drawable/ic_photo_camera_white_48dp"
-            android:label="@string/camera"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-        <service
-            android:name="net.sourceforge.opencamera.MyTileServiceVideo"
-            android:exported="true"
-            android:icon="@drawable/ic_videocam_white_48dp"
-            android:label="@string/record_video"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-        <service
-            android:name="net.sourceforge.opencamera.MyTileServiceFrontCamera"
-            android:exported="true"
-            android:icon="@drawable/ic_face_white_48dp"
-            android:label="@string/selfie"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
         <service
             android:name="net.sourceforge.opencamera.remotecontrol.BluetoothLeService"
             android:enabled="true"

@@ -33,6 +33,7 @@ import android.Manifest;
 import android.app.Fragment;
 import android.content.pm.PackageInfo;
 import android.content.res.TypedArray;
+import android.content.res.Resources; //gemini_81dlp// for multilang
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -716,7 +717,36 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
             Log.d(TAG, "onCreate: total time for Activity startup: " + (System.currentTimeMillis() - debug_time));
     }
 
-// 81dlp_gemini // Enforce VR default settings on fresh install or reset
+    //gemini_81dlp// Note to self: Turn on when multi-lang/multilang enabled
+    /** 
+    @Override
+    protected void attachBaseContext(Context base) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(base);
+        boolean forceEnglish = prefs.getBoolean("preference_force_english", false);
+
+        Locale targetLocale;
+        if( forceEnglish ) {
+            targetLocale = Locale.ENGLISH;
+        }
+        else {
+            // Explicitly recover the device's real system locale from the OS configuration
+            if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.N ) {
+                targetLocale = Resources.getSystem().getConfiguration().getLocales().get(0);
+            }
+            else {
+                targetLocale = Resources.getSystem().getConfiguration().locale;
+            }
+        }
+
+        Locale.setDefault(targetLocale);
+        Configuration config = new Configuration(base.getResources().getConfiguration());
+        config.setLocale(targetLocale);
+        config.setLayoutDirection(targetLocale);
+        base = base.createConfigurationContext(config);
+
+        super.attachBaseContext(base);
+    } **/
+    // 81dlp_gemini // Enforce VR default settings on fresh install or reset
     private void setMyPreferenceDefaults() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -735,6 +765,10 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         }
         if( !sharedPreferences.contains(PreferenceKeys.ShowExposureLockPreferenceKey) ) {
             editor.putBoolean(PreferenceKeys.ShowExposureLockPreferenceKey, false);
+        }
+        // Enforce immersive mode (Hide everything)[cite: 4]
+        if( !sharedPreferences.contains(PreferenceKeys.ImmersiveModePreferenceKey) ) {
+            editor.putString(PreferenceKeys.ImmersiveModePreferenceKey, "immersive_mode_everything");
         }
         editor.apply();
     }

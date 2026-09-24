@@ -2,6 +2,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:key="preferences_root">
 
+    <!--Note 2 self 81dlp: uncomment this when fixed
+    <SwitchPreference
+        android:key="preference_force_english"
+        android:title="@string/preference_force_english"
+        android:summary="@string/preference_force_english_summary"
+	    android:defaultValue="false" />
+    --> 
     <Preference
         android:key="preference_save_settings"
         android:title="@string/preference_save_settings"

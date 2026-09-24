@@ -627,6 +627,20 @@
         <item>local</item>
         <item>zulu</item>
     </string-array>
+    <string-array name="preference_settings_font_size_entries">
+	<item>1.00x</item>
+	<item>1.25x</item>
+	<item>1.50x</item>
+	<item>1.75x</item>
+	<item>2.00x</item>
+    </string-array>
+    <string-array name="preference_settings_font_size_values">
+        <item>1.0</item>
+        <item>1.25</item>
+        <item>1.5</item>
+        <item>1.75</item>
+        <item>2.0</item>
+    </string-array>
     <string-array name="preference_stamp_dateformat_entries">
         <item>@string/preference_stamp_dateformat_default</item>
         <item>@string/preference_stamp_dateformat_yyyymmdd</item>
@@ -1707,6 +1721,8 @@
     <string name="preference_category_stamp">Photo Stamp</string>
     <string name="preference_color_effect">Apply a color effect</string>
     <string name="preference_color_effect_summary">Applies the selected color effect to the photo</string>
+    <string name="preference_color_filters_type">Color filters menu</string>
+    <string name="preference_color_filters_type_summary">%s (HWS filters usually only work on Samsung devices)</string>
     <string name="preference_comment_ypr">Store yaw, pitch and roll</string>
     <string name="preference_comment_ypr_summary">Store the yaw, pitch and roll of the device in the photo\'s Exif user comment, for non-RAW (JPEG/etc) images only</string>
     <string name="preference_crop_guide">Show a crop guide</string>
@@ -1781,6 +1797,8 @@
     <string name="preference_focus_peaking_off">Off</string>
     <string name="preference_focus_peaking_on">On</string>
     <string name="preference_focus_peaking_summary">If this option is enabled, highlights will be shown on in-focus edges (contours). This is primarily useful for manual focus, and can be used to help determine which regions of the image are in focus.\n%s</string>
+    <string name="preference_force_english">Force English language</string>
+    <string name="preference_force_english_summary">Switch between English and Android system default</string>
     <string name="preference_force_video_4k">Force 4K UHD video (only works on some devices)</string>
     <string name="preference_force_video_4k_summary">Enable 3840x2160 resolution for video recording on back camera - this option is a hack that may allow 4K devices on 4K cameras that don\'t expose the option to 3rd party camera apps. This isn\'t guaranteed to work, please test before working.</string>
     <string name="preference_free_memory">Show free memory</string>
@@ -1851,8 +1869,8 @@
         under the Apache license version 2.0. Some icons include modifications. Tap here for full licence text.</string>
     <string name="preference_licence_online" translatable="false">GitHub repository</string>
     <string name="preference_licence_online_text" translatable="false">Please tap here for full online licensing information (opens in your browser).</string>
-    <string name="preference_licence_open_camera" translatable="false">Open Camera</string>
-    <string name="preference_licence_open_camera_text" translatable="false">Open Camera is © 2013–2026 Mark Harman, released under the GPL v3 or later. Tap here for full licence text and terms of service.</string>
+    <string name="preference_licence_open_camera" translatable="false">Open TeleScope VR</string>
+    <string name="preference_licence_open_camera_text" translatable="false">Open TeleScope VR is © 2026 Digvijay Lalwani Prakash, a modified fork of Open Camera (© 2013–2026 Mark Harman).\n\nOpen TeleScope VR is released under the GPL v3. Tap here for full licence text and terms of service.</string>
     <string name="preference_location">Store location data (Geotagging)</string>
     <string name="preference_location_disable">Stop storing location data</string>
     <string name="preference_location_enable">Store location data</string>
@@ -1861,9 +1879,13 @@
     <string name="preference_lock_orientation_summary">If set, the orientation of the device will be ignored, and the orientation of the photo/video will be with respect to the specified orientation\n%s</string>
     <string name="preference_lock_video">Lock screen when recording video</string>
     <string name="preference_lock_video_summary">When recording video, the GUI will be locked to prevent accidentally stopping recording. Swipe the screen to unlock. Note that video recording will always stop if the app goes into background or the screen is blanked.</string>
+    <string name="preference_manual_camera_ids">Manual camera IDs</string>
+    <string name="preference_manual_camera_ids_dialog_title">Enter camera IDs</string>
     <string name="preference_manual_camera_ids_summary">Force add undetected camera IDs. Some manufacturers hide the telephoto lens from third-party apps. Check GCam forums for your device\'s camera ID. Note: The app will restart/close on saving; relaunch it to apply.</string>
     <string name="preference_max_brightness">Force maximum brightness</string>
     <string name="preference_max_brightness_summary">Force screen display to be at maximum brightness, rather than device default</string>
+    <string name="preference_max_zoom_boost">Digital zoom boost limit</string>
+    <string name="preference_max_zoom_boost_summary">Over-zoom beyond device hardware limits (may cause pixelation or preview lag on some devices)</string>
     <string name="preference_multi_cam_button">Multiple cameras icon</string>
     <string name="preference_multi_cam_button_summary">Show an icon to switch between detected cameras.</string>
     <string name="preference_noise_reduction_mode">Noise reduction algorithm</string>
@@ -1981,16 +2003,21 @@
     <string name="preference_save_zulu_time">Time format for filename</string>
     <string name="preference_scene_mode">Apply a scene mode</string>
     <string name="preference_scene_mode_summary">Optimise the photo for different scenes</string>
+    <string name="preference_screen_app_info">App info and help</string>
     <string name="preference_screen_camera_controls_more">More camera controls…</string>
     <string name="preference_screen_gui">On screen GUI…</string>
     <string name="preference_screen_licences" translatable="false">Open Source licences</string>
     <string name="preference_screen_location_settings">Location settings…</string>
     <string name="preference_screen_photo_settings">Photo settings…</string>
+    <string name="preference_screen_photo_video_settings">Additional settings</string>
+    <string name="preference_screen_photo_video_settings_summary">Video and controls</string>
     <string name="preference_screen_processing_settings">Processing settings…</string>
     <string name="preference_screen_remote_control">Bluetooth LE remote control…</string>
     <string name="preference_screen_settings_manager">Settings manager</string>
     <string name="preference_screen_video_settings">Video settings…</string>
     <string name="preference_select_remote">Select remote device</string>
+    <string name="preference_settings_font_size">Settings font size</string>
+    <string name="preference_settings_font_size_summary">Adjust text size within the settings menus\n%s</string>
     <string name="preference_show_angle">Show angle</string>
     <string name="preference_show_angle_line">Show angle line</string>
     <string name="preference_show_angle_line_summary">Display horizontal level line</string>
@@ -2029,6 +2056,8 @@
     <string name="preference_show_store_location_summary">Whether to show an on-screen icon for enabling or disabling location data (geotagging)</string>
     <string name="preference_show_take_photo">Show \"Take Photo\" icon</string>
     <string name="preference_show_take_photo_summary">Show the icon for taking photos. (If disabled, double-click the left mouse button on the left screen)</string>
+    <string name="preference_show_take_video">Show Video icon</string>
+    <string name="preference_show_take_video_summary">Show video shutter and switch button</string>
     <string name="preference_show_textstamp">Show custom text stamp photo icon</string>
     <string name="preference_show_textstamp_summary">Whether to show an on-screen icon for specifying custom text to be stamped onto the photo</string>
     <string name="preference_show_time">Show time</string>

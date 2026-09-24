@@ -3,13 +3,19 @@
 
     <ListPreference
         android:key="preference_max_zoom_boost"
-        android:title="Digital zoom boost limit"
-        android:summary="Over-zoom beyond device hardware limits (may cause pixelation or preview lag on some devices)"
+        android:title="@string/preference_max_zoom_boost"
+        android:summary="@string/preference_max_zoom_boost_summary"
         android:entries="@array/preference_max_zoom_boost_entries"
         android:entryValues="@array/preference_max_zoom_boost_values"
         android:defaultValue="1.0"
         android:icon="@drawable/ic_photo_size_select_large_white_48dp" />
-
+    <!--<ListPreference
+        android:key="preference_settings_font_size"
+        android:title="@string/preference_settings_font_size"
+        android:summary="@string/preference_settings_font_size_summary"
+        android:entries="@array/preference_settings_font_size_entries"
+        android:entryValues="@array/preference_settings_font_size_values"
+        android:defaultValue="1.0" />-->
     <PreferenceScreen
         android:key="preference_screen_gui"
         android:title="@string/preference_screen_gui"
@@ -21,9 +27,9 @@
     <!-- gemini_81dlp: NEW MANUAL CAMERA ID SETTING -->
     <EditTextPreference
         android:key="preference_manual_camera_ids"
-        android:title="Manual camera IDs"
+        android:title="@string/preference_manual_camera_ids"
         android:summary="@string/preference_manual_camera_ids_summary"
-        android:dialogTitle="Enter camera IDs"
+        android:dialogTitle="@string/preference_manual_camera_ids_dialog_title"
         android:defaultValue=""
         android:icon="@drawable/baseline_add_a_photo_white_48" />
     <!--gemini_81dlp-->
@@ -31,8 +37,8 @@
     <!--gemini_81dlp Nested Photo & Video Settings -->
     <PreferenceScreen
         android:key="preference_screen_photo_video_settings"
-        android:title="Additional settings"
-        android:summary="Video and controls"
+        android:title="@string/preference_screen_photo_video_settings"
+        android:summary="@string/preference_screen_photo_video_settings_summary"
         android:icon="@drawable/take_photo_pref"
         android:persistent="false"
         android:fragment="net.sourceforge.opencamera.PreferenceSubPhotoVideo" />
@@ -49,7 +55,7 @@
     <!--gemini_81dlp Nested App Info Sub-Settings -->
     <PreferenceScreen
         android:key="preference_screen_app_info"
-        android:title="App info and help"
+        android:title="@string/preference_screen_app_info"
         android:summary="@string/preference_about_summary"
         android:icon="@drawable/ic_info_outline_white_48dp"
         android:fragment="net.sourceforge.opencamera.PreferenceSubAppInfo" />

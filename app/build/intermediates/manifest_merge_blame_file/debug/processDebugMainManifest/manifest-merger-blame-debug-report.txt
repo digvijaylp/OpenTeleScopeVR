@@ -2,385 +2,238 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.samsung.android.OpenTeleScopeVR"
 4    android:installLocation="auto"
-5    android:versionCode="3"
-6    android:versionName="0.3.oc.1.56.2" >
+5    android:versionCode="6"
+6    android:versionName="0.4.6.oc.1.56.2" >
 7
 8    <uses-sdk
 9        android:minSdkVersion="23"
 10        android:targetSdkVersion="36" />
-11    <!-- ignore GoogleAppIndexingWarning as we don't want to implement that -->
-12
+11
+12    <!-- Restrict to phone form-factor displays (excludes 7"+ and 10"+ tablets) -->
 13    <supports-screens
-13-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:5-164
+13-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:5-15:37
 14        android:anyDensity="true"
-14-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:137-162
-15        android:largeScreens="true"
-15-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:52-79
+14-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:15:9-34
+15        android:largeScreens="false"
+15-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:13:9-37
 16        android:normalScreens="true"
-16-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:80-108
+16-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:12:9-37
 17        android:smallScreens="true"
-17-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:109-136
-18        android:xlargeScreens="true" />
-18-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:10:23-51
+17-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:11:9-36
+18        android:xlargeScreens="false" />
+18-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:14:9-38
 19
-20    <!-- if adding permissions, remember to review privacy policy; also features accessing sensitive information must be listed in Google Play listing -->
+20    <!-- Permissions -->
 21    <uses-permission
-21-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:13:5-15:31
+21-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:18:5-21:31
 22        android:name="android.permission.BLUETOOTH_SCAN"
-22-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:13:22-70
+22-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:19:9-57
 23        android:usesPermissionFlags="neverForLocation" />
-23-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:14:9-55
+23-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:20:9-55
 24    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-24-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:16:5-76
-24-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:16:22-73
+24-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:22:5-76
+24-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:22:22-73
 25    <uses-permission
-25-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:17:5-19:40
+25-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:23:5-26:40
 26        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-26-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:17:22-78
+26-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:24:9-65
 27        android:maxSdkVersion="28" />
-27-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:18:9-35
+27-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:25:9-35
 28    <uses-permission android:name="android.permission.CAMERA" />
-28-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:20:5-65
-28-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:20:22-62
+28-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:27:5-65
+28-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:27:22-62
 29    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-29-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:21:5-71
-29-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:21:22-68
-30    <!-- see note above if adding permissions -->
-31
-32    <uses-feature android:name="android.hardware.camera" />
-32-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:24:5-60
-32-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:24:19-57
-33    <uses-feature android:name="android.hardware.microphone" />
-33-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:25:5-64
-33-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:25:19-61
-34    <uses-feature
-34-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:26:5-90
-35        android:name="android.hardware.bluetooth_le"
-35-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:26:19-63
-36        android:required="false" />
-36-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:26:64-88
-37    <!-- needed for targetting Android 11 - see https://developer.android.com/about/versions/11/behavior-changes-11 -->
-38    <queries>
-38-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:149:5-153:15
-39        <intent>
-39-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:150:9-152:18
-40            <action android:name="android.intent.action.TTS_SERVICE" />
-40-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:151:13-72
-40-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:151:21-69
-41        </intent>
-42    </queries>
-43
-44    <permission
-44-->[androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/0a442df3b823586b7b45366d3f7198cf/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
-45        android:name="com.samsung.android.OpenTeleScopeVR.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-45-->[androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/0a442df3b823586b7b45366d3f7198cf/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
-46        android:protectionLevel="signature" />
-46-->[androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/0a442df3b823586b7b45366d3f7198cf/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
-47
-48    <uses-permission android:name="com.samsung.android.OpenTeleScopeVR.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-48-->[androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/0a442df3b823586b7b45366d3f7198cf/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
-48-->[androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/0a442df3b823586b7b45366d3f7198cf/transformed/core-1.13.0/AndroidManifest.xml:26:22-94
-49
-50    <application
-50-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:28:5-147:19
-51        android:name="net.sourceforge.opencamera.OpenCameraApplication"
-51-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:32:9-46
-52        android:allowBackup="true"
-52-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:29:9-35
-53        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-53-->[androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/0a442df3b823586b7b45366d3f7198cf/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
-54        android:debuggable="true"
-55        android:extractNativeLibs="false"
-56        android:icon="@mipmap/ic_launcher"
-56-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:30:9-43
-57        android:label="@string/app_name"
-57-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:31:9-41
-58        android:largeHeap="true"
-58-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:34:9-33
-59        android:theme="@style/AppTheme" >
-59-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:33:9-40
-60
-61        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-62        <activity
-62-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:37:9-74:20
-63            android:name="net.sourceforge.opencamera.MainActivity"
-63-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:38:13-67
-64            android:clearTaskOnLaunch="true"
-64-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:40:13-45
-65            android:configChanges="orientation|screenSize|keyboardHidden"
-65-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:39:13-74
-66            android:exported="true" >
-66-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:41:13-36
-67
-68            <!-- clearTaskOnLaunch set to true, so if user goes to gallery then returns to home, we return to the camera rather than remaining in gallery if user relaunches Open Camera -->
-69            <intent-filter>
-69-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:44:13-48:29
-70                <action android:name="android.intent.action.MAIN" />
-70-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:45:17-69
-70-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:45:25-66
-71
-72                <category android:name="android.intent.category.LAUNCHER" />
-72-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:46:17-77
-72-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:46:27-74
-73                <category android:name="android.intent.category.DEFAULT" />
-73-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:17-76
-73-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:27-73
-74            </intent-filter>
-75            <intent-filter>
-75-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:49:13-52:29
-76                <action android:name="android.media.action.IMAGE_CAPTURE" />
-76-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:50:17-77
-76-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:50:25-74
-77
-78                <category android:name="android.intent.category.DEFAULT" />
-78-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:17-76
-78-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:27-73
-79            </intent-filter>
-80            <intent-filter>
-80-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:53:13-56:29
-81                <action android:name="android.media.action.IMAGE_CAPTURE_SECURE" />
-81-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:54:17-84
-81-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:54:25-81
-82
-83                <category android:name="android.intent.category.DEFAULT" />
-83-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:17-76
-83-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:27-73
-84            </intent-filter>
-85            <intent-filter>
-85-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:57:13-60:29
-86                <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
-86-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:58:17-82
-86-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:58:25-79
-87
-88                <category android:name="android.intent.category.DEFAULT" />
-88-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:17-76
-88-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:27-73
-89            </intent-filter>
-90            <intent-filter>
-90-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:61:13-64:29
-91                <action android:name="android.media.action.STILL_IMAGE_CAMERA_SECURE" />
-91-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:62:17-89
-91-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:62:25-86
-92
-93                <category android:name="android.intent.category.DEFAULT" />
-93-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:17-76
-93-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:27-73
-94            </intent-filter>
-95            <intent-filter>
-95-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:65:13-68:29
-96                <action android:name="android.media.action.VIDEO_CAMERA" />
-96-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:66:17-76
-96-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:66:25-73
-97
-98                <category android:name="android.intent.category.DEFAULT" />
-98-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:17-76
-98-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:27-73
-99            </intent-filter>
-100            <intent-filter>
-100-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:69:13-72:29
-101                <action android:name="android.media.action.VIDEO_CAPTURE" />
-101-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:70:17-77
-101-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:70:25-74
-102
-103                <category android:name="android.intent.category.DEFAULT" />
-103-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:17-76
-103-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:47:27-73
-104            </intent-filter>
-105
+29-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:28:5-71
+29-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:28:22-68
+30
+31    <!-- Hardware requirements strictly matching smartphones -->
+32    <uses-feature
+32-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:31:5-87
+33        android:name="android.hardware.telephony"
+33-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:31:19-60
+34        android:required="true" />
+34-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:31:61-84
+35    <uses-feature
+35-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:32:5-89
+36        android:name="android.hardware.touchscreen"
+36-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:32:19-62
+37        android:required="true" />
+37-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:32:63-86
+38    <uses-feature
+38-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:33:5-84
+39        android:name="android.hardware.camera"
+39-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:33:19-57
+40        android:required="true" />
+40-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:33:58-81
+41
+42    <!-- Optional peripherals -->
+43    <uses-feature
+43-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:36:5-95
+44        android:name="android.hardware.camera.autofocus"
+44-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:36:19-67
+45        android:required="false" />
+45-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:36:68-92
+46    <uses-feature
+46-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:37:5-89
+47        android:name="android.hardware.microphone"
+47-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:37:19-61
+48        android:required="false" />
+48-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:37:62-86
+49    <uses-feature
+49-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:38:5-91
+50        android:name="android.hardware.bluetooth_le"
+50-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:38:19-63
+51        android:required="false" />
+51-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:38:64-88
+52
+53    <!-- Queries needed for TTS on Android 11+ -->
+54    <queries>
+54-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:75:5-79:15
+55        <intent>
+55-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:76:9-78:18
+56            <action android:name="android.intent.action.TTS_SERVICE" />
+56-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:77:13-72
+56-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:77:21-69
+57        </intent>
+58    </queries>
+59
+60    <permission
+60-->[androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/0a442df3b823586b7b45366d3f7198cf/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
+61        android:name="com.samsung.android.OpenTeleScopeVR.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+61-->[androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/0a442df3b823586b7b45366d3f7198cf/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
+62        android:protectionLevel="signature" />
+62-->[androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/0a442df3b823586b7b45366d3f7198cf/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
+63
+64    <uses-permission android:name="com.samsung.android.OpenTeleScopeVR.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+64-->[androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/0a442df3b823586b7b45366d3f7198cf/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
+64-->[androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/0a442df3b823586b7b45366d3f7198cf/transformed/core-1.13.0/AndroidManifest.xml:26:22-94
+65
+66    <application
+66-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:40:5-72:19
+67        android:name="net.sourceforge.opencamera.OpenCameraApplication"
+67-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:44:9-46
+68        android:allowBackup="true"
+68-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:41:9-35
+69        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+69-->[androidx.core:core:1.13.0] /home/Digvijay/.gradle/caches/8.13/transforms/0a442df3b823586b7b45366d3f7198cf/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
+70        android:debuggable="true"
+71        android:extractNativeLibs="false"
+72        android:icon="@mipmap/ic_launcher"
+72-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:42:9-43
+73        android:label="@string/app_name"
+73-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:43:9-41
+74        android:largeHeap="true"
+74-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:46:9-33
+75        android:theme="@style/AppTheme" >
+75-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:45:9-40
+76        <activity
+76-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:48:9-58:20
+77            android:name="net.sourceforge.opencamera.MainActivity"
+77-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:49:13-67
+78            android:clearTaskOnLaunch="true"
+78-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:51:13-45
+79            android:configChanges="orientation|screenSize|keyboardHidden"
+79-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:50:13-74
+80            android:exported="true" >
+80-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:52:13-36
+81            <intent-filter>
+81-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:53:13-57:29
+82                <action android:name="android.intent.action.MAIN" />
+82-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:54:17-69
+82-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:54:25-66
+83
+84                <category android:name="android.intent.category.LAUNCHER" />
+84-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:55:17-77
+84-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:55:27-74
+85                <category android:name="android.intent.category.DEFAULT" />
+85-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:56:17-76
+85-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:56:27-73
+86            </intent-filter>
+87        </activity>
+88        <activity
+88-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:60:9-64:20
+89            android:name="net.sourceforge.opencamera.remotecontrol.DeviceScanner"
+89-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:61:13-82
+90            android:exported="false"
+90-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:63:13-37
+91            android:label="@string/scan_ble" >
+91-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:62:13-45
+92        </activity>
+93
+94        <service
+94-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:66:9-70:36
+95            android:name="net.sourceforge.opencamera.remotecontrol.BluetoothLeService"
+95-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:67:13-87
+96            android:enabled="true"
+96-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:68:13-35
+97            android:exported="false" />
+97-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:69:13-37
+98
+99        <provider
+99-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+100            android:name="androidx.startup.InitializationProvider"
+100-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
+101            android:authorities="com.samsung.android.OpenTeleScopeVR.androidx-startup"
+101-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
+102            android:exported="false" >
+102-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
+103            <meta-data
+103-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+104                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+104-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+105                android:value="androidx.startup" />
+105-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
 106            <meta-data
-106-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:73:13-97
-107                android:name="android.app.shortcuts"
-107-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:73:24-60
-108                android:resource="@xml/shortcuts" />
-108-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:73:61-94
-109        </activity>
-110        <activity
-110-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:75:9-80:20
-111            android:name="net.sourceforge.opencamera.remotecontrol.DeviceScanner"
-111-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:76:13-82
-112            android:exported="false"
-112-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:78:13-37
-113            android:label="@string/scan_ble" >
-113-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:77:13-45
-114        </activity>
-115
-116        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-117        <activity
-117-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:83:9-92:20
-118            android:name="net.sourceforge.opencamera.TakePhoto"
-118-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:84:13-37
-119            android:configChanges="orientation|screenSize|keyboardHidden"
-119-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:87:13-74
-120            android:excludeFromRecents="true"
-120-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:89:13-46
-121            android:exported="false"
-121-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:90:13-37
-122            android:icon="@drawable/ic_launcher_take_photo"
-122-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:86:13-60
-123            android:label="@string/take_photo"
-123-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:85:13-47
-124            android:taskAffinity="" >
-124-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:88:13-36
-125        </activity>
-126        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-127        <receiver
-127-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:94:9-105:20
-128            android:name="net.sourceforge.opencamera.MyWidgetProviderTakePhoto"
-128-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:97:13-53
-129            android:exported="true"
-129-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:98:13-36
-130            android:icon="@drawable/ic_launcher_take_photo"
-130-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:95:13-60
-131            android:label="@string/take_photo" >
-131-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:96:13-47
-132            <intent-filter>
-132-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:99:13-101:29
-133                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-133-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:100:18-85
-133-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:100:26-82
-134            </intent-filter>
-135
-136            <meta-data
-136-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:102:13-104:65
-137                android:name="android.appwidget.provider"
-137-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:103:16-57
-138                android:resource="@xml/widget_info_take_photo" />
-138-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:104:16-62
-139        </receiver>
-140        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-141        <service
-141-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:107:9-117:19
-142            android:name="net.sourceforge.opencamera.MyTileService"
-142-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:108:13-68
-143            android:exported="true"
-143-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:112:13-36
-144            android:icon="@drawable/ic_photo_camera_white_48dp"
-144-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:109:13-64
-145            android:label="@string/camera"
-145-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:110:13-43
-146            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
-146-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:111:13-77
-147            <intent-filter>
-147-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:114:13-116:29
-148                <action android:name="android.service.quicksettings.action.QS_TILE" />
-148-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:115:17-87
-148-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:115:25-84
-149            </intent-filter>
-150        </service>
-151        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-152        <service
-152-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:119:9-129:19
-153            android:name="net.sourceforge.opencamera.MyTileServiceVideo"
-153-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:120:13-73
-154            android:exported="true"
-154-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:124:13-36
-155            android:icon="@drawable/ic_videocam_white_48dp"
-155-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:121:13-60
-156            android:label="@string/record_video"
-156-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:122:13-49
-157            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
-157-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:123:13-77
-158            <intent-filter>
-158-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:114:13-116:29
-159                <action android:name="android.service.quicksettings.action.QS_TILE" />
-159-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:115:17-87
-159-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:115:25-84
-160            </intent-filter>
-161        </service>
-162        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-163        <service
-163-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:131:9-141:19
-164            android:name="net.sourceforge.opencamera.MyTileServiceFrontCamera"
-164-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:132:13-79
-165            android:exported="true"
-165-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:136:13-36
-166            android:icon="@drawable/ic_face_white_48dp"
-166-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:133:13-56
-167            android:label="@string/selfie"
-167-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:134:13-43
-168            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
-168-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:135:13-77
-169            <intent-filter>
-169-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:114:13-116:29
-170                <action android:name="android.service.quicksettings.action.QS_TILE" />
-170-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:115:17-87
-170-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:115:25-84
-171            </intent-filter>
-172        </service>
-173        <service
-173-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:142:9-146:15
-174            android:name="net.sourceforge.opencamera.remotecontrol.BluetoothLeService"
-174-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:142:18-92
-175            android:enabled="true"
-175-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:143:13-35
-176            android:exported="false" />
-176-->/home/Digvijay/Apps/OpenCamera_dlp/repo/samsung/oneui_OpenTeleScopeVR/app/src/main/AndroidManifest.xml:144:13-37
-177
-178        <provider
-178-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-179            android:name="androidx.startup.InitializationProvider"
-179-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
-180            android:authorities="com.samsung.android.OpenTeleScopeVR.androidx-startup"
-180-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
-181            android:exported="false" >
-181-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
-182            <meta-data
-182-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-183                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-183-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
-184                android:value="androidx.startup" />
-184-->[androidx.emoji2:emoji2:1.3.0] /home/Digvijay/.gradle/caches/8.13/transforms/0cbe343614403bb23b063726add83b65/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
-185            <meta-data
-185-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/Digvijay/.gradle/caches/8.13/transforms/7f422d072582d65d4bebf07b8951c54d/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
-186                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-186-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/Digvijay/.gradle/caches/8.13/transforms/7f422d072582d65d4bebf07b8951c54d/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
-187                android:value="androidx.startup" />
-187-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/Digvijay/.gradle/caches/8.13/transforms/7f422d072582d65d4bebf07b8951c54d/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
-188            <meta-data
-188-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-189                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-189-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-190                android:value="androidx.startup" />
-190-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-191        </provider>
-192
-193        <receiver
-193-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-194            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-194-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-195            android:directBootAware="false"
-195-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-196            android:enabled="true"
-196-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
-197            android:exported="true"
-197-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-198            android:permission="android.permission.DUMP" >
-198-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
-199            <intent-filter>
-199-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-200                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-200-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-200-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
-201            </intent-filter>
-202            <intent-filter>
-202-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-203                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-203-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-203-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
-204            </intent-filter>
-205            <intent-filter>
-205-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-206                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-206-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-206-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
-207            </intent-filter>
-208            <intent-filter>
-208-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-209                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-209-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-209-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-210            </intent-filter>
-211        </receiver>
-212    </application>
-213
-214</manifest>
+106-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/Digvijay/.gradle/caches/8.13/transforms/7f422d072582d65d4bebf07b8951c54d/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+107                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+107-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/Digvijay/.gradle/caches/8.13/transforms/7f422d072582d65d4bebf07b8951c54d/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+108                android:value="androidx.startup" />
+108-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/Digvijay/.gradle/caches/8.13/transforms/7f422d072582d65d4bebf07b8951c54d/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+109            <meta-data
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+110                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+111                android:value="androidx.startup" />
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+112        </provider>
+113
+114        <receiver
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+115            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+115-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+116            android:directBootAware="false"
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+117            android:enabled="true"
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+118            android:exported="true"
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+119            android:permission="android.permission.DUMP" >
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+120            <intent-filter>
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+121                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+122            </intent-filter>
+123            <intent-filter>
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+124                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+125            </intent-filter>
+126            <intent-filter>
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+127                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+128            </intent-filter>
+129            <intent-filter>
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+130                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/Digvijay/.gradle/caches/8.13/transforms/4406a9fbde36da215b72289a02691bd5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+131            </intent-filter>
+132        </receiver>
+133    </application>
+134
+135</manifest>
